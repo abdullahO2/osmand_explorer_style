@@ -20,7 +20,7 @@
 - أمور أخرى موجودة ومشروحة في الملف
 </p>
 
-*
+
 </p>
 <p dir="rtl">
 وللاستفادة القصوى من ملف النمط أن تضع حجم الخريطة على 50% أو 75% وعدلها حسب رغبتك واحتياجك.
@@ -30,6 +30,8 @@
 <p dir="rtl">
 كما أن هذا النمط مجاني و وقف لله عز وجل ولا أسمح ببيعه أبداً 
 </p>
-*
+
+![image](https://user-images.githubusercontent.com/61907628/140186820-0b75d016-135f-4154-9f6d-98d7343ba114.png)
+
 
 <p dir="rtl"><a href="https://github.com/abdullahO2/osmand_explorer_style/releases/download/1.0/explorer_1.0.render.xml/">للتحميل اضغط هنا</a></p>
