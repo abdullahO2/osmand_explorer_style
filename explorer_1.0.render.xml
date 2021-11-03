@@ -5273,11 +5273,11 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			<switch textColor="#654321" textDy="7" textWrapWidth="25" textHaloColor="#aaf1eae4" textHaloRadius="$textHaloRadius" textItalic="true">
 				<switch>
 					<case minzoom="$naturalPeakTextMinZoom" tag="natural" value="peak" textOrder="80"><!-- النصوص الخاصة بالقمم الجبلية -->
-						<case maxzoom="12" nameTag="ele" textSize="11" intersectionMargin="15"/>
-						<case minzoom="10" maxzoom="16" nameTag="" nameTag2="ele" textSize="13"/>
-						<case minzoom="10" maxzoom="16" nameTag="ele" textSize="13"/>
-						<case minzoom="17" nameTag="" nameTag2="ele" textSize="15"/>
-						<case minzoom="17" nameTag="ele" textSize="15"/>
+						<case maxzoom="12" nameTag="ele" textSize="11" intersectionMargin="15"/><!-- وصولاً للمستوى 12 يظهر الارتفاع على القمة بدون النص -->
+						<case minzoom="10" maxzoom="16" nameTag="" nameTag2="ele" textSize="13"/><!-- من المستوى 10 إلى 16 يظهر الاسم والارتفاع إن وجد -->
+						<case minzoom="10" maxzoom="16" nameTag="ele" textSize="13"/><!-- من المستوى 10 إلى 16 يظهر الارتفاع إن كان هو الموجود فقط -->
+						<case minzoom="17" nameTag="" nameTag2="ele" textSize="15"/><!-- نفس السابق لكن من المستوى 17 وأدنى -->
+						<case minzoom="17" nameTag="ele" textSize="15"/><!-- نفس السابق لكن من المستوى 17 وأدنى -->
 						<apply_if maxzoom="14" engine_v1="true" textDy="-2"/>
 						<apply_if minzoom="15" engine_v1="true" textDy="-1"/>
 					</case>
@@ -5383,18 +5383,19 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					</switch>
 					<case minzoom="8" tag="natural" value="bay" textOnPath="true" textWrapWidth="17" textOrder="179" nameTag=""/><!-- الخليج -->
 					<case minzoom="8" tag="natural" value="strait" textOnPath="true" textWrapWidth="25" textOrder="180" nameTag=""/><!-- المضيق -->
-					<case minzoom="$waterwayStreamTextMinZoom" tag="waterway" value="stream" textOnPath="false" textOrder="206" nameTag=""/><!-- الشعبان والمجاري المائة التي هي أصغر من الأنهار -->
-					<case minzoom="19" textSize="12" tag="waterway" value="fish_pass" textOnPath="true" textOrder="78" textDy="0"/>
-					<case minzoom="$wadiStreamTextMinZoom" tag="waterway" value="wadi" textOnPath="true" textOrder="213" nameTag=""/><!-- الوديان -->
+					<case minzoom="$waterwayStreamTextMinZoom" tag="waterway" value="stream" textOnPath="false" textOrder="206" nameTag=""/>
+					<!-- الشعبان والمجاري المائة التي هي أصغر من الأنهار -->
+					<case minzoom="19" textSize="12" tag="waterway" value="fish_pass" textOnPath="false" textOrder="78" textDy="0"/>
+					<case minzoom="$wadiStreamTextMinZoom" tag="waterway" value="wadi" textOnPath="false" textOrder="213" nameTag=""/><!-- الوديان -->
 					<case minzoom="11" tag="waterway" value="river" textOnPath="false" textMinDistance="80" textOrder="184" nameTag=""/><!-- الأنهار والمجاري الواسعة -->
 					<case minzoom="13" tag="waterway" value="canal" textOnPath="true" textMinDistance="80" textOrder="185"/><!-- القنوات -->
 					<case hidePOILabels="false" minzoom="17" tag="waterway" value="dock" textDy="7" textOrder="209"/>
-					<case minzoom="12" tag="waterway" value="ditch" textOnPath="true" textOrder="210"/>
-					<case minzoom="12" tag="waterway" value="drain" textOnPath="true" textOrder="211"/>
+					<case minzoom="12" tag="waterway" value="ditch" textOnPath="false" textOrder="210"/>
+					<case minzoom="12" tag="waterway" value="drain" textOnPath="false" textOrder="211"/>
 					<case minzoom="15" tag="waterway" value="lock_gate" textDy="7" textWrapWidth="30" textOrder="212"/>
 					<!-- not a conventional tag: case minzoom="15" textDy="7" textWrapWidth="30" tag="waterway" value="lock" textOrder="15"/ -->
-					<case minzoom="11" tag="waterway" value="dam" textWrapWidth="20" textOnPath="true" textOrder="207"/><!-- السدود -->
-					<case minzoom="16" tag="waterway" value="weir" textWrapWidth="20" textOnPath="true" textOrder="208"/>
+					<case minzoom="11" tag="waterway" value="dam" textWrapWidth="20" textOnPath="false" textOrder="207"/><!-- السدود -->
+					<case minzoom="16" tag="waterway" value="weir" textWrapWidth="20" textOnPath="false" textOrder="208"/>
 					<case hidePOILabels="false" minzoom="17" tag="natural" value="spring" textDy="7" textWrapWidth="20" textOrder="214"/><!-- الينابيع -->
 					<case hidePOILabels="false" minzoom="16" tag="natural" value="hot_spring" textDy="7" textWrapWidth="20" textOrder="215"/>
 					<case hidePOILabels="false" minzoom="16" tag="natural" value="geyser" textDy="7" textWrapWidth="20" textOrder="216"/>
@@ -7017,17 +7018,22 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			<switch hideIcons="false">
 				<!-- Natural --><!-- الأماكن الطبيعية -->
 				<switch>
-					<case minzoom="$naturalPeakIconMinZoom" tag="natural" value="peak" iconOrder="65"><!-- الجبال والقمم الجبلية -->
-						<case maxzoom="11" icon="natural_peak" shield="peakvolcano_shield" iconVisibleSize="25" intersectionSizeFactor="2"><!-- وصولا للمستوى 11 -->
+					<case minzoom="$naturalPeakIconMinZoom" tag="natural" value="peak" iconOrder="65">
+					<!-- الجبال والقمم الجبلية -->
+						<case maxzoom="11" icon="natural_peak" shield="peakvolcano_shield" iconVisibleSize="25" intersectionSizeFactor="2">
+						<!-- وصولا للمستوى 11 -->
 							<apply_if additional="summit:cross=yes" icon="natural_peak_cross"/>
 						</case>
-						<case maxzoom="14" icon="natural_peak" shield="peakvolcano_shield"><!-- وصولا للمستوى 14 -->
+						<case maxzoom="14" icon="natural_peak" shield="peakvolcano_shield">
+						<!-- وصولا للمستوى 14 -->
 							<apply_if additional="summit:cross=yes" icon="natural_peak_cross"/>
 						</case>
-						<case minzoom="15" icon="natural_peak_big" shield="peakvolcano_big_shield"><!-- من المستوى 15 وأدنى -->
+						<case minzoom="15" icon="natural_peak_big" shield="peakvolcano_big_shield">
+						<!-- من المستوى 15 وأدنى -->
 							<apply_if additional="summit:cross=yes" icon="natural_peak_cross_big"/>
 						</case>
-						<apply_if nightMode="true" shield=""><!-- في الوضع الليلي -->
+						<apply_if nightMode="true" shield="">
+						<!-- في الوضع الليلي -->
 							<case minzoom="11" maxzoom="14" icon="natural_peak_night"/>
 							<case minzoom="15" icon="natural_peak_night_big"/>
 						</apply_if>
@@ -11329,8 +11335,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 		<switch>
 			<switch minzoom="$streamMinZoom">
 				<case tag="waterway" value="stream"><!-- الشعبان والمجاري المائية التي هي أصغر من مجاري الأنهار -->
-					<case additional="tunnel=yes" pathEffect_2="4_2">
-						<case maxzoom="13" strokeWidth_2="0.6"/><!-- عرض الخط ومتى يظهر -->
+					<case additional="tunnel=yes" pathEffect_2="4_2"><!-- التأثير على الخط في حال كان يمر من خلال نفق -->
+						<case maxzoom="13" strokeWidth_2="0.6"/><!-- عرض الخط وأقصى ظهور له بهذا العرض -->
 						<case maxzoom="14" strokeWidth_2="0.9"/>
 						<case maxzoom="16" strokeWidth_2="1:1"/>
 						<case maxzoom="17" strokeWidth_2="1.2:1.2"/>
@@ -11339,7 +11345,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				</case>
 				<case tag="waterway" value="wadi"><!-- الوديان وهو وسم أوقف العمل به -->
 					<case maxzoom="13" pathEffect="4.5_3"/>
-					<case maxzoom="14" pathEffect="6_4"/><!-- عرض الخط ومتى يظهر -->
+					<case maxzoom="14" pathEffect="6_4"/><!-- أقصى ظهور للخط وبالتأثير الخاص بالتقطيع -->
 					<case maxzoom="16" pathEffect="8_5"/>
 					<case maxzoom="17" pathEffect="9_5.5"/>
 					<case minzoom="18" pathEffect="12_7"/>
@@ -11409,12 +11415,14 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				</apply>
 			</switch>
 			<apply_if minzoom="$waterwayIntermittentMinZoom" additional="intermittent=yes"><!-- في حال كانت المياة تجري بشكل متقطع خلال السنة ولا تجري بشكل دائم -->
-				<case maxzoom="11" pathEffect="2.5_1.5"/><!-- عرض الخط ومتى يظهر -->
+				<case maxzoom="11" pathEffect="2.5_1.5"/>
+				<!-- أقصى ظهور للخط وبالتأثير الخاص بالتقطيع -->
 				<case maxzoom="13" pathEffect="4.5_3"/>
 				<case maxzoom="14" pathEffect="6_4"/>
 				<case maxzoom="16" pathEffect="8_5"/>
 				<case maxzoom="17" pathEffect="9_5.5"/>
 				<case minzoom="18" pathEffect="12_7"/>
+				<!-- ظهور الخط من المستوى 18 وأدنى وبالتأثير الخاص بالتقطيع -->
 			</apply_if>
 			<apply_if engine_v1="true" onewayArrowsColor="$waterwayArrowsColor"/>
 			<!-- Waterway color -->
