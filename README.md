@@ -16,6 +16,10 @@
 <p dir="rtl">
 - تصحيح أولوية ظهور المدن والقرى يتكون بشكل أفضل من الثيم الأصلي
 </p>
+</p>
+<p dir="rtl">
+- تم عزل الطرق السكينة عن الطرق الغير مصنفه لتكون في مستوى مختلف
+</p>
 <p dir="rtl">
 - أمور أخرى موجودة ومشروحة في الملف
 </p>
@@ -35,3 +39,12 @@
 
 
 <p dir="rtl"><a href="https://github.com/abdullahO2/osmand_explorer_style/releases/download/1.0/explorer_1.0.render.xml/">للتحميل اضغط هنا</a></p>
+
+
+<p dir="rtl">
+وهذا النمط بالأصل هو النمط الافتراضي لأوسماند والموجود هنا:
+  
+ 
+https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles
+
+</p>
