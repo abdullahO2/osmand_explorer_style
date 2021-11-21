@@ -38,7 +38,7 @@
 ![image](https://user-images.githubusercontent.com/61907628/140186820-0b75d016-135f-4154-9f6d-98d7343ba114.png)
 
 
-<p dir="rtl"><a href="https://github.com/abdullahO2/osmand_explorer_style/releases/download/1.0/explorer_1.0.render.xml/">للتحميل اضغط هنا</a></p>
+<p dir="rtl"><a href="https://github.com/abdullahO2/osmand_explorer_style/releases/download/1.0/explorer_1.0.render.xml/">للتحميل اضغط هنا</a> بعد التحميل قم بفتح الملف بواسطة أوسماند</p>
 
 
 <p dir="rtl">
