@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<renderingStyle name="explorer_style" depends="default" defaultColor="#ebe7e4" version="1">
+<renderingStyle name="المستكشف الثاني" depends="default" defaultColor="#ebe7e4" version="2">
 
 	<!--  Documentation of the rendering syntax:
 		Elements:
@@ -113,8 +113,8 @@ dp
 		type="boolean" possibleValues="" category="details"/><!-- هذا المحدد في يعمل في حال تفعيل خيار (عرض جودة الطريق) في (تفاصيل إضافية) التي في ضبط الخريطة  -->
 	<renderingProperty attr="showAccess" name="Show access restrictions" description="Show access restrictions"
 		type="boolean" possibleValues="" category="details"/><!-- هذا المحدد في يعمل في حال تفعيل خيار (عرض قيود الدخول) في (تفاصيل إضافية) التي في ضبط الخريطة  -->
-	<renderingProperty attr="showLez" name="Show Low Emission Zones" description="Show Low Emission zones on the map. Does not affect routing."
-		type="boolean" possibleValues="" category="details"/><!-- هذا المحدد في يعمل في حال تفعيل خيار (إظهار مناطق الانبعاثات المنخفضة) في (تفاصيل إضافية) التي في ضبط الخريطة  -->
+	<!--<renderingProperty attr="showLez" name="Show Low Emission Zones" description="Show Low Emission zones on the map. Does not affect routing."
+		type="boolean" possibleValues="" category="details"/> --><!-- هذا المحدد في يعمل في حال تفعيل خيار (إظهار مناطق الانبعاثات المنخفضة) في (تفاصيل إضافية) التي في ضبط الخريطة  -->
 	<renderingProperty attr="contourLines" name="Show contour lines" description="Select minimum zoom level to display in map if available. Separate contour file may be needed."
 		type="string" possibleValues="disabled,16,15,14,13,12,11" defaultValueDescription="default13" category="details"/><!-- هذا المحدد لتخصيص طريقة ظهور الخطوط الكنتورية من ضبط الخريطة  -->
 	<renderingProperty attr="contourColorScheme" name="Contour lines color scheme" description="Contour lines color scheme" type="string" possibleValues="white,yellow,green,light_brown,brown,dark_brown,red" defaultValueDescription="default"/><!-- هذا المحدد لتخصيص ألوان الخطوط الكنتورية من ضبط الخريطة  -->
@@ -126,15 +126,20 @@ dp
 		type="boolean" possibleValues="" category="details"/><!-- هذا المحدد لتخصيص ظهور الشوارع المنارة والتي تفعل من تفاصيل إضافية  -->
 	<renderingProperty attr="streetLightingNight" name="Street lighting (night mode)" description="Show street lighting only at night"
 		type="boolean" possibleValues="" category="details"/><!-- هذا المحدد لتخصيص ظهور الشوارع المنارة بالوضع الليلي والتي تفعل من تفاصيل إضافية  -->
-	<renderingProperty attr="OSMMapperAssistant" name="OSM mapper assistant" description="Show fixme and other features to help OSM mappers"
-		type="boolean" possibleValues="" category="details"/><!-- هذا المحدد لإظهار العناصر التي تحتاج إلى إصلاح في الخريطة (مساعد تخطيط OSM)  -->
+	<renderingProperty attr="OSMMapperAssistantFixme" name="Fixme tags" description="Show fixme tags"
+		type="boolean" possibleValues="" category="osm_assistant"/>
+	<renderingProperty attr="OSMMapperAssistantNote" name="Note tags" description="Show note tags"
+		type="boolean" possibleValues="" category="osm_assistant"/>
+	<renderingProperty attr="OSMMapperAssistantIconsLowZooms" name="Icons at low zooms" description="Schematic display of icons at low zooms"
+		type="boolean" possibleValues="" category="osm_assistant"/>
+	<renderingProperty attr="OSMMapperAssistantWaterwayTunnels" name="Waterway tunnels" description="Don't hide waterway tunnels"
+		type="boolean" possibleValues="" category="osm_assistant"/><!-- هذا المحدد لإظهار العناصر التي تحتاج إلى إصلاح في الخريطة (مساعد تخطيط OSM)  -->
 	<renderingProperty attr="depthContours" name="Depth contours" description="Show depth contours and points"
 		type="boolean" possibleValues="" category="details"/><!-- هذا المحدد لتخصيص ظهور عمق الخطوط الكنتورية والنقاط  -->
-
+	<renderingProperty attr="natureReserves" name="Nature reserves" description="Show nature reserve, protected areas and national parks"
+		type="boolean" possibleValues="" category="details"/>
 	<renderingProperty attr="noAdminboundaries" name="Hide boundaries" description="Suppress display of admin levels 5-9"
 		type="boolean" possibleValues="" category="hide"/><!-- هذا المحدد لتخصيص إخفاء الحدود الإدارية  -->
-	<renderingProperty attr="noNatureReserveBoundaries" name="Hide nature boundaries" description="Hide nature reserve, protected areas and national park boundaries"
-		type="boolean" possibleValues="" category="hide"/><!-- هذا المحدد لتخصيص إخفاء الحدود الطبيعية  -->
 	<renderingProperty attr="noPolygons" name="Hide polygons" description="Make all areal land features on map transparent"
 		type="boolean" possibleValues="" category="hide"/><!-- هذا المحدد لتخصيص إخفاء مضلعات (مساحات) الأشياء  -->
 	<renderingProperty attr="hideBuildings" name="Hide buildings" description="Hide buildings"
@@ -165,12 +170,12 @@ dp
 	<renderingProperty attr="alpineHiking" name="Alpine hiking view" description="Render paths according to SAC scale"
 		type="boolean" possibleValues="" category="routes"/>
 	<renderingProperty attr="horseRoutes" name="Horse routes" description="Horse routes"
-		type="boolean" possibleValues="" category="routes"/><!-- هذا المحدد لتخصيص إخفاء مسارات الخيول  -->
+		type="boolean" possibleValues="" category="routes"/> <!-- هذا المحدد لتخصيص إخفاء مسارات الخيول  -->
 	<renderingProperty attr="whiteWaterSports" name="Whitewater sports" description="Whitewater sports"
 		type="boolean" possibleValues="" category="routes"/>
 
 	<renderingProperty attr="roadStyle" name="Road style" description="Road style"
-		type="string" possibleValues="germanRoadAtlas,americanRoadAtlas,highContrastRoads,boldOutline" defaultValueDescription="default"/><!-- هذا المحدد لتخصيص نمط الطريق (أطلس الطرق الأمريكية،والألمانية،وجعل الطرق بألوان متباينة،أو جعلها بخطوط أعرض) والتي يتحكم بها من ضبط الخريطة  -->
+		type="string" possibleValues="germanRoadAtlas,americanRoadAtlas,highContrastRoads,الافتراضي" defaultValueDescription=" مخطط واضح"/>--><!-- هذا المحدد لتخصيص نمط الطريق (أطلس الطرق الأمريكية،والألمانية،وجعل الطرق بألوان متباينة،أو جعلها بخطوط أعرض) والتي يتحكم بها من ضبط الخريطة  -->
 
 	<renderingProperty attr="currentTrackColor" name="Current GPX color" description="Color of the currently recording track"
 		type="string" possibleValues="red,orange,lightblue,blue,purple,pink,translucent_red,translucent_orange,translucent_lightblue,translucent_blue,translucent_purple,translucent_pink" defaultValueDescription="default"/><!-- هذا المحدد لتخصيص المسارات المسجلة  -->
@@ -178,8 +183,8 @@ dp
 		type="string" possibleValues="thin,medium,bold" defaultValueDescription="default"/><!-- هذا المحدد لتخصيص عروض المسارات المسجلة  -->
 
 	<renderingProperty attr="legend" name="Legend" type="boolean" possibleValues="" category="ui_hidden"/>
-	<renderingProperty attr="locality" name="مستوى الأماكن الغير مأهولة" description="لتحديد مستوى ظهور الأماكن الغير مأهولة."
-		type="string" possibleValues="15,14,13,12,11,10,9" defaultValueDescription="" category="details"/>
+	<!--<renderingProperty attr="locality" name="مستوى الأماكن الغير مأهولة" description="لتحديد مستوى ظهور الأماكن الغير مأهولة."
+		type="string" possibleValues="15,14,13,12,11,10,9" defaultValueDescription="" category="details"/>-->
 
 	<!--	<renderingProperty attr="levelNumber" name="Levels" description="" type="string" possibleValues="-5,-4,-3,-2,-1,0,1,2,3,4,5"/>-->
 
@@ -398,7 +403,7 @@ dp
 		<case minzoom="15" attrIntValue="4"/>
 		<case attrIntValue="3"/>
 	</renderingAttribute>
-
+	
 	<renderingAttribute name="roadsDensityLimitPerTile">
 		<!-- Number of roads to display per tile -->
 		<case moreDetailed="true" attrIntValue="55"/>
@@ -524,7 +529,7 @@ dp
 		<case attrColorValue="$motorwayRoadColor"/>
 	</renderingAttribute>
 	<renderingAttribute name="motorwayRoadShadowColor"><!-- تخصيص الظل -->
-		<!--		<case roadStyle="boldOutline" attrColorValue="#000000">
+		<!--		<case roadStyle="الافتراضي" attrColorValue="#000000">
 			<apply_if nightMode="true" attrColorValue="$null"/>
 		</case>-->
 		<case showAccess="true" additional="motorroad=yes" attrColorValue="$motorroadShadowColor"/>
@@ -598,7 +603,7 @@ dp
 		<case showAccess="true" additional="motorroad=yes" attrColorValue="$motorroadShadowColor"/>
 		<case additional="winter_road=yes" attrColorValue="$winterroadShadowColor"/>
 		<case additional="ice_road=yes" attrColorValue="$winterroadShadowColor"/>
-		<case roadStyle="boldOutline" attrColorValue="#000000">
+		<case roadStyle="الافتراضي" attrColorValue="#969696">
 			<apply_if nightMode="true" attrColorValue="$null"/>
 		</case>
 		<case roadStyle="germanRoadAtlas" attrColorValue="#fe2e2e">
@@ -609,7 +614,7 @@ dp
 		<case roadStyle="americanRoadAtlas" attrColorValue="#6f4726">
 			<apply_if nightMode="true" attrColorValue="#a72202"/>
 		</case>
-		<case attrColorValue="#969696"><!-- اللون الافتراضي للظل -->
+		<case attrColorValue="#000000"><!-- اللون الافتراضي للظل -->
 			<case streetLighting="true">
 				<apply_if nightMode="false" streetLightingNight="false" attrColorValue="#555555"/>
 			</case>
@@ -673,7 +678,7 @@ dp
 		<case showAccess="true" additional="motorroad=yes" attrColorValue="$motorroadShadowColor"/>
 		<case additional="winter_road=yes" attrColorValue="$winterroadShadowColor"/>
 		<case additional="ice_road=yes" attrColorValue="$winterroadShadowColor"/>
-		<case roadStyle="boldOutline" attrColorValue="#000000">
+		<case roadStyle="الافتراضي" attrColorValue="#90805224">
 			<apply_if nightMode="true" attrColorValue="$null"/>
 		</case>
 		<case roadStyle="germanRoadAtlas" attrColorValue="#767676">
@@ -681,7 +686,7 @@ dp
 			<!-- NOTE: Touring view's <renderingConstant name="shadowColorLowZoom" value="#262626"/> still ignored here for now -->
 		</case>
 		<case roadStyle="americanRoadAtlas" attrColorValue="#693431"/>
-		<case attrColorValue="#90805224"><!-- اللون الافتراضي للظل -->
+		<case attrColorValue="#000000"><!-- اللون الافتراضي للظل -->
 			<case streetLighting="true"><!-- في حال تفعيل إظهار إنارة الطرق من تفاصيل إضافية -->
 				<apply_if nightMode="false" streetLightingNight="false" attrColorValue="#555555"/>
 			</case>
@@ -730,14 +735,14 @@ dp
 		<case showAccess="true" additional="motorroad=yes" attrColorValue="$motorroadShadowColor"/>
 		<case additional="winter_road=yes" attrColorValue="$winterroadShadowColor"/>
 		<case additional="ice_road=yes" attrColorValue="$winterroadShadowColor"/>
-		<case roadStyle="boldOutline" attrColorValue="#000000">
+		<case roadStyle="الافتراضي" attrColorValue="#9080792f">
 			<apply_if nightMode="true" attrColorValue="$null"/>
 		</case>
 		<case roadStyle="germanRoadAtlas" attrColorValue="#767676">
 			<apply_if nightMode="true" attrColorValue="#464646"/>
 			<!-- NOTE: Touring view's <renderingConstant name="shadowColorLowZoom" value="#262626"/> still ignored here for now -->
 		</case>
-		<case attrColorValue="#9080792f"><!-- اللون الافتراضي للظل -->
+		<case attrColorValue="#000000"><!-- اللون الافتراضي للظل -->
 			<apply_if nightMode="true" attrColorValue="$null"/>
 			<case streetLighting="true">
 				<apply_if nightMode="false" streetLightingNight="false" attrColorValue="#444444"/>
@@ -787,14 +792,14 @@ dp
 		<case showAccess="true" additional="motorroad=yes" attrColorValue="$motorroadShadowColor"/>
 		<case additional="winter_road=yes" attrColorValue="$winterroadShadowColor"/>
 		<case additional="ice_road=yes" attrColorValue="$winterroadShadowColor"/>
-		<case roadStyle="boldOutline" attrColorValue="#000000">
+		<case roadStyle="الافتراضي" attrColorValue="#30000000">
 			<apply_if nightMode="true" attrColorValue="$null"/>
 		</case>
 		<case roadStyle="germanRoadAtlas" attrColorValue="#767676">
 			<apply_if nightMode="true" attrColorValue="#464646"/>
 			<!-- NOTE: Touring view's <renderingConstant name="shadowColorLowZoom" value="#262626"/> ignored here for now -->
 		</case>
-		<case attrColorValue="#30000000"><!-- اللون الافتراضي للظل -->
+		<case attrColorValue="#000000"><!-- اللون الافتراضي للظل -->
 			<apply_if nightMode="true" attrColorValue="#20000000"/>
 			<case streetLighting="true" minzoom="14">
 				<apply_if nightMode="false" streetLightingNight="false" attrColorValue="#444444"/>
@@ -807,13 +812,13 @@ dp
 		<case showAccess="true" additional="motorroad=yes" attrColorValue="$motorroadShadowColor"/>
 		<case additional="winter_road=yes" attrColorValue="$winterroadShadowColor"/>
 		<case additional="ice_road=yes" attrColorValue="$winterroadShadowColor"/>
-		<case roadStyle="boldOutline" attrColorValue="#000000">
+		<case roadStyle="الافتراضي" attrColorValue="#30000000">
 			<apply_if nightMode="true" attrColorValue="$null"/>
 		</case>
 		<case roadStyle="germanRoadAtlas" attrColorValue="#767676">
 			<apply_if nightMode="true" attrColorValue="#464646"/>
 		</case>
-		<case attrColorValue="#30000000">
+		<case attrColorValue="#000000">
 		    <apply_if nightMode="true" attrColorValue="$null"/>
 			<case streetLighting="true" minzoom="14">
 				<apply_if nightMode="false" streetLightingNight="false" attrColorValue="#444444"/>
@@ -847,10 +852,10 @@ dp
 		<case showAccess="true" additional="motorroad=yes" attrColorValue="$motorroadShadowColor"/>
 		<case additional="winter_road=yes" attrColorValue="$winterroadShadowColor"/>
 		<case additional="ice_road=yes" attrColorValue="$winterroadShadowColor"/>
-		<case roadStyle="boldOutline" attrColorValue="#99666666">
+		<case roadStyle="الافتراضي" attrColorValue="#30000000">
 			<apply_if nightMode="true" attrColorValue="$null"/>
 		</case>
-		<case attrColorValue="#30000000">
+		<case attrColorValue="#99666666">
 			<apply_if nightMode="true" attrColorValue="#20000000"/>
 		</case>
 	</renderingAttribute>
@@ -859,10 +864,10 @@ dp
 		<case showAccess="true" additional="motorroad=yes" attrColorValue="$motorroadShadowColor"/>
 		<case additional="winter_road=yes" attrColorValue="$winterroadShadowColor"/>
 		<case additional="ice_road=yes" attrColorValue="$winterroadShadowColor"/>
-		<case roadStyle="boldOutline" attrColorValue="#444444">
+		<case roadStyle="الافتراضي" attrColorValue="#30000000">
 			<apply_if nightMode="true" attrColorValue="$null"/>
 		</case>
-		<case attrColorValue="#30000000">
+		<case attrColorValue="#444444">
 			<apply_if nightMode="true" attrColorValue="#20000000"/>
 		</case>
 	</renderingAttribute>
@@ -871,10 +876,10 @@ dp
 		<case showAccess="true" additional="motorroad=yes" attrColorValue="$motorroadShadowColor"/>
 		<case additional="winter_road=yes" attrColorValue="$winterroadShadowColor"/>
 		<case additional="ice_road=yes" attrColorValue="$winterroadShadowColor"/>
-		<case roadStyle="boldOutline" attrColorValue="#000000">
+		<case roadStyle="الافتراضي" attrColorValue="#30000000">
 			<apply_if nightMode="true" attrColorValue="$null"/>
 		</case>
-		<case attrColorValue="#30000000">
+		<case attrColorValue="#000000">
 			<apply_if nightMode="true" attrColorValue="#20000000"/>
 		</case>
 	</renderingAttribute>
@@ -940,10 +945,10 @@ dp
 		<case showAccess="true" additional="motorroad=yes" attrColorValue="$motorroadShadowColor"/>
 		<case additional="winter_road=yes" attrColorValue="$winterroadShadowColor"/>
 		<case additional="ice_road=yes" attrColorValue="$winterroadShadowColor"/>
-		<case roadStyle="boldOutline" attrColorValue="#222222">
+		<case roadStyle="الافتراضي" attrColorValue="#30000000">
 			<apply_if nightMode="true" attrColorValue="$null"/>
 		</case>
-		<case attrColorValue="#30000000">
+		<case attrColorValue="#222222">
 			<case streetLighting="true" minzoom="14">
 				<apply_if nightMode="false" streetLightingNight="false" attrColorValue="#444444"/>
 				<apply_if nightMode="true" attrColorValue="#ffffff"/>
@@ -972,10 +977,10 @@ dp
 		<apply_if hideOverground="true" attrColorValue="$hideOvergroundHighwayColor"/>
 	</renderingAttribute>
 	<renderingAttribute name="serviceDrivewayRoadShadowColor">
-		<case roadStyle="boldOutline" attrColorValue="#000000">
+		<case roadStyle="الافتراضي" attrColorValue="#30000000">
 			<apply_if nightMode="true" attrColorValue="$null"/>
 		</case>
-		<case attrColorValue="#30000000">
+		<case attrColorValue="#000000">
 			<apply_if nightMode="true" attrColorValue="#20000000"/>
 		</case>
 	</renderingAttribute>
@@ -1037,10 +1042,10 @@ dp
 		<case baseAppMode="car" attrColorValue="#44444444">
 			<apply_if nightMode="true" attrColorValue="$null"/>
 		</case>
-		<case roadStyle="boldOutline" attrColorValue="#000000">
+		<case roadStyle="الافتراضي" attrColorValue="#30000000">
 			<apply_if nightMode="true" attrColorValue="$null"/>
 		</case>
-		<case attrColorValue="#30000000">
+		<case attrColorValue="#000000">
 			<apply_if nightMode="true" attrColorValue="#20000000"/>
 		</case>
 	</renderingAttribute>
@@ -1122,10 +1127,10 @@ dp
 	</renderingAttribute>
 	<!-- تخصيص لون الخطوط الغير معبدة (الردمية) -->
 	<renderingAttribute name="trackColor">
-		<case maxzoom="13" attrColorValue="#B98141"><!-- اللون في حال اخترت أن تظهر بالطبقة 13 وأعلى-->
-			<apply_if nightMode="true" attrColorValue="#4F7A73"/>
+		<case maxzoom="13" attrColorValue="#120d06"><!-- اللون في حال اخترت أن تظهر بالطبقة 13 وأعلى-->
+			<apply_if nightMode="true" attrColorValue="#120d06"/>
 		</case>
-		<case attrColorValue="#B98141"><!-- اللون الافتراضي بدون الحالات الأخرى -->
+		<case attrColorValue="#120d06"><!-- اللون الافتراضي بدون الحالات الأخرى -->
 			<apply_if nightMode="true" attrColorValue="#4F7A73"/><!-- اللون في حال الوضع الليلي -->
 		</case>
 	</renderingAttribute>
@@ -1696,6 +1701,13 @@ dp
 		<case nightMode="true" attrColorValue="#55803b80"/>
 		<case attrColorValue="#30800080"/>
 	</renderingAttribute>
+	<renderingAttribute name="boundaryAboriginalLandsColor">
+		<case attrColorValue="#44865F37"/>
+	</renderingAttribute>
+	<renderingAttribute name="boundaryBorderZoneColor">
+		<case nightMode="true" attrColorValue="#55803B43"/>
+		<case attrColorValue="#35BB0059"/>
+	</renderingAttribute>
 	<renderingConstant name="boundaryNationalParkColor" value="$null"/>
 	<renderingConstant name="boundaryNationalParkColor2" value="#500AED0A"/>
 
@@ -1840,9 +1852,8 @@ dp
 		<case attrColorValue="$defaultColor"/>
 	</renderingAttribute>
 	<renderingAttribute name="pitchColor">
-		<case nightMode="true" attrColorValue="$woodColor"/>
-		<case moreDetailed="true" attrColorValue="#ADE5A1"/>
-		<case attrColorValue="$woodColor"/>
+		<case nightMode="true" attrColorValue="#294B53"/>
+		<case attrColorValue="#80DA9F"/>
 	</renderingAttribute>
 	<renderingAttribute name="pitchColorStroke">
 		<case nightMode="true" attrColorValue="$null"/>
@@ -2070,9 +2081,15 @@ dp
 		<case moreDetailed="true" attrColorValue="#F1DBD9"/>
 		<case attrColorValue="$defaultColor"/>
 	</renderingAttribute>
+	<renderingAttribute name="amenityMarketplaceColor">
+		<case nightMode="true" attrColorValue="$defaultColor"/>
+		<case moreDetailed="true" attrColorValue="#F1D2CF"/>
+		<case attrColorValue="$defaultColor"/>
+	</renderingAttribute>
 	<renderingAttribute name="landuseRetailColor">
 		<case nightMode="true" attrColorValue="$defaultColor"/>
 		<case moreDetailed="true" attrColorValue="#F1DBD9"/>
+	
 		<case attrColorValue="$defaultColor"/>
 	</renderingAttribute>
 	<renderingAttribute name="landuseLandfillColor">
@@ -2547,7 +2564,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 		</case>
 	</renderingAttribute>
 	<renderingAttribute name="placeCityVillageTextColor">
-		<case attrColorValue="#000000"><!-- محدد لون أسماء المدن والقرى  -->
+		<case attrColorValue="#2222e2"><!-- محدد لون أسماء المدن والقرى  -->
 			<apply_if nightMode="true" attrColorValue="#E5E5E5"/>
 		</case>
 	</renderingAttribute>
@@ -2563,19 +2580,35 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 	</renderingAttribute>
 
 	<renderingAttribute name="contour10mTextColor">
-		<case attrColorValue="#888888"/><!-- محدد لون نصوص  الخطوط الكنتورية 10 متر  -->
+		<case contourColorScheme="white" attrColorValue="#F1F1F1"/>
+		<case contourColorScheme="yellow" attrColorValue="#F4E166"/>
+		<case contourColorScheme="green" attrColorValue="#00D400"/>
+		<case contourColorScheme="red" attrColorValue="#D40000"/>
+		<case attrColorValue="#888888"/>
 	</renderingAttribute>
 	<renderingAttribute name="contour20mTextColor">
-		<case attrColorValue="#777777"><!-- محدد لون نصوص  الخطوط الكنتورية 20 متر  -->
+		<case contourColorScheme="white" attrColorValue="#F1F1F1"/>
+		<case contourColorScheme="yellow" attrColorValue="#F4E166"/>
+		<case contourColorScheme="green" attrColorValue="#00D400"/>
+		<case contourColorScheme="red" attrColorValue="#D40000"/>
+		<case attrColorValue="#777777">
 			<apply_if nightMode="true" attrColorValue="#999999"/>
 		</case>
 	</renderingAttribute>
 	<renderingAttribute name="contour50mTextColor">
-		<case attrColorValue="#777777"><!-- محدد لون نصوص  الخطوط الكنتورية 50 متر  -->
+		<case contourColorScheme="white" attrColorValue="#ffffff"/>
+		<case contourColorScheme="yellow" attrColorValue="#FFF29E"/>
+		<case contourColorScheme="green" attrColorValue="#00ff00"/>
+		<case contourColorScheme="red" attrColorValue="#ff0000"/>
+		<case attrColorValue="#777777">
 			<apply_if nightMode="true" attrColorValue="#AAAAAA"/>
 		</case>
 	</renderingAttribute>
 	<renderingAttribute name="contour100mTextColor">
+		<case contourColorScheme="white" attrColorValue="#ffffff"/>
+		<case contourColorScheme="yellow" attrColorValue="#FFF29E"/>
+		<case contourColorScheme="green" attrColorValue="#00ff00"/>
+		<case contourColorScheme="red" attrColorValue="#ff0000"/>
 		<case attrColorValue="#444444"><!-- محدد لون نصوص  الخطوط الكنتورية 100 متر  -->
 			<apply_if nightMode="true" attrColorValue="#BBBBBB"/>
 		</case>
@@ -2591,9 +2624,9 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 	<renderingConstant name="placeSuburbMinZoom" value="12"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور الضواحي  -->
 	<renderingConstant name="placeNeighbourhoodMinZoom" value="12"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور الأحياء السكنية  -->
 
-	<renderingConstant name="placeVillageIconMinZoom" value="11"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور رموز القرى  -->
+	<renderingConstant name="placeVillageIconMinZoom" value="10"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور رموز القرى  -->
 	<renderingConstant name="placeVillageIconMaxZoom" value="12"/><!-- تحديد مستوى التكبير الذي ينتهي فيه ظهور رموز القرى (ليس بالضرورة أن تكون نفس الرموز التي في المحدد السابق)  -->
-	<renderingConstant name="placeHamletIconMinZoom" value="11"/><!-- نفس السابق لكن للهجر والقرى الصغيرة  -->
+	<renderingConstant name="placeHamletIconMinZoom" value="10"/><!-- نفس السابق لكن للهجر والقرى الصغيرة  -->
 	<renderingConstant name="placeHamletIconMaxZoom" value="12"/><!-- نفس السابق لكن للهجر والقرى الصغيرة  -->
 	<renderingConstant name="naturalPeakIconMinZoom" value="12"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور رموز أماكن الجبال  -->
 	<renderingConstant name="naturalVolcanoIconMinZoom" value="11"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور رموز أماكن البراكين  -->
@@ -2611,7 +2644,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 	<renderingConstant name="towerIconMinZoom" value="12"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور رموز أماكن الأبراج  -->
 	<renderingConstant name="mastIconMinZoom" value="13"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور رموز أماكن الأبراج العامودية  -->
 	<renderingConstant name="barrierControlDotMinZoom" value="14"/>
-	<renderingConstant name="powerTowerIconMinZoom" value="12"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور رموز أماكن أبراج الكهرباء  -->
+	<renderingConstant name="powerTowerIconMinZoom" value="14"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور رموز أماكن أبراج الكهرباء  -->
 	<renderingConstant name="historicCastleIconMinZoom" value="12"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور رموز القلاع التاريخية  -->
 	<renderingConstant name="petroleumWellIconMinZoom" value="16"/>
 
@@ -2633,12 +2666,12 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 	<renderingConstant name="tertiaryMinZoom" value="11"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور الطريق الثالثي  -->
 	<renderingConstant name="unclassifiedMinZoom" value="11"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور الطريق الغير مصنف  -->
 	<renderingConstant name="serviceMinZoom" value="13"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور الطريق المؤدي لخدمة  -->
-	<renderingConstant name="trackMinZoom" value="12"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور طرق الردميات  -->
+	<renderingConstant name="trackMinZoom" value="10"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور طرق الردميات  -->
 	<renderingConstant name="pathMinZoom" value="12"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور الممرات  -->
 	<renderingConstant name="footwayMinZoom" value="12"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور طرق المشاة  -->
 	<renderingConstant name="cyclewayMinZoom" value="13"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور طرق الدراجات  -->
 	<renderingConstant name="bridlewayMinZoom" value="13"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور طرق الخيالة  -->
-	<renderingConstant name="powerTowerLineMinZoom" value="14"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور خطوط الكهرباء  -->
+	<renderingConstant name="powerTowerLineMinZoom" value="13"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور خطوط الكهرباء  -->
 
 	<renderingConstant name="streamMinZoom" value="11"/><!-- تحديد مستوى التكبير الذي يبدأ فيه ظهور مجاري المياه مثل الشعبان  -->
 	<renderingConstant name="ditchMinZoom" value="13"/><!-- تحديد مستوى التكبير الذي يبدأ فيه المصارف المائية الصغيرة والتي تشبه الخنادق  -->
@@ -2761,6 +2794,22 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 	<renderingConstant name="sportTextHaloColorDay" value="#f1eae4"/>
 	<renderingConstant name="craftTextColorDay" value="#273249"/><!-- تحديد لون النصوص التي تخص أماكن أصحاب الحرف والمهن مثل النحال أو الجزار  -->
 	<renderingConstant name="craftTextHaloColorDay" value="#aae4edff"/><!-- نفس السابق لكن لون الاطار الذي حول النص  -->
+	<renderingAttribute name="boundaryAboriginalLandsTextColor">
+		<case nightMode="true" attrColorValue="#BF9264"/>
+		<case attrColorValue="#A27343"/>
+	</renderingAttribute>
+	<renderingAttribute name="boundaryAboriginalLandsTextHaloColor">
+		<case nightMode="true" attrColorValue="#33BF9264"/>
+		<case attrColorValue="#99F3E8DC"/>
+	</renderingAttribute>
+	<renderingAttribute name="boundaryBorderZoneTextColor">
+		<case nightMode="true" attrColorValue="#C18C93"/>
+		<case attrColorValue="#83003F"/>
+	</renderingAttribute>
+	<renderingAttribute name="boundaryBorderZoneTextHaloColor">
+		<case nightMode="true" attrColorValue="#33805D62"/>
+		<case attrColorValue="#225E4327"/>
+	</renderingAttribute>
 
 <!-- تخصيص ألوان خطوط الأنفاق والمترو  -->
 	<renderingAttribute name="subwayTextDefaultColor">
@@ -3089,6 +3138,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case tag="natural" value="bay"/>
 					<case tag="natural" value="hot_spring"/>
 					<case tag="natural" value="geyser"/>
+					<case tag="natural" value="blowhole"/>
+					<case tag="natural" value="fumarole"/>
 					<case tag="natural" value="volcano">
 						<apply_if maxzoom="12" additional="volcano:type=mud" order="-1"/>
 					</case>
@@ -3236,6 +3287,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case tag="public_transport" value="station"/>
 					<apply_if moreDetailed="false" layer="-1" order="-1"/>
 					<apply_if baseAppMode="car" maxzoom="18" layer="-1" order="-1"/>
+					<apply_if baseAppMode="public_transport" order="15"/>
 				</switch>
 				<case tag="historic" value="archaeological_site"/><!-- مواقع أثرية -->
 				<case tag="historic" value="memorial"/>
@@ -3316,7 +3368,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<apply_if baseAppMode="pedestrian" order="-1"/>
 					<apply_if baseAppMode="bicycle" order="-1"/>
 				</case>
-				<case tag="amenity" value="fountain"/>
+				<case tag="amenity" value="fountain" order="11"/>
 				<case tag="railway" value="station" ignorePolygonArea="true" ignorePolygonAsPointArea="true"/>
 				<case tag="railway" value="yard" ignorePolygonArea="true" ignorePolygonAsPointArea="true"/>
 				<case tag="amenity" value="bus_station" ignorePolygonArea="true" ignorePolygonAsPointArea="true" order="6"/>
@@ -3338,6 +3390,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<apply_if moreDetailed="false" maxzoom="14" order="-1"/>
 				</case>
 				<case tag="boundary" value="low_emission_zone" order="255" />
+				<case tag="boundary" value="aboriginal_lands" order="9"/>
+				<case tag="boundary" value="border_zone" order="100"/>
 				<case tag="harbour" value="yes"/>
 				<case tag="waterway" value="dock"/>
 				<case tag="waterway" value="wadi"/><!-- وادي -->
@@ -3358,6 +3412,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				</case>
 				<case tag="natural" value="hot_spring"/>
 				<case tag="natural" value="geyser"/>
+				<case tag="natural" value="blowhole"/>
 				<case tag="region:type" value="mountain_area"/>
 				<case tag="natural" value="plateau"/>
 				<case tag="natural" value="wetland" order="6"/><!-- أرض رطبة -->
@@ -3465,112 +3520,112 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<!-- يفضل عدم تغيير تراتبية الطرق -->
 				<!-- Highways: 35-57, bridges 70-88 -->
 				<switch>
-					<case tag="highway" value="motorway" order="84"><!-- السريعة -->
+					<case tag="highway" value="motorway" order="84">
 						<apply_if layer="1" order="107"/>
 						<apply_if additional="layer=2" order="137"/>
 						<apply_if additional="layer=3" order="165"/>
-						<apply_if layer="-1" order="62"/>
-						<apply_if additional="layer=-2" order="41"/>
+						<apply_if layer="-1" order="62" orderByDensity="84"/>
+						<apply_if additional="layer=-2" order="41" orderByDensity="84"/>
 					</case>
-					<case tag="highway" value="motorway_link" order="71"><!-- وصلات السريعة -->
+					<case tag="highway" value="motorway_link" order="71">
 						<apply_if layer="1" order="94"/>
 						<apply_if additional="layer=2" order="124"/>
 						<apply_if additional="layer=3" order="152"/>
-						<apply_if layer="-1" order="49"/>
-						<apply_if additional="layer=-2" order="25"/>
+						<apply_if layer="-1" order="49" orderByDensity="71"/>
+						<apply_if additional="layer=-2" order="25" orderByDensity="71"/>
 					</case>
-					<case tag="highway" value="trunk" order="83"><!-- الرئيسية -->
+					<case tag="highway" value="trunk" order="83">
 						<apply_if layer="1" order="106"/>
 						<apply_if additional="layer=2" order="136"/>
 						<apply_if additional="layer=3" order="164"/>
-						<apply_if layer="-1" order="61"/>
-						<apply_if additional="layer=-2" order="40"/>
+						<apply_if layer="-1" order="61" orderByDensity="83"/>
+						<apply_if additional="layer=-2" order="40" orderByDensity="83"/>
 					</case>
-					<case tag="highway" value="trunk_link" order="70"><!-- وصلة الرئيسية -->
+					<case tag="highway" value="trunk_link" order="70">
 						<apply_if layer="1" order="93"/>
 						<apply_if additional="layer=2" order="123"/>
 						<apply_if additional="layer=3" order="151"/>
-						<apply_if layer="-1" order="48"/>
-						<apply_if additional="layer=-2" order="24"/>
+						<apply_if layer="-1" order="48" orderByDensity="70"/>
+						<apply_if additional="layer=-2" order="24" orderByDensity="70"/>
 					</case>
-					<case tag="highway" value="primary" order="82"><!-- الأولية -->
+					<case tag="highway" value="primary" order="82">
 						<apply_if layer="1" order="105"/>
 						<apply_if additional="layer=2" order="135"/>
 						<apply_if additional="layer=3" order="163"/>
-						<apply_if layer="-1" order="60"/>
-						<apply_if additional="layer=-2" order="39"/>
+						<apply_if layer="-1" order="60"  orderByDensity="82"/>
+						<apply_if additional="layer=-2" order="39"  orderByDensity="82"/>
 					</case>
-					<case tag="highway" value="primary_link" order="69"><!-- وصلة الأولية -->
+					<case tag="highway" value="primary_link" order="69">
 						<apply_if layer="1" order="92"/>
 						<apply_if additional="layer=2" order="122"/>
 						<apply_if additional="layer=3" order="150"/>
 						<apply_if layer="-1" order="47"/>
 						<apply_if additional="layer=-2" order="23"/>
 					</case>
-					<case tag="highway" value="secondary" order="81"><!-- الثانوية -->
+					<case tag="highway" value="secondary" order="81">
 						<apply_if layer="1" order="104"/>
 						<apply_if additional="layer=2" order="134"/>
 						<apply_if additional="layer=3" order="162"/>
 						<apply_if layer="-1" order="59"/>
 						<apply_if additional="layer=-2" order="38"/>
 					</case>
-					<case tag="highway" value="secondary_link" order="68"><!-- وصلة الثانوية -->
+					<case tag="highway" value="secondary_link" order="68">
 						<apply_if layer="1" order="91"/>
 						<apply_if additional="layer=2" order="121"/>
 						<apply_if additional="layer=3" order="149"/>
 						<apply_if layer="-1" order="46"/>
 						<apply_if additional="layer=-2" order="22"/>
 					</case>
-					<case tag="highway" value="tertiary" order="80"><!-- الثالثية -->
+					<case tag="highway" value="tertiary" order="80">
 						<apply_if layer="1" order="103"/>
 						<apply_if additional="layer=2" order="133"/>
 						<apply_if additional="layer=3" order="161"/>
 						<apply_if layer="-1" order="58"/>
 						<apply_if additional="layer=-2" order="37"/>
 					</case>
-					<case tag="highway" value="tertiary_link" order="67"><!-- وصلة الثالثية -->
+					<case tag="highway" value="tertiary_link" order="67">
 						<apply_if layer="1" order="90"/>
 						<apply_if additional="layer=2" order="120"/>
 						<apply_if additional="layer=3" order="148"/>
 						<apply_if layer="-1" order="45"/>
 						<apply_if additional="layer=-2" order="21"/>
 					</case>
-					<case tag="highway" value="road" order="79"><!-- الطرق العامة -->
+					<case tag="highway" value="road" order="79">
 						<apply_if layer="1" order="102"/>
 						<apply_if additional="layer=2" order="132"/>
 						<apply_if additional="layer=3" order="160"/>
 						<apply_if layer="-1" order="57"/>
 						<apply_if additional="layer=-2" order="36"/>
 					</case>
-					<case tag="highway" value="unclassified" order="79"><!-- الطرق الغير مصنفة -->
+					<case tag="highway" value="unclassified" order="79">
 						<apply_if layer="1" order="102"/>
 						<apply_if additional="layer=2" order="132"/>
 						<apply_if additional="layer=3" order="160"/>
 						<apply_if layer="-1" order="57"/>
 						<apply_if additional="layer=-2" order="36"/>
 					</case>
-					<case tag="highway" value="residential" order="78"><!-- السكنية -->
+					<case tag="highway" value="residential" order="78">
 						<apply_if layer="1" order="101"/>
 						<apply_if additional="layer=2" order="131"/>
 						<apply_if additional="layer=3" order="159"/>
 						<apply_if layer="-1" order="56"/>
 						<apply_if additional="layer=-2" order="35"/>
 					</case>
-					<case tag="highway" value="service" order="78"><!-- الخدمية -->
-						<apply_if layer="1" order="101"/>
-						<apply_if additional="layer=2" order="131"/>
-						<apply_if additional="layer=3" order="159"/>
-						<apply_if layer="-1" order="56"/>
-						<apply_if additional="layer=-2" order="35"/>
-					</case>
-					<case tag="highway" value="busway" order="77"><!-- طرق الحافلات -->
+					<case tag="highway" value="service" order="77">
 						<apply_if layer="1" order="100"/>
 						<apply_if additional="layer=2" order="130"/>
 						<apply_if additional="layer=3" order="158"/>
 						<apply_if layer="-1" order="55"/>
 						<apply_if additional="layer=-2" order="34"/>
 					</case>
-					<case tag="highway" value="living_street" order="77"><!-- طرق المعيشة (مثل السكنية إلا أنها حية بالناس) -->
+					<case tag="highway" value="busway" order="77">
+						<apply_if layer="1" order="100"/>
+						<apply_if additional="layer=2" order="130"/>
+						<apply_if additional="layer=3" order="158"/>
+						<apply_if layer="-1" order="55"/>
+						<apply_if additional="layer=-2" order="34"/>
+					</case>
+					<case tag="highway" value="living_street" order="77">
 						<apply_if layer="1" order="100"/>
 						<apply_if additional="layer=2" order="130"/>
 						<apply_if additional="layer=3" order="158"/>
@@ -3580,7 +3635,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case tag="highway" value="escape" order="89">
 						<apply_if baseAppMode="car" order="168"/>
 					</case>
-					<case tag="highway" value="pedestrian" order="76"><!-- طرق المشاة -->
+					<case tag="highway" value="pedestrian" order="76">
 						<apply_if layer="1" order="99"/>
 						<apply_if additional="layer=2" order="129"/>
 						<apply_if additional="layer=3" order="157"/>
@@ -3652,7 +3707,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 									<case maxzoom="12" order="-1"/>
 									<case minzoom="13" order="67"/>
 								</apply_if>
-							</case>
+								<apply_if maxzoom="18" additional="tunnel=yes" order="-1"/>
+ 							</case>
 							<!--<case tag="railway" value="tram">
 								<apply_if minzoom="18" order="178"/>
 							</case>-->
@@ -3699,8 +3755,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 
 					<case tag="region:type" value="mountain_area"/>
 					<case tag="natural" value="bay"/>
-					<case tag="natural" value="cliff"/><!-- الجال أو الحافة -->
-					<case tag="natural" value="slope"/><!-- المنحدر -->
+					<case tag="natural" value="cliff"/>
+					<case tag="natural" value="slope"/>
 					<case tag="natural" value="earth_bank"/>
 					<case tag="natural" value="crater"/>
 					<case tag="natural" value="volcano"/>
@@ -3720,7 +3776,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<apply_if layer="1" order="112"/>
 						<apply_if additional="layer=2" order="141"/>
 						<apply_if additional="layer=3" order="168"/>
-						<apply_if OSMMapperAssistant="false" additional="tunnel=yes" maxzoom="17" order="-1"/>
+						<apply_if OSMMapperAssistantWaterwayTunnels="false" additional="tunnel=yes" maxzoom="17" order="-1"/>
 						<apply_if additional="tunnel=yes" baseAppMode="car" order="-1"/>
 						<apply_if maxzoom="15" additional="tunnel=yes" baseAppMode="bicycle" order="-1"/>
 					</case>
@@ -3798,6 +3854,20 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<apply_if additional="layer=3" order="167"/>
 						<apply_if layer="-1" order="42"/>
 						<apply_if additional="layer=-2" order="19"/>
+					</switch>
+					<switch engine_v1="false" order="88">
+						<case tag="osmand_cycleway_trunk_left" value="true"/>
+						<case tag="osmand_cycleway_trunk_right" value="true"/>
+						<case tag="osmand_cycleway_trunk_link_left" value="true"/>
+						<case tag="osmand_cycleway_trunk_link_right" value="true"/>
+						<case tag="osmand_cycleway_tertiary_left" value="true"/>
+						<case tag="osmand_cycleway_tertiary_right" value="true"/>
+						<case tag="osmand_cycleway_residential_left" value="true"/>
+						<case tag="osmand_cycleway_residential_right" value="true"/>
+						<case tag="osmand_cycleway_service_left" value="true"/>
+						<case tag="osmand_cycleway_service_right" value="true"/>
+						<case tag="osmand_cycleway_footway_left" value="true"/>
+						<case tag="osmand_cycleway_footway_right" value="true"/>
 					</switch>
 					<case baseAppMode="pedestrian" tag="sidewalk" value="" order="89">
 						<apply_if layer="1" order="109"/>
@@ -3926,7 +3996,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case tag="osmand" value="file_routeline"/>
 				<case tag="route" value="segment" order="100"/>
 			</switch>
-			<apply_if hideUnderground="true"><!-- هنا في حال تفعيل إخفاء ما تحت الأرض -->
+			<apply_if hideUnderground="true">
 				<apply_if layer="-1" order="-1">
 					<apply_if tag="highway" value="motorway" order="62"/>
 					<apply_if tag="highway" value="motorway_link" order="49"/>
@@ -4105,15 +4175,15 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<apply textMinDistance="130" textWrapWidth="10">
 						<apply textSize="13" textBold="true">
 							<switch>
-								<case additional="road_network_#SEQ=us:i" nameTag="route_road_#SEQ_ref">
-									<case additional="road_modifier_#SEQ=business">
+								<case additional="route_road_#SEQ_network=us:i" nameTag="route_road_#SEQ_ref">
+									<case additional="route_road_#SEQ_modifier=business">
 										<case textLength="1" icon="green_cshield_2_road_shield"/> <!-- these icons will be rendered on the top of the shields, but this simplifies code a lot -->
 										<case textLength="2" icon="green_cshield_2_road_shield"/>
 										<case textLength="3" icon="green_cshield_3_road_shield"/>
 									</case>
-									<case additional="road_modifier_#SEQ=spur" icon="us_spur_icon_shield"/>
-									<case additional="road_modifier_#SEQ=truck" icon="us_truck_icon_shield"/>
-									<case additional="road_modifier_#SEQ=alternate" icon="us_alt_icon_shield"/>
+									<case additional="route_road_#SEQ_modifier=spur" icon="us_spur_icon_shield"/>
+									<case additional="route_road_#SEQ_modifier=truck" icon="us_truck_icon_shield"/>
+									<case additional="route_road_#SEQ_modifier=alternate" icon="us_alt_icon_shield"/>
 								</case>
 								<apply textColor="#ffffff">
 									<case textLength="1" textShield="blue_usishield_2_road_shield"/>
@@ -4124,13 +4194,13 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 								<apply textOrder="$roadShieldOrder1"/>
 							</switch>
 							<switch>
-								<case additional="road_network_#SEQ=us:us" nameTag="route_road_#SEQ_ref">
-									<case additional="road_modifier_#SEQ=business" icon="us_business_icon_shield"/>
-									<case additional="road_modifier_#SEQ=spur" icon="us_spur_icon_shield"/>
-									<case additional="road_modifier_#SEQ=truck" icon="us_truck_icon_shield"/>
-									<case additional="road_modifier_#SEQ=alternate" icon="us_alt_icon_shield"/>
-									<case additional="road_modifier_#SEQ=bypass" icon="us_bypass_icon_shield"/>
-									<case additional="road_modifier_#SEQ=connector" icon="us_connector_icon_shield"/>
+								<case additional="route_road_#SEQ_network=us:us" nameTag="route_road_#SEQ_ref">
+									<case additional="route_road_#SEQ_modifier=business" icon="us_business_icon_shield"/>
+									<case additional="route_road_#SEQ_modifier=spur" icon="us_spur_icon_shield"/>
+									<case additional="route_road_#SEQ_modifier=truck" icon="us_truck_icon_shield"/>
+									<case additional="route_road_#SEQ_modifier=alternate" icon="us_alt_icon_shield"/>
+									<case additional="route_road_#SEQ_modifier=bypass" icon="us_bypass_icon_shield"/>
+									<case additional="route_road_#SEQ_modifier=connector" icon="us_connector_icon_shield"/>
 								</case>
 								<!-- <case additional="road_network_2=us:us" nameTag="route_road_2_ref">
 									<case additional="road_modifier_2=business" icon="us_business_icon_shield"/>
@@ -4813,7 +4883,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<apply maxzoom="14" textSize="12"/>
 					</apply>
 					</switch>
-					<apply textColor="#000000" textHaloRadius="$highwayTrackTextHaloRadiusDay" textHaloColor="$highwayTrackTextHaloColorDay" textOnPath="true"/><!-- خصائص الخط النصي المكتوب على الردميات والطرق الغير معبده وهل يكتب على الخط أو لا -->
+					<apply textColor="#000000" textHaloRadius="$highwayTrackTextHaloRadiusDay" textHaloColor="$highwayTrackTextHaloColorDay" textOnPath="false"/><!-- خصائص الخط النصي المكتوب على الردميات والطرق الغير معبده وهل يكتب على الخط أو لا -->
 					<apply_if minzoom="15">
 						<case maxzoom="15" textSize="13"/>
 						<case maxzoom="16" textSize="14"/>
@@ -4858,14 +4928,14 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				</case>
 				<switch>
 					<case minzoom="16" tag="junction" value="yes" textOrder="47"/>
-					<case minzoom="17" tag="highway" value="traffic_signals" textOrder="141">
+					<case minzoom="17" tag="highway" value="traffic_signals" textOrder="83">
 						<apply_if engine_v1="true" textDy="7"/>
 					</case>
 					<apply textSize="13" textColor="#222222" textHaloRadius="$textHaloRadius" textHaloColor="#77ffffff" textWrapWidth="16" textMinDistance="10"/>
 					<apply_if nightMode="true" textColor="#dcdcdc" textHaloColor="#77050547"/>
 				</switch>
 
-				<switch minzoom="13" textOnPath="true" textBold="true" textOrder="2" textColor="#ffffff" textHaloRadius="2" intersectsWith="transport">
+				<switch minzoom="13" textOnPath="true" textBold="true" textOrder="41" textColor="#ffffff" textHaloRadius="2" intersectsWith="transport">
 					<switch publicTransportMode="true">
 						<case tag="route_bus" value="" nameTag="bus_ref" textHaloColor="$routeBusColor"/>
 						<case tag="route_share_taxi" value="" nameTag="share_taxi_ref" textHaloColor="$routeShareTaxiColor"/>
@@ -5114,9 +5184,9 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				</switch>
 
 				<switch>
-					<case minzoom="$placeVillageMinZoom" tag="place" value="village" textSize="14" textOrder="40" nameTag="" intersectionMargin="1">
-						<apply_if minzoom="9" textSize="15"/><!-- النص الخاص بالقرى -->
-						<apply_if minzoom="17" textSize="17"/>
+					<case minzoom="$placeVillageMinZoom" tag="place" value="village" textSize="14" textOrder="23" nameTag="" intersectionMargin="1">
+						<apply_if minzoom="9" textSize="14"/><!-- النص الخاص بالقرى -->
+						<apply_if minzoom="17" textSize="16"/>
 					</case>
 					<apply>
 						<case additional="population_rounded=1500000000" textOrder="8"/><!-- مليار ونصف نسمة وأعلى -->
@@ -5135,16 +5205,16 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<case additional="population_rounded=2000000" textOrder="21"/>
 						<case additional="population_rounded=1000000" textOrder="22"/>
 						<case additional="population_rounded=700000" textOrder="23"/>
-						<case additional="population_rounded=400000" textOrder="24"/>
-						<case additional="population_rounded=200000" textOrder="34"/>
-						<case additional="population_rounded=100000" textOrder="35"/>
-						<case additional="population_rounded=70000" textOrder="36"/>
-						<case additional="population_rounded=40000" textOrder="37"/>
-						<case additional="population_rounded=20000" textOrder="38"/>
-						<case additional="population_rounded=10000" textOrder="39"/>
-						<case additional="population_rounded=5000" textOrder="40"/>
-						<case additional="population_rounded=2500" textOrder="41"/>
-						<case additional="population_rounded=1000" textOrder="42"/>
+						<case additional="population_rounded=400000" textOrder="23"/>
+						<case additional="population_rounded=200000" textOrder="23"/>
+						<case additional="population_rounded=100000" textOrder="23"/>
+						<case additional="population_rounded=70000" textOrder="23"/>
+						<case additional="population_rounded=40000" textOrder="23"/>
+						<case additional="population_rounded=20000" textOrder="23"/>
+						<case additional="population_rounded=10000" textOrder="23"/>
+						<case additional="population_rounded=5000" textOrder="23"/>
+						<case additional="population_rounded=2500" textOrder="23"/>
+						<case additional="population_rounded=1000" textOrder="23"/>
 						<case additional="population_rounded=500" textOrder="43"/>
 						<case additional="population_rounded=200" textOrder="44"/>
 						<case additional="population_rounded=100" textOrder="45"/>
@@ -5162,7 +5232,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<case minzoom="12" tag="place" value="borough" textItalic="true" nameTag="" textOrder="38"/><!-- النص الخاص بمقاطعات المدن -->
 						<case minzoom="13" tag="place" value="quarter" textItalic="true" nameTag="" textOrder="37"/><!-- النص الخاص بالأرباع (أجزاء المدن) -->
 						<case minzoom="14" tag="place" value="city_block" textItalic="true" nameTag="" textOrder="36"/><!-- النص الخاص بالمربعات السكنية -->
-						<case minzoom="$placeHamletMinZoom" tag="place" value="hamlet" nameTag="" textOrder="42"/><!-- النص الخاص بالهجر -->
+						<case minzoom="9" tag="place" value="hamlet" nameTag="" textOrder="42"/><!-- النص الخاص بالهجر -->
 						<case minzoom="$placeHamletMinZoom" tag="place" value="farm" nameTag="" textOrder="109"/><!-- النص الخاص بالمزارع -->
 						<case minzoom="12" tag="place" value="plot" nameTag="" textOrder="108"/><!-- النص الخاص بقطع الأراضي -->
 						<case minzoom="12" tag="place" value="municipality" nameTag="" textOrder="107"/><!-- النص الخاص بالبلديات أو الأمانات -->
@@ -5171,20 +5241,14 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<apply_if minzoom="16" textSize="15"/>
 						<apply_if minzoom="17" textSize="16"/>
 					</switch>
-					<switch tag="place" value="locality" nameTag="" textColor="#000000" textOrder="112"><!-- النص الخاص بالمواضع الغير مأهولة -->
-						<case minzoom="9" locality=""/>
-						<case minzoom="10" locality="10"/>
-						<case minzoom="11" locality="11"/>
-						<case minzoom="12" locality="12"/>
-						<case minzoom="13" locality="13"/>
-						<case minzoom="14" locality="14"/>
-						<case minzoom="15" locality="15"/>
+					<case minzoom="9" tag="place" value="locality" nameTag="" textColor="#000000" textOrder="112">
 						<apply textSize="13"/>
 						<apply_if minzoom="16" textSize="15"/>
 						<apply_if minzoom="17" textSize="16"/>
-					</switch>
+						<apply_if nightMode="true" textColor="#888888"/>
+					</case>
 				</switch>
-				<case minzoom="13" tag="place" value="allotments" nameTag="" textOrder="110" textColor="$landuseManmadeFadedTextColor"><!-- النص الخاص بالأراضي المخصصة (لا توجد في بلداننا) -->
+				<case minzoom="13" tag="place" value="allotments" nameTag="" textOrder="110" textColor="$landuseManmadeFadedTextColor">
 					<apply textSize="12"/>
 					<apply_if minzoom="16" textSize="14"/>
 					<apply_if minzoom="17" textSize="15"/>
@@ -5333,6 +5397,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					</switch>
 					<case minzoom="15" textSize="12" tag="natural" value="saddle" nameTag="" nameTag2="rtsa_scale"/><!-- السرج الجبلي -->
 					<case minzoom="13" textSize="14" tag="natural" value="crater" textColor="#4e0d0d"/>
+					<case minzoom="16" textSize="11" tag="natural" value="fumarole" textColor="#4e0d0d"/>
 					<case minzoom="14" textSize="14" tag="natural" value="crevasse" textColor="#4e0d0d">
 						<apply_if legend="true" textOnPath="true"/>
 					</case>
@@ -5399,6 +5464,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case hidePOILabels="false" minzoom="17" tag="natural" value="spring" textDy="7" textWrapWidth="20" textOrder="214"/><!-- الينابيع -->
 					<case hidePOILabels="false" minzoom="16" tag="natural" value="hot_spring" textDy="7" textWrapWidth="20" textOrder="215"/>
 					<case hidePOILabels="false" minzoom="16" tag="natural" value="geyser" textDy="7" textWrapWidth="20" textOrder="216"/>
+					<case hidePOILabels="false" minzoom="16" tag="natural" value="blowhole" textDy="7" textWrapWidth="20" textOrder="217"/>
 					<switch hidePOILabels="false" minzoom="15">
 						<case tag="waterway" value="waterfall" additional="osmand_remarkable_waterfall=yes" nameTag2="height"/>
 						<case tag="waterway" value="waterfall" nameTag=""/><!-- الشلالات -->
@@ -5543,6 +5609,10 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					</switch>
 					<apply_if nightMode="true" textColor="#9fe39f" textHaloColor="#aa444444"/>
 				</switch>
+				<switch textSize="12" textWrapWidth="20" textHaloRadius="$textHaloRadius" textItalic="true" nameTag="">
+					<case minzoom="8" tag="boundary" value="aboriginal_lands" textOrder="104" textColor="$boundaryAboriginalLandsTextColor" textHaloColor="$boundaryAboriginalLandsTextHaloColor"/>
+					<case minzoom="11" tag="boundary" value="border_zone" textOrder="105" textColor="$boundaryBorderZoneTextColor" textHaloColor="$boundaryBorderZoneTextHaloColor" textOnPath="true"/>
+				</switch>
 				<switch textSize="13" textColor="$tourismTextColor" textHaloRadius="$textHaloRadius" textHaloColor="$tourismTextHaloColorDay" textWrapWidth="20">
 					<case minzoom="$naturalSandTextMinZoom" tag="natural" value="sand" textOrder="25"/><!-- نصوص المساحات الرملية -->
 					<case minzoom="13" tag="natural" value="dune" textOrder="55"/><!-- نصوص أماكن النفود -->
@@ -5560,35 +5630,41 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			</switch>
 
 			<!-- Emergency and Health -->
-			<switch hidePOILabels="false" textSize="13" nameTag="" textColor="#da0092" textHaloRadius="$textHaloRadius" textHaloColor="$defaultTextHaloColorDay" textWrapWidth="25" textOrder="131">
-				<case minzoom="17" tag="amenity" value="police" iconOrder="85"/><!-- الشرطة -->
-				<case minzoom="16" tag="amenity" value="fire_station" iconOrder="85"/><!-- المطافي -->
-
-				<case minzoom="17" tag="amenity" value="pharmacy" textOrder="147"/><!-- الصيدليات -->
-				<case minzoom="16" tag="amenity" value="hospital" textOrder="79"/><!-- المستشفيات -->
-				<case minzoom="16" tag="amenity" value="clinic" textOrder="85"/><!-- المستوصفات -->
-				<case minzoom="16" tag="amenity" value="veterinary" textOrder="147"/><!-- البيطري -->
-				<case minzoom="16" tag="amenity" value="doctors" iconOrder="85"/><!-- عيادة طبيب -->
-				<case minzoom="16" tag="amenity" value="dentist" textOrder="147"/><!-- عيادة أسنان -->
-				<case minzoom="16" tag="amenity" value="nursing_home"/><!-- مكان تمريض -->
-				<case minzoom="17" tag="amenity" value="health_post"/>
-				<case minzoom="16" tag="emergency" value="ambulance_station"/><!-- محطة اسعاف -->
-				<case minzoom="18" tag="emergency" value="phone"/>
-				<case minzoom="18" tag="emergency" value="defibrillator"/>
-				<case minzoom="19" tag="emergency" value="fire_hydrant"/><!-- صنبور اطفاء حريق -->
-				<case minzoom="18" tag="emergency" value="rescue_box"/>
-				<case minzoom="17" tag="emergency" value="mountain_rescue"/>
-				<case minzoom="17" tag="emergency" value="lifeguard_base"/>
-				<case minzoom="16" tag="highway" value="emergency_access_point" textOrder="157"/>
-				<case minzoom="18" tag="emergency" value="siren"/>
-				<case minzoom="16" tag="amenity" value="social_facility"/>
-				<case minzoom="16" tag="healthcare" value="laboratory"/>
-				<case minzoom="16" tag="healthcare" value="blood_donation"/>
-				<case minzoom="16" tag="healthcare" value="nurse"/>
-				<case minzoom="16" tag="healthcare" value="occupational_therapist"/>
-				<case minzoom="16" tag="healthcare" value="physiotherapist"/>
-				<case minzoom="17" tag="healthcare" value=""/>
-				<apply_if nightMode="true" textColor="#ffd4f0" textHaloColor="#AA663956"/>
+			<switch hidePOILabels="false" textSize="12" nameTag="" textColor="#da0092" textHaloRadius="$textHaloRadius" textHaloColor="$defaultTextHaloColorDay" textWrapWidth="25" textOrder="131">
+				<switch>
+					<case minzoom="17" tag="amenity" value="police" iconOrder="85"/>
+					<case minzoom="16" tag="amenity" value="fire_station" iconOrder="85"/>
+					<case minzoom="16" tag="amenity" value="hospital" textOrder="79"/>
+					<case minzoom="16" tag="amenity" value="clinic" textOrder="85"/>
+					<case minzoom="16" tag="amenity" value="veterinary" textOrder="147"/>
+					<case minzoom="16" tag="amenity" value="doctors" iconOrder="85"/>
+					<case minzoom="16" tag="amenity" value="dentist" textOrder="147"/>
+					<case minzoom="16" tag="amenity" value="nursing_home"/>
+					<case minzoom="17" tag="amenity" value="health_post"/>
+					<case minzoom="16" tag="emergency" value="ambulance_station"/>
+					<case minzoom="18" tag="emergency" value="phone"/>
+					<case minzoom="18" tag="emergency" value="defibrillator"/>
+					<case minzoom="19" tag="emergency" value="fire_hydrant"/>
+					<case minzoom="18" tag="emergency" value="rescue_box"/>
+					<case minzoom="17" tag="emergency" value="mountain_rescue"/>
+					<case minzoom="17" tag="emergency" value="lifeguard_base"/>
+					<case minzoom="16" tag="highway" value="emergency_access_point" textOrder="127"/>
+					<case minzoom="18" tag="emergency" value="siren"/>
+					<case minzoom="16" tag="amenity" value="social_facility"/>
+					<case minzoom="16" tag="healthcare" value="laboratory"/>
+					<case minzoom="16" tag="healthcare" value="blood_donation"/>
+					<case minzoom="16" tag="healthcare" value="nurse"/>
+					<case minzoom="16" tag="healthcare" value="occupational_therapist"/>
+					<case minzoom="16" tag="healthcare" value="physiotherapist"/>
+					<case minzoom="16" tag="healthcare" value="hospice"/>
+					<case minzoom="17" tag="healthcare" value=""/>
+					<case minzoom="17" tag="amenity" value="pharmacy" additional="dispensing=no" textOrder="147"/>
+					<case minzoom="17" tag="amenity" value="avalanche_transceiver"/>
+					<apply_if nightMode="true" textColor="#ffd4f0" textHaloColor="#AA663956"/>
+				</switch>
+				<case minzoom="17" tag="amenity" value="pharmacy" textOrder="147" textColor="$forestTextColorDay">
+					<apply_if nightMode="true" textColor="#9fe39f" textHaloColor="#aa444444"/>
+				</case>
 				<apply_if engine_v1="true" textDy="5"/>
 				<apply_if legend="true" textDy="0"/>
 			</switch>
@@ -5603,10 +5679,13 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="17" tag="waterway" value="fuel" nameTag="brand" textWrapWidth="20"/>
 					<case minzoom="17" tag="waterway" value="fuel" nameTag="operator" textWrapWidth="20"/>
 					<case minzoom="17" tag="amenity" value="charging_station" textWrapWidth="20"/><!-- محطات الشحن -->
-					<case minzoom="17" tag="amenity" value="parking" nameTag="" textWrapWidth="20" iconOrder="151"/><!-- مواقف -->
+					<case minzoom="17" tag="amenity" value="parking" nameTag="" textWrapWidth="20" textOrder="151"><!-- مواقف -->
+						<apply_if additional="access=customers" textOrder="181"/>
+						<apply_if additional="access=private" textOrder="182"/>
+					</case><!-- مواقف -->
 					<case minzoom="18" tag="amenity" value="parking_entrance" textWrapWidth="20" iconOrder="152"/><!-- مدخل مواقف -->
-					<case minzoom="18" tag="amenity" value="bicycle_parking" nameTag="" textWrapWidth="20"/><!-- مواقف دراجات -->
-					<case minzoom="17" tag="amenity" value="motorcycle_parking" nameTag="" textWrapWidth="20"/>
+					<case minzoom="18" tag="amenity" value="bicycle_parking" nameTag="" textWrapWidth="20" textOrder="152"/>
+					<case minzoom="17" tag="amenity" value="motorcycle_parking" nameTag="" textWrapWidth="20" textOrder="152"/>
 					<case minzoom="17" tag="amenity" value="taxi" textWrapWidth="20"/>
 					<case minzoom="13" tag="man_made" value="lighthouse" textWrapWidth="20" textOrder="104"/><!-- المنارة أو الفنار  -->
 					<case minzoom="17" tag="amenity" value="car_pooling" nameTag="" textWrapWidth="20"/>
@@ -5726,24 +5805,29 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 
 			<!-- Railroad, public transport -->
 			<!-- السكك الحديدية والمواصلات العامة -->
-			<switch hidePOILabels="false" textColor="$railwayPOITextColorDay" textWrapWidth="25" textHaloRadius="$textHaloRadius" textBold="true" nameTag="">
-				<case minzoom="17" tag="public_transport" value="platform" additional="disused=yes" textColor="#999999" textSize="13" textOnPath="true">
+			<switch hidePOILabels="false" textColor="$railwayPOITextColorDay" textWrapWidth="25" textHaloRadius="$textHaloRadius" textBold="true">
+				<case minzoom="17" tag="public_transport" value="platform" additional="disused=yes" textColor="#999999" textSize="12" textOnPath="true" nameTag="">
 					<apply_if nightMode="true" textColor="#dddddd" textHaloColor="$publicTransportModeStopTextHaloColorNight"/>
 				</case>
 				<switch minzoom="15" maxzoom="15" textSize="13" textColor="$publicTransportModeStopTextColor" textHaloColor="$publicTransportModeStopTextHaloColor" textOrder="1">
 					<case publicTransportMode="true" tag="public_transport" value="platform" nameTag="" nameTag2="local_ref" textOnPath="true"/>
 					<case publicTransportMode="true" tag="public_transport" value="platform" nameTag="" textOnPath="true"/>
-					<case tramTrainRoutes="true" tag="public_transport" value="platform" nameTag="" textOnPath="true"/>
+					<case tramTrainRoutes="true" tag="public_transport" value="platform" additional="train=yes" nameTag="" textOnPath="true"/>
+					<case tramTrainRoutes="true" tag="public_transport" value="platform" additional="tram=yes" nameTag="" textOnPath="true"/>
 					<case publicTransportMode="true" tag="amenity" value="bus_station" nameTag=""/>
 					<case publicTransportMode="true" tag="highway" value="bus_stop" nameTag=""/>
-					<case tramTrainRoutes="true" tag="railway" value="tram_stop"/>
+					<case tramTrainRoutes="true" tag="railway" value="tram_stop" nameTag=""/>
 					<apply_if nightMode="true" textColor="$publicTransportModeStopTextColorNight" textHaloRadius="2" textHaloColor="$publicTransportModeStopTextHaloColorNight"/>
 				</switch>
 				<switch minzoom="16" textSize="13"> <!-- When public transport is selected -->
 					<case publicTransportMode="true" tag="public_transport" value="platform" nameTag="" nameTag2="local_ref" textOnPath="true" textOrder="1"/>
 					<case publicTransportMode="true" tag="public_transport" value="platform" nameTag2="local_ref" textOnPath="true" textOrder="1"/>
-					<case tramTrainRoutes="true" tag="public_transport" value="platform" nameTag="" nameTag2="local_ref" textOnPath="true" textOrder="1"/>
-					<case tramTrainRoutes="true" tag="public_transport" value="platform" nameTag2="local_ref" textOnPath="true" textOrder="1"/>
+					<switch tramTrainRoutes="true" tag="public_transport" value="platform" textOnPath="true" textOrder="1">
+						<case additional="train=yes" nameTag="" nameTag2="local_ref"/>
+						<case additional="train=yes" nameTag="local_ref"/>
+						<case additional="tram=yes" nameTag="" nameTag2="local_ref"/>
+						<case additional="tram=yes" nameTag="local_ref"/>
+					</switch>
 					<case publicTransportMode="true" tag="amenity" value="bus_station" textOrder="10"/>
 					<case publicTransportMode="true" tag="highway" value="bus_stop" nameTag="" textOrder="1"/>
 					<case tramTrainRoutes="true" tag="railway" value="tram_stop" textOrder="1"/>
@@ -5752,11 +5836,33 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					</apply>
 				</switch>
 				<switch minzoom="16"> <!-- When no public transport is selected -->
-					<case tag="public_transport" value="platform" nameTag="" nameTag2="local_ref" textOnPath="true" textOrder="71" intersectionMargin="15"/>
+					<switch>
+						<switch baseAppMode="public_transport" tag="public_transport" value="platform" textOrder="20">
+							<case nameTag="" nameTag2="ref"/>
+							<case nameTag="local_ref"/>
+							<case nameTag="ref"/>
+						</switch>
+						<switch minzoom="17" tag="public_transport" value="platform" textOrder="71">
+							<case nameTag="" nameTag2="local_ref"/>
+							<case nameTag="local_ref"/>
+						</switch>
+						<apply textOnPath="true" intersectionMargin="15"/>
+					</switch>
+
+					<!--<case tag="public_transport" value="platform" nameTag="" nameTag2="local_ref" textOnPath="true" textOrder="71" intersectionMargin="15"/>
+					<case tag="public_transport" value="platform" nameTag="" nameTag2="ref" textOnPath="true" textOrder="71" intersectionMargin="15"/>
+					<case baseAppMode="public_transport" minzoom="17" tag="public_transport" value="platform" nameTag="local_ref" textOnPath="true" textOrder="71" intersectionMargin="15"/>
+					<case baseAppMode="public_transport" minzoom="17" tag="public_transport" value="platform" nameTag="ref" textOnPath="true" textOrder="71" intersectionMargin="15"/>
 					<case minzoom="17" tag="public_transport" value="platform" nameTag="local_ref" textOnPath="true" textOrder="71" intersectionMargin="15"/>
+					<case minzoom="17" tag="public_transport" value="platform" nameTag="ref" textOnPath="true" textOrder="71" intersectionMargin="15"/>-->
 					<case tag="highway" value="bus_stop" nameTag="" textOrder="73"/>
 					<case tag="amenity" value="bus_station" textOrder="68"/>
-					<case tag="railway" value="tram_stop" textOrder="74"/>
+					<switch baseAppMode="public_transport" tag="railway" value="tram_stop" textOrder="20">
+						<case nameTag="" nameTag2="ref"/>
+						<case nameTag="local_ref"/>
+						<case nameTag="ref"/>
+					</switch>
+					<case tag="railway" value="tram_stop" nameTag="" textOrder="74"/>
 					<apply_if maxzoom="16" textSize="11"/>
 					<apply_if minzoom="17" textSize="13"/>
 					<apply_if nightMode="true" textColor="#d4d4ff" textHaloRadius="2" textHaloColor="#994563a7"/>
@@ -5895,7 +6001,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 
 			<!-- Accommodation -->
 			<!-- مراكز الاقامة والمبيت -->
-			<switch textSize="13" nameTag="" textColor="$accomodationTextColor" textHaloRadius="$textHaloRadius" textHaloColor="$accomodationTextHaloColorDay" textWrapWidth="25" textOrder="161">
+			<switch textSize="12" nameTag="" textColor="$accomodationTextColor" textHaloRadius="$textHaloRadius" textHaloColor="$accomodationTextHaloColorDay" textWrapWidth="25" textOrder="141">
 				<switch>
 					<switch hidePOILabels="false">
 						<case minzoom="17" tag="tourism" value="apartment"/><!-- شقق -->
@@ -5903,7 +6009,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<case minzoom="17" tag="tourism" value="hostel"/><!-- بيوت شباب -->
 						<case minzoom="17" tag="tourism" value="hotel"/><!-- فندق -->
 						<case minzoom="17" tag="tourism" value="motel"/><!-- فندق صفير -->
-						<switch textOrder="162">
+						<switch textOrder="137">
 							<case minzoom="16" tag="tourism" value="camp_site"/><!-- موقع تخييم -->
 							<case minzoom="17" tag="tourism" value="camp_pitch" nameTag="ref"/>
 							<case minzoom="16" tag="tourism" value="caravan_site"/><!-- موقع كرافانات -->
@@ -5914,7 +6020,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="16" tag="leisure" value="resort"/><!-- ملجأ -->
 					<apply_if nightMode="true" textHaloColor="#55234ca7"/>
 				</switch>
-				<switch hidePOILabels="false" textOrder="162" nameTag2="ele">
+				<switch hidePOILabels="false" textOrder="142" nameTag2="ele">
 					<case minzoom="16" tag="tourism" value="chalet"/><!-- شاليه -->
 					<case minzoom="13" tag="tourism" value="alpine_hut" textOrder="43"/>
 					<case minzoom="15" tag="tourism" value="cabin"/><!-- كوخ -->
@@ -5931,16 +6037,19 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			<!-- سياحة وترفيه -->
 			<switch hidePOILabels="false" textSize="12" nameTag="" textColor="$tourismTextColor" textHaloRadius="$textHaloRadius" textHaloColor="$tourismTextHaloColorDay" textWrapWidth="20" textOrder="155">
 				<case minzoom="18" tag="tourism" value="artwork" nameTag="" textOrder="155"/>
+				<case minzoom="17" tag="tourism" value="gallery"/>
 				<case minzoom="16" tag="man_made" value="geoglyph" nameTag=""/>
 				<case minzoom="17" tag="tourism" value="picnic_site"/>
 				<case minzoom="17" tag="leisure" value="picnic_table"/>
 				<case minzoom="17" tag="leisure" value="firepit"/>
 				<case minzoom="17" tag="tourism" value="museum" textOrder="134"/>
 				<case minzoom="17" tag="tourism" value="information" nameTag=""/>
+				<case minzoom="16" tag="highway" value="trailhead" nameTag=""/>
 				<case minzoom="17" tag="tourism" value="viewpoint"/>
 				<case minzoom="16" tag="tourism" value="theme_park" textOrder="153"/>
-				<case minzoom="15" tag="tourism" value="zoo" textOrder="152"/>
+				<case minzoom="15" tag="tourism" value="zoo" textOrder="139"/>
 				<case minzoom="16" tag="tourism" value="aquarium" textOrder="152"/>
+				<case minzoom="15" tag="tourism" value="trail_riding_station"/>
 				<switch textOrder="154">
 					<case minzoom="23" tag="amenity" value="arts_centre"/>
 					<case minzoom="23" tag="amenity" value="casino"/>
@@ -5953,6 +6062,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="23" tag="amenity" value="studio" textOrder="156"/>
 				<case minzoom="23" tag="amenity" value="brothel" textOrder="156"/>
 				<case minzoom="23" tag="amenity" value="gambling" textOrder="156"/>
+				<case minzoom="23" tag="leisure" value="escape_game"/>
 				<case minzoom="23" tag="leisure" value="amusement_arcade" textOrder="156"/>
 				<case minzoom="23" tag="leisure" value="adult_gaming_centre" textOrder="156"/>
 				<case minzoom="16" tag="natural" value="beach"/>
@@ -5982,10 +6092,10 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<switch hidePOILabels="false">
 					<case minzoom="17" tag="historic" value="aircraft"/>
 					<case minzoom="17" tag="historic" value="tank"/>
-					<case minzoom="16" tag="historic" value="castle" nameTag=""/>
+					<case minzoom="16" tag="historic" value="castle" nameTag="" textOrder="156"/>
 					<case minzoom="16" tag="historic" value="manor" nameTag=""/>
 					<case minzoom="18" tag="historic" value="cannon" textOrder="159"/>
-					<case minzoom="16" tag="historic" value="monument" textOrder="154"/>
+					<case minzoom="16" tag="historic" value="monument" textOrder="137"/>
 					<case minzoom="16" tag="historic" value="technical_monument"/>
 					<case minzoom="17" tag="historic" value="locomotive"/>
 					<case minzoom="18" tag="historic" value="tomb" textOrder="159"/>
@@ -6049,11 +6159,12 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="17" tag="amenity" value="social_centre"/>
 				<case minzoom="17" tag="amenity" value="library"/>
 				<case minzoom="17" tag="amenity" value="conference_centre"/>
-
+				<case minzoom="17" tag="amenity" value="research_institute"/>
 				<case minzoom="17" tag="amenity" value="post_office"/><!-- مكاتب البريد -->
 				<case minzoom="18" tag="amenity" value="post_box"/>
 				<case legend="true" minzoom="18" tag="amenity" value="letter_box"/>
 				<case minzoom="18" tag="amenity" value="letter_box" nameTag="post:housenumber" nameTag2="post:flats"/>
+				<case minzoom="17" tag="amenity" value="parcel_locker"/><!-- صانديق الأمانات -->
 
 				<case minzoom="17" tag="landuse" value="education"/><!-- المرافق التعليمية -->
 				<case minzoom="17" tag="amenity" value="kindergarten" textOrder="133"/><!-- التمهيدي -->
@@ -6065,6 +6176,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="23" tag="amenity" value="music_school"/>
 				<case minzoom="17" tag="amenity" value="language_school"/><!-- أماكن تعليم اللغات -->
 				<case minzoom="17" tag="amenity" value="driving_school"/><!-- تعليم القيادة -->
+				<case minzoom="17" tag="amenity" value="driver_training"/>
 				<case minzoom="17" tag="amenity" value="childcare" textOrder="133"/><!-- حضانات أطفال -->
 
 				<case minzoom="18" tag="amenity" value="bench" textOrder="172" textOnPath="true"/>
@@ -6156,7 +6268,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<apply_if engine_v1="true" textDy="9"/>
 				<apply_if nightMode="true" textColor="#eeeeee" textHaloColor="#77555555"/>
 			</case>
-			<switch hidePOILabels="false" textSize="11" nameTag="" textColor="#444444" textHaloRadius="$textHaloRadius" textHaloColor="$defaultTextHaloColorDay" textWrapWidth="17" textOrder="162">
+			<switch hidePOILabels="false" textSize="11" nameTag="" textColor="#444444" textHaloRadius="$textHaloRadius" textHaloColor="$defaultTextHaloColorDay" textWrapWidth="17" textOrder="138">
 				<case minzoom="17" tag="man_made" value="windmill" textSize="12"/>
 				<case minzoom="17" tag="man_made" value="watermill" textSize="12"/>
 				<case minzoom="18" tag="man_made" value="beehive"/>
@@ -6202,6 +6314,33 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="18" tag="amenity" value="trolley_bay"/>
 				<case minzoom="18" tag="railway" value="traverser" nameTag=""/>
 				<case minzoom="18" tag="railway" value="turntable" nameTag=""/>
+				<switch minzoom="18">
+					<case tag="barrier" value="gate"/>
+					<case tag="barrier" value="sliding_gate"/>
+					<case tag="barrier" value="lift_gate"/>
+					<case tag="barrier" value="hampshire_gate"/>
+					<case tag="barrier" value="swing_gate"/>
+					<case tag="barrier" value="chain"/>
+					<case tag="barrier" value="turnstile"/>
+					<case tag="barrier" value="full-height_turnstile"/>
+					<case tag="barrier" value="stile"/>
+					<case tag="barrier" value="sally_port"/>
+					<case tag="barrier" value="block"/>
+					<case tag="barrier" value="debris"/>
+					<case tag="barrier" value="log"/>
+					<case tag="barrier" value="jersey_barrier"/>
+					<case tag="barrier" value="horse_stile"/>
+					<case tag="barrier" value="kissing_gate"/>
+					<case tag="barrier" value="cycle_barrier"/>
+					<case tag="barrier" value="height_restrictor"/>
+					<case tag="barrier" value="bus_trap"/>
+					<case tag="barrier" value="bump_gate"/>
+					<case tag="barrier" value="cattle_grid"/>
+					<case tag="barrier" value="toll_booth"/>
+					<case tag="barrier" value="bollard"/>
+					<case tag="barrier" value="border_control"/>
+					<case tag="barrier" value="motorcycle_barrier"/>
+				</switch>
 				<apply_if engine_v1="true" textDy="5"/>
 				<apply_if nightMode="true" textColor="#eeeeee" textHaloColor="#aa555555"/>
 				<apply_if legend="true" textDy="0"/>
@@ -6287,9 +6426,9 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 
 			<!-- Food and Drink -->
 			<!-- مأكولات ومشروبات -->
-			<switch hidePOILabels="false" textSize="13" nameTag="" textColor="$foodTextColorDay" textHaloColor="$foodTextHaloColorDay" textHaloRadius="$textHaloRadius" textWrapWidth="20" textOrder="159">
+			<switch hidePOILabels="false" textSize="12" nameTag="" textColor="$foodTextColorDay" textHaloColor="$foodTextHaloColorDay" textHaloRadius="$textHaloRadius" textWrapWidth="20" textOrder="156">
 				<case minzoom="17" tag="amenity" value="restaurant"/><!-- مطاعم -->
-				<case minzoom="17" tag="amenity" value="cafe"/><!-- مقهى -->
+				<case minzoom="17" tag="amenity" value="cafe" textOrder="157"/><!-- مقهى -->
 				<case minzoom="17" tag="amenity" value="fast_food"/><!-- وجبات سريعة -->
 				<case minzoom="17" tag="amenity" value="food_court"/><!-- صالات أكل -->
 				<case minzoom="23" tag="amenity" value="pub"/>
@@ -6297,7 +6436,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="23" tag="amenity" value="biergarten"/>
 				<case minzoom="17" tag="amenity" value="ice_cream"/><!-- محلات مثلجات -->
 				<case minzoom="18" tag="amenity" value="drinking_water" textOrder="171"/><!-- مياه شرب -->
-				<case minzoom="17" tag="leisure" value="outdoor_seating" textOrder="254"/><!-- أماكن جلوس خارجية -->
+				<case minzoom="17" tag="leisure" value="outdoor_seating" textOrder="250"/><!-- أماكن جلوس خارجية -->
 				<case minzoom="17" tag="amenity" value="hookah_lounge"/>
 				<apply_if engine_v1="true" textDy="5"/>
 				<apply_if nightMode="true" textColor="#ffffff" textHaloColor="#5574542F"/>
@@ -6337,6 +6476,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="17" tag="shop" value="chemist"/><!-- مداخن -->
 				<case minzoom="17" tag="shop" value="chocolate"/><!-- شوكلاته -->
 				<case minzoom="17" tag="shop" value="coffee"/><!-- بن وقهوة -->
+				<case minzoom="17" tag="shop" value="collector"/>
 				<case minzoom="17" tag="shop" value="computer"/><!-- حاسب آلي -->
 				<case minzoom="17" tag="shop" value="confectionery"/><!-- حلويات -->
 				<case minzoom="17" tag="shop" value="convenience" textOrder="157"/>
@@ -6347,7 +6487,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="17" tag="shop" value="curtain"/>
 				<case minzoom="17" tag="shop" value="dairy"/>
 				<case minzoom="17" tag="shop" value="deli"/>
-				<case minzoom="16" tag="shop" value="department_store" textOrder="158"/>
+				<case minzoom="16" tag="shop" value="department_store" textOrder="156"/>
 				<case minzoom="17" tag="shop" value="dive"/>
 				<case minzoom="17" tag="shop" value="doityourself"/>
 				<case minzoom="17" tag="shop" value="doors"/><!-- أبواب -->
@@ -6395,8 +6535,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="17" tag="shop" value="lighting"/>
 				<case minzoom="17" tag="shop" value="locksmith"/>
 				<case minzoom="23" tag="shop" value="lottery"/>
-				<case minzoom="16" tag="shop" value="mall" textOrder="156"/>
-				<case minzoom="16" tag="amenity" value="marketplace" textOrder="157"/>
+				<case minzoom="16" tag="shop" value="mall" textOrder="154"/>
+				<case minzoom="16" tag="amenity" value="marketplace" textOrder="155"/>
 				<case minzoom="17" tag="shop" value="medical_supply"/><!-- معدات طبية -->
 				<case minzoom="17" tag="shop" value="mobile_phone"/>
 				<case minzoom="17" tag="shop" value="model"/>
@@ -6431,15 +6571,19 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="17" tag="shop" value="sewing"/><!-- أدوات خياطة -->
 				<case minzoom="17" tag="shop" value="shoes" textOrder="158"/>
 				<case minzoom="17" tag="shop" value="shoe_repair"/><!-- اسكافي -->
+				<case minzoom="17" tag="shop" value="skate"/>
 				<case minzoom="17" tag="shop" value="sports"/>
 				<case minzoom="17" tag="shop" value="stationery"/>
-				<case minzoom="16" tag="shop" value="supermarket" textOrder="157"/>
+				<case minzoom="16" tag="shop" value="supermarket" textOrder="140"/>
 				<case minzoom="17" tag="shop" value="spices"/>
 				<case minzoom="23" tag="shop" value="tattoo"/>
 				<case minzoom="17" tag="shop" value="tea"/><!-- شاي -->
+				<case minzoom="17" tag="shop" value="telecommunication"/>
 				<case minzoom="17" tag="shop" value="ticket"/>
+				<case minzoom="17" tag="shop" value="tiles"/>
 				<case minzoom="23" tag="shop" value="tobacco"/>
 				<case minzoom="17" tag="shop" value="toys"/>
+				<case minzoom="17" tag="shop" value="tool_hire"/>
 				<case minzoom="17" tag="shop" value="trade"/>
 				<case minzoom="17" tag="shop" value="trophy"/>
 				<case minzoom="17" tag="shop" value="tyres"/>
@@ -6491,7 +6635,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="17" tag="sport" value="canoe"/>
 					<case minzoom="17" tag="sport" value="tennis"/>
 					<case minzoom="17" tag="sport" value="shooting"/>
-					<case minzoom="17" tag="sport" value="golf"/>
+					<case minzoom="17" tag="sport" value="golf" textOrder="155"/>
 					<case minzoom="17" tag="sport" value="sailing"/>
 					<case minzoom="17" tag="sport" value="skiing"/>
 					<case minzoom="17" tag="sport" value="swimming"/>
@@ -6525,8 +6669,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="17" tag="sport" value="rc_car"/>
 					<case minzoom="17" tag="sport" value="ultralight_aviation"/>
 
-					<case minzoom="15" tag="leisure" value="stadium" textOrder="165"/>
-					<case minzoom="17" tag="leisure" value="playground"/>
+					<case minzoom="15" tag="leisure" value="stadium" textOrder="155"/>
+					<case minzoom="17" tag="leisure" value="playground" textOrder="167"/>
 					<case minzoom="17" tag="leisure" value="fitness_station"/>
 					<case minzoom="16" tag="leisure" value="horse_riding"/>
 					<case minzoom="16" tag="leisure" value="water_park"/>
@@ -6535,6 +6679,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="18" tag="leisure" value="tanning_salon"/>
 					<case minzoom="16" tag="leisure" value="sports_centre" textOrder="166"/>
 					<case minzoom="17" tag="leisure" value="fitness_centre" textOrder="166"/>
+					<case minzoom="16" tag="leisure" value="sports_hall" textOrder="167"/>
 					<case minzoom="16" tag="leisure" value="ice_rink"/>
 					<case minzoom="17" tag="leisure" value="fishing"/>
 					<case minzoom="17" tag="leisure" value="bird_hide"/>
@@ -6552,8 +6697,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<apply_if nightMode="true" textColor="#ffe7e7" textHaloColor="#77b32c2c"/>
 			</case>
 
-			<switch OSMMapperAssistant="true" minzoom="15" intersectionSizeFactor="0" intersectionMargin="0">
-				<switch tag="fixme_tag" value="yes" nameTag="fixme" textColor="#ffffff" textHaloColor="#ccf800e0" textWrapWidth="20" textOrder="1">
+			<switch minzoom="15" intersectionSizeFactor="0" intersectionMargin="0">
+				<switch OSMMapperAssistantFixme="true" tag="fixme_tag" value="yes" nameTag="fixme" textColor="#ffffff" textHaloColor="#ccf800e0" textWrapWidth="20" textOrder="1">
 					<case maxzoom="15" textSize="10" textDy="-40"/>
 					<case minzoom="16" textSize="11" textDy="-50"/>
 					<apply_if engine_v1="true">
@@ -6562,7 +6707,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					</apply_if>
 					<apply_if nightMode="true" textColor="#7f0a7e" textHaloColor="#ffdcff"/>
 				</switch>
-				<switch>
+				<switch OSMMapperAssistantNote="true">
 					<case tag="note_tag" value="yes" nameTag="note"/>
 					<apply textColor="#ffffff" textHaloColor="#cc347b4c" textOrder="33" textWrapWidth="20">
 						<apply_if minzoom="16" textSize="11" textDy="30"/>
@@ -6570,7 +6715,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<apply_if nightMode="true" textColor="#008b12" textHaloColor="#deffe3"/>
 					</apply>
 				</switch>
-				<case minzoom="17" tag="osm_note" value="yes" textColor="#ffffff" textHaloColor="#ff5757" textSize="11" textOrder="5" textWrapWidth="30">
+				<case minzoom="17" OSMMapperAssistantNote="true" tag="osm_note" value="yes" textColor="#ffffff" textHaloColor="#ff5757" textSize="11" textOrder="5" textWrapWidth="30">
 					<apply_if engine_v1="true" textDy="8"/>
 					<apply_if nightMode="true" textColor="#ff5757" textHaloColor="#ffe9e9"/>
 				</case>
@@ -6599,7 +6744,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<apply_if nightMode="true" textColor="#dddddd" textHaloColor="#66000000"/>
 			</case>
 
-			<switch OSMMapperAssistant="true" minzoom="17" nameTag="">
+			<switch OSMMapperAssistantIconsLowZooms="true" minzoom="17" nameTag="">
 				<case tag="amenity" value=""/>
 				<case tag="club" value=""/>
 				<case tag="craft" value=""/>
@@ -6732,9 +6877,9 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<apply icon="ford" shield="ford_shield"/>
 					</switch>
 					<case minzoom="16" tag="highway" value="passing_place" icon="highway_passing_place"/>
-					<case moreDetailed="true" minzoom="16" tag="highway" value="crossing" icon="highway_crossing_map" shield="highway_crossing_shield" iconVisibleSize="18" intersectionSizeFactor="1.2">
+					<case moreDetailed="true" minzoom="16" tag="highway" value="crossing" icon="highway_crossing_map" shield="highway_crossing_shield" iconVisibleSize="18" intersectionSizeFactor="1.2" iconOrder="160">
 						<case additional="crossing=uncontrolled" icon="crossing_uncontrolled_map"/>
-						<case additional="crossing=traffic_signals" icon="crossing_traffic_signals_map" shield="highway_crossing_traffic_signals_shield" iconOrder="51"/>
+						<case additional="crossing=traffic_signals" icon="crossing_traffic_signals_map" shield="highway_crossing_traffic_signals_shield" iconOrder="83"/>
 						<apply_if streetLighting="true">
 							<case additional="lit_additional=yes">
 								<apply_if nightMode="false" streetLightingNight="false" shield="street_lamp_lit_yes_shield"/>
@@ -6805,7 +6950,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<apply_if nightMode="true" shield="gray_round_night_shield"/>
 					</switch>
 				</switch>
-				<switch moreDetailed="true" minzoom="17" iconOrder="162">
+				<switch moreDetailed="true" minzoom="17" iconOrder="138">
 					<case tag="barrier" value="block" icon="barrier_block" shield="barrier_block_shield"/>
 					<case tag="barrier" value="debris" icon="barrier_colored_debris" shield="barrier_debris_shield"/>
 					<case tag="barrier" value="log" icon="barrier_colored_log" shield="barrier_log_shield"/>
@@ -6818,6 +6963,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case tag="barrier" value="sliding_gate" icon="barrier_gate" shield="barrier_gate_shield"/>
 					<case tag="barrier" value="kissing_gate" icon="barrier_kissing_gate" shield="barrier_kissing_gate_shield"/>
 					<case tag="barrier" value="lift_gate" icon="barrier_lift_gate" shield="barrier_lift_gate_shield"/>
+					<case tag="barrier" value="hampshire_gate" icon="barrier_hampshire_gate" shield="barrier_hampshire_gate_shield"/>
 					<case tag="barrier" value="sally_port" icon="barrier_sally_port" shield="barrier_sally_port_shield"/>
 					<case tag="barrier" value="swing_gate" icon="barrier_swing_gate" shield="barrier_swing_gate_shield"/>
 					<case tag="barrier" value="toll_booth" icon="toll_booth" shield="barrier_toll_booth_shield"/>
@@ -6890,10 +7036,11 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					</case>
 				</switch>
 				<case minzoom="15" tag="barrier" value="cycle_barrier" icon="barrier_cycle_barrier" shield="barrier_cycle_barrier_shield" iconOrder="162"/>
-				<switch minzoom="18" iconOrder="162">
+				<switch minzoom="18" iconOrder="138">
 					<case tag="barrier" value="gate" icon="barrier_gate" shield="barrier_gate_shield"/>
 					<case tag="barrier" value="sliding_gate" icon="barrier_gate" shield="barrier_gate_shield"/>
 					<case tag="barrier" value="lift_gate" icon="barrier_lift_gate" shield="barrier_lift_gate_shield"/>
+					<case tag="barrier" value="hampshire_gate" icon="barrier_hampshire_gate" shield="barrier_hampshire_gate_shield"/>
 					<case tag="barrier" value="swing_gate" icon="barrier_swing_gate" shield="barrier_swing_gate_shield"/>
 					<case tag="barrier" value="chain" icon="barrier_chain" shield="barrier_chain_shield"/>
 					<case tag="barrier" value="turnstile" icon="barrier_turnstile" shield="barrier_turnstile_shield" iconOrder="128"/>
@@ -6996,6 +7143,9 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<case minzoom="16" tag="natural" value="geyser" icon="natural_geyser" shield="blue_round_shield">
 							<apply_if nightMode="true" shield="blue_round_night_shield"/>
 						</case>
+						<case minzoom="16" tag="natural" value="blowhole" icon="natural_blowhole" shield="blue_round_shield" iconOrder="217">
+							<apply_if nightMode="true" shield="blue_round_night_shield"/>
+						</case>
 						<apply_if minzoom="16" additional="drinking_water=yes" icon_2="drinking_water_yes_map"/>
 					</switch>
 					<case minzoom="17" tag="amenity" value="bench" icon="bench" shield="bench_shield" iconOrder="70"/>
@@ -7077,6 +7227,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="15" tag="natural" value="cave_entrance" icon="natural_cave_entrance" iconOrder="85"/><!-- مدخل الكهف أو الغار -->
 					<case minzoom="16" tag="man_made" value="adit" icon="man_made_adit"/><!-- مدخل المنجم الأفقي -->
 					<case minzoom="17" tag="man_made" value="cellar_entrance" icon="cellar_entrance"/>
+					<case minzoom="15" tag="natural" value="fumarole" icon="fumarole"/>
 					<apply shield="gray_round_shield" iconOrder="60">
 						<apply_if nightMode="true" shield="gray_round_night_shield"/>
 					</apply>
@@ -7103,6 +7254,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<switch shield="blue_round_shield">
 					<case minzoom="14" tag="natural" value="hot_spring" icon="natural_hot_spring"/>
 					<case minzoom="14" tag="natural" value="geyser" icon="natural_geyser"/><!-- نبع الماء الفوار -->
+					<case minzoom="16" tag="natural" value="blowhole" icon="natural_blowhole"/>
 					<case minzoom="$springIconMinZoom" tag="natural" value="spring" icon="natural_spring"/>
 					<case minzoom="$waterfallIconMinZoom" tag="waterway" value="waterfall" icon="waterfall">
 						<apply_if whiteWaterSports="true" iconOrder="10"/>
@@ -7182,16 +7334,20 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case tag="amenity" value="clinic" icon="clinic" iconOrder="85"/><!-- مستوصفات  -->
 					<case tag="amenity" value="dentist" icon="amenity_dentist" iconOrder="147"/><!-- طبيب أسنان  -->
 					<case tag="emergency" value="ambulance_station" icon="ambulance_station"/><!-- محطة اسعاف  -->
-					<case tag="highway" value="emergency_access_point" icon="emergency_access_point" iconOrder="157"/>
+					<case tag="highway" value="emergency_access_point" icon="emergency_access_point" iconOrder="127"/>
 					<case tag="amenity" value="social_facility" icon="social_facility"/>
 					<case tag="healthcare" value="laboratory" icon="laboratory"/><!-- مختبرات  -->
 					<case tag="healthcare" value="blood_donation" icon="blood_donation"/><!-- التبرع بالدم  -->
 					<case tag="healthcare" value="nurse" icon="nurse"/><!-- التمريض  -->
 					<case tag="healthcare" value="occupational_therapist" icon="occupational_therapist"/>
 					<case tag="healthcare" value="physiotherapist" icon="physiotherapist"/>
+					<case tag="healthcare" value="hospice" icon="hospice"/>
 					<case minzoom="17" tag="emergency" value="rescue_box" icon="rescue_box"/>
 					<case tag="emergency" value="mountain_rescue" icon="mountain_rescue"/>
 					<case tag="emergency" value="lifeguard_base" icon="lifeguard_base"/>
+					<case minzoom="17" tag="amenity" value="avalanche_transceiver" icon="avalanche_transceiver">
+						<apply_if additional="avalanche_transceiver=training" icon="avalanche_transceiver_training"/>
+					</case>
 					<case tag="amenity" value="health_post" icon="health_post"/>
 					<case minzoom="18" tag="emergency" value="siren" icon="siren"/>
 					<case minzoom="17" tag="healthcare" value="" icon="healthcare"/>
@@ -7205,8 +7361,11 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<apply_if nightMode="true" shield="red_round_night_shield" iconVisibleSize="24"/>
 					<apply_if moreDetailed="false" maxzoom="15" icon=""/>
 				</switch>
-				<case minzoom="16" tag="amenity" value="pharmacy" icon="amenity_pharmacy" iconVisibleSize="26" shield="red_round_shield" iconOrder="147"><!-- صيدلية  -->
-					<apply_if nightMode="true" shield="red_round_night_shield"/>
+				<case minzoom="16" tag="amenity" value="pharmacy" icon="amenity_pharmacy" iconVisibleSize="20" shield="green_round_shield" iconOrder="147">
+					<apply_if nightMode="true" shield="green_round_night_shield"/>
+					<apply_if additional="dispensing=no" shield="red_round_shield">
+						<apply_if nightMode="true" shield="red_round_night_shield"/>
+					</apply_if>
 				</case>
 				<switch minzoom="16">
 					<case tag="amenity" value="nursing_home"/>
@@ -7229,9 +7388,9 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<apply icon="ford" shield="ford_shield"/>
 				</switch>
 				<case minzoom="17" tag="highway" value="passing_place" icon="highway_passing_place"/>
-				<case minzoom="17" tag="highway" value="crossing" icon="highway_crossing_map" iconVisibleSize="14" shield="highway_crossing_shield">
+				<case minzoom="17" tag="highway" value="crossing" icon="highway_crossing_map" iconVisibleSize="14" shield="highway_crossing_shield" iconOrder="160">
 					<case additional="crossing=uncontrolled" icon="crossing_uncontrolled_map"/>
-					<case additional="crossing=traffic_signals" icon="crossing_traffic_signals_map" shield="highway_crossing_traffic_signals_shield" iconOrder="51"/>
+					<case additional="crossing=traffic_signals" icon="crossing_traffic_signals_map" shield="highway_crossing_traffic_signals_shield" iconOrder="83"/>
 					<case additional="crossing=unmarked" icon="crossing_unmarked_map"/>
 					<apply_if streetLighting="true">
 						<case additional="lit_additional=yes">
@@ -7247,7 +7406,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="18" tag="highway" value="steps" icon="highway_steps" shield="highway_steps_shield" iconVisibleSize="8"/>
 				<case minzoom="16" tag="ladder" value="yes" icon="ladder"/>
 				<case minzoom="16" tag="highway" value="via_ferrata" icon="via_ferrata_map" shield="via_ferrata_shield"/>
-				<case minzoom="16" tag="osmand_rungs_node" value="yes" icon="rungs_dot"/>
+				<case minzoom="16" tag="osmand_rungs_node" value="yes" icon="rungs" shield="rungs_shield"/>
 				<switch shield="blue_round_shield">
 					<case minzoom="18" tag="highway" value="speed_camera" icon="highway_speed_camera" iconOrder="70"/><!-- كاميرا رصد سرعة  -->
 					<case minzoom="15" tag="highway" value="services" icon="highway_services" iconOrder="60"/>
@@ -7263,11 +7422,11 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 							<case additional="fee=yes" icon="amenity_parking_underground_paid"/>
 						</case>
 						<case additional="fee=yes" icon="amenity_parking_paid"/>
-						<apply_if additional="access=customers" icon="amenity_parking_private"/>
+						<apply_if additional="access=customers" icon="amenity_parking_private" iconOrder="181"/>
 						<apply_if additional="access=private" icon=""/>
 						<apply_if additional="access=no" icon=""/>
 					</case>
-					<case minzoom="16" tag="amenity" value="bicycle_parking" icon="bicycle_parking" iconVisibleSize="32" iconOrder="80">
+					<case minzoom="16" tag="amenity" value="bicycle_parking" icon="bicycle_parking" iconVisibleSize="32" iconOrder="152">
 						<case additional="bicycle_parking=stands" icon="bicycle_parking_stands"/>
 						<case additional="bicycle_parking=wall_loops" icon="bicycle_parking_wall_loops"/>
 						<case additional="bicycle_parking=rack" icon="bicycle_parking_rack"/>
@@ -7280,7 +7439,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<case additional="bicycle_parking=tree" icon="bicycle_parking_tree"/>
 						<case additional="bicycle_parking=streetpod" icon="bicycle_parking_streetpod"/>
 					</case>
-					<case minzoom="16" tag="amenity" value="motorcycle_parking" icon="amenity_motorcycle_parking" iconVisibleSize="32" iconOrder="80">
+					<case minzoom="16" tag="amenity" value="motorcycle_parking" icon="amenity_motorcycle_parking" iconVisibleSize="32" iconOrder="152">
 						<case additional="fee=yes" icon="amenity_motorcycle_parking_paid"/>
 					</case>
 					<apply_if nightMode="true" shield="blue_round_night_shield" iconVisibleSize="50"/>
@@ -7502,13 +7661,13 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 
 
 				<!-- Accommodation -->
-				<switch iconOrder="161" shield="blue_round_shield" iconVisibleSize="32">
+				<switch iconOrder="141" shield="blue_round_shield" iconVisibleSize="32">
 					<case minzoom="$hotelIconMinZoom" tag="tourism" value="apartment" icon="tourism_apartment"/>
 					<case minzoom="$hotelIconMinZoom" tag="tourism" value="guest_house" icon="tourism_guest_house"/>
 					<case minzoom="$hotelIconMinZoom" tag="tourism" value="hostel" icon="tourism_hostel"/>
 					<case minzoom="$hotelIconMinZoom" tag="tourism" value="hotel" icon="tourism_hotel"/>
 					<case minzoom="$hotelIconMinZoom" tag="tourism" value="motel" icon="tourism_motel"/>
-					<switch iconOrder="162">
+					<switch iconOrder="137">
 						<case minzoom="$campSiteIconMinZoom" tag="tourism" value="camp_site" icon="tourism_camp_site"/>
 						<case minzoom="$caravanSiteIconMinZoom" tag="tourism" value="caravan_site" icon="tourism_caravan_site"/>
 						<case minzoom="$chaletIconMinZoom" tag="tourism" value="chalet" icon="tourism_chalet"/>
@@ -7525,7 +7684,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<apply_if nightMode="true" shield="blue_round_night_shield" iconVisibleSize="45"/>
 				</switch>
 
-				<case minzoom="15" tag="tourism" value="camp_pitch" icon="camp_pitch" shield="blue_square_small_shield" iconOrder="163"/>
+				<case minzoom="15" tag="tourism" value="camp_pitch" icon="camp_pitch" shield="blue_square_small_shield" iconOrder="142"/>
 
 				<!-- Tourism, Entertainment -->
 				<case minzoom="16" tag="tourism" value="information" icon="tourism_information" iconOrder="86" shield="information_shield">
@@ -7555,8 +7714,10 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<case minzoom="18" tag="tourism" value="artwork" icon="tourism_artwork" iconOrder="155">
 							<apply_if additional="artwork_type=statue" icon="memorial_statue"/>
 						</case>
+						<case minzoom="16" tag="tourism" value="gallery" icon="gallery"/>
 						<case minzoom="16" tag="man_made" value="geoglyph" icon="geoglyph"/>
-						<case minzoom="14" tag="tourism" value="zoo" icon="zoo" iconOrder="152"/>
+						<case minzoom="14" tag="tourism" value="zoo" icon="zoo" iconOrder="139"/>
+						<case minzoom="16" tag="tourism" value="trail_riding_station" icon="trail_riding_station"/>
 						<switch minzoom="18">
 							<case tag="attraction" value="amusement_ride" icon="attraction_amusement_ride"/>
 							<case tag="attraction" value="animal" icon="attraction_animal"/>
@@ -7581,7 +7742,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<case minzoom="23" tag="amenity" value="stripclub" icon="amenity_nightclub" iconVisibleSize="32" iconOrder="154"/>
 
 						<switch iconOrder="158">
-							<case minzoom="$historicCastleIconMinZoom" tag="historic" value="castle" icon="historic_castle"/>
+							<case minzoom="$historicCastleIconMinZoom" tag="historic" value="castle" icon="historic_castle" iconOrder="156"/>
 							<case minzoom="16" tag="historic" value="manor" icon="historic_manor" iconOrder="159"/>
 							<case minzoom="16" tag="historic" value="tomb" icon="tomb" iconOrder="159"/>
 							<case minzoom="16" tag="historic" value="pillory" icon="pillory" iconOrder="157"/>
@@ -7600,7 +7761,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 								<apply_if additional="memorial=stolperstein" icon="memorial_stolperstein" iconOrder="160"/>
 								<apply_if additional="memorial=plaque" icon="memorial_plaque" iconOrder="160"/>
 							</case>
-							<case minzoom="16" tag="historic" value="monument" icon="monument" iconVisibleSize="32" iconOrder="154"/>
+							<case minzoom="16" tag="historic" value="monument" icon="monument" iconVisibleSize="32" iconOrder="137"/>
 							<apply_if additional="memorial=bust" icon="memorial_bust"/>
 							<apply_if additional="memorial=obelisk" icon="memorial_obelisk"/>
 							<apply_if additional="memorial=column" icon="memorial_obelisk"/>
@@ -7617,6 +7778,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<case minzoom="16" tag="geological" value="outcrop" icon="outcrop" iconOrder="163"/>
 						<case minzoom="15" tag="historic" value="mine" icon="historic_mine"/>
 						<case minzoom="17" tag="historic" value="charcoal_pile" icon="charcoal_pile"/>
+						<case minzoom="16" tag="highway" value="trailhead" icon="trailhead"/>
 						<apply_if nightMode="true" shield="brown_round_night_shield" iconVisibleSize="40"/>
 						<apply_if moreDetailed="false" maxzoom="15" icon=""/>
 					</switch>
@@ -7627,12 +7789,12 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="16" tag="leisure" value="horse_riding" icon="equestrian" shield="gray_round_shield" iconVisibleSize="24" iconOrder="166">
 					<apply_if nightMode="true" shield="gray_round_night_shield"/>
 				</case>
-				<case minzoom="17" tag="leisure" value="playground" icon="leisure_playground" iconOrder="166" iconVisibleSize="40" intersectionSizeFactor="2.5"/>
+				<case minzoom="17" tag="leisure" value="playground" icon="leisure_playground" iconOrder="167" iconVisibleSize="40" intersectionSizeFactor="2.5"/>
 				<case minzoom="17" tag="leisure" value="dog_park" icon="dog_park" shield="green_round_shield" iconOrder="250" iconVisibleSize="40" intersectionSizeFactor="2.5">
 					<apply_if nightMode="true" shield="green_round_night_shield"/>
 				</case>
 				<switch iconOrder="166" shield="green_round_shield" iconVisibleSize="40" intersectionSizeFactor="2.5">
-					<case minzoom="15" tag="leisure" value="stadium" icon="sport_stadium" iconOrder="165">
+					<case minzoom="15" tag="leisure" value="stadium" icon="sport_stadium" iconOrder="155">
 						<apply_if moreDetailed="false" maxzoom="15" icon=""/>
 					</case>
 					<case minzoom="16" tag="sport" value="equestrian" icon="equestrian"/>
@@ -7646,7 +7808,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="16" tag="sport" value="canoe" icon="sport_canoe"/>
 					<case minzoom="16" tag="sport" value="tennis" icon="sport_tennis"/>
 					<case minzoom="16" tag="sport" value="shooting" icon="sport_shooting"/>
-					<case minzoom="15" tag="sport" value="golf" icon="sport_golf"/>
+					<case minzoom="15" tag="sport" value="golf" icon="sport_golf" iconOrder="155"/>
 					<case minzoom="16" tag="sport" value="swimming" icon="sport_swimming"/>
 					<case minzoom="16" tag="sport" value="ice_skating" icon="leisure_ice_rink"/>
 					<case minzoom="16" tag="sport" value="sailing" icon="sport_sailing"/>
@@ -7692,12 +7854,14 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="17" tag="amenity" value="public_bath" icon="public_bath" iconOrder="167"/>
 					<case minzoom="23" tag="leisure" value="tanning_salon" icon="tanning_salon"/>
 					<case minzoom="23" tag="leisure" value="dance" icon="dance_floor"/>
+					<case minzoom="23" tag="leisure" value="escape_game" icon="escape_game"/>
 					<case minzoom="17" tag="leisure" value="bandstand" icon="bandstand"/>
 					<apply_if nightMode="true" shield="green_round_night_shield" iconVisibleSize="55" intersectionSizeFactor="3.5"/>
 				</switch>
 
 				<switch minzoom="16">
 					<case tag="leisure" value="sports_centre" icon="leisure_sports_centre"/>
+					<case tag="leisure" value="sports_hall" icon="sports_hall"/>
 					<case minzoom="17" tag="leisure" value="fitness_centre" icon="fitness_centre"/>
 					<case minzoom="17" tag="leisure" value="fitness_station" icon="fitness_station" iconVisibleSize="24" iconOrder="166"/>
 					<apply shield="green_round_shield" iconVisibleSize="32" iconOrder="166"/>
@@ -7742,7 +7906,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="18" tag="amenity" value="telephone" icon="amenity_telephone"/>
 					<case minzoom="17" tag="amenity" value="post_box" icon="amenity_post_box"/>
 					<case minzoom="18" tag="amenity" value="letter_box" icon="letter_box"/>
-					<case minzoom="17" tag="amenity" value="post_office" icon="amenity_post_office"/>
+					<case minzoom="17" tag="amenity" value="post_office" icon="amenity_post_office"/><!-- مكاتب البريد -->
+					<case minzoom="17" tag="amenity" value="parcel_locker" icon="parcel_locker"/><!-- صانديق الأمانات -->
 					<case minzoom="17" tag="amenity" value="prison" icon="amenity_prison"/>
 					<case minzoom="17" tag="amenity" value="toilets" icon="amenity_toilets" iconOrder="90">
 						<apply_if additional="drinking_water=yes" icon_2="drinking_water_yes_map"/>
@@ -7863,6 +8028,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="17" tag="amenity" value="community_centre" icon="amenity_public_building" iconOrder="74"/>
 					<case minzoom="17" tag="amenity" value="social_centre" icon="amenity_public_building"/>
 					<case minzoom="16" tag="amenity" value="conference_centre" icon="conference_centre"/>
+					<case minzoom="16" tag="amenity" value="research_institute" icon="research_institute"/>
 					<case minzoom="16" tag="amenity" value="ranger_station" icon="ranger_station"/>
 					<case minzoom="16" tag="amenity" value="waste_transfer_station" icon="waste_transfer_station"/>
 					<case minzoom="16" tag="amenity" value="mobile_library" icon="mobile_library"/>
@@ -7878,6 +8044,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="23" tag="amenity" value="music_school" icon="music_school"/>
 					<case minzoom="16" tag="amenity" value="language_school" icon="language_school"/><!-- مدرسة لغة -->
 					<case minzoom="16" tag="amenity" value="driving_school" icon="driving_school"/><!-- مدرسة قيادة -->
+					<case minzoom="16" tag="amenity" value="driver_training" icon="driver_training"/>
 					<case minzoom="16" tag="amenity" value="training" icon="training" iconOrder="171"><!-- معهد تدريب -->
 						<apply_if additional="training=yoga" icon="training_yoga"/>
 					</case>
@@ -7915,7 +8082,10 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<case additional="generator:source=nuclear" icon="generator_source_nuclear" shield="generator_nuclear_shield"/>
 						<case additional="generator:source=hydro" icon="generator_source_hydro" shield="generator_hydro_shield"/>
 						<case additional="generator:source=wind" icon="generator_source_wind" shield="generator_wind_shield"/>
-						<case moreDetailed="true" minzoom="17" additional="generator:source=solar" icon="generator_source_solar" shield="generator_solar_shield" iconOrder="101"/>
+						<case additional="generator:source=solar">
+							<apply_if moreDetailed="true" minzoom="17" icon="generator_source_solar" shield="generator_solar_shield" iconOrder="101"/>
+							<apply_if moreDetailed="false" icon="no_icon" shield=""/>
+						</case>
 						<case additional="generator:source=geothermal" icon="generator_source_geothermal" shield="generator_geothermal_shield"/>
 						<case additional="generator:source=oil" icon="generator_source_oil" shield="generator_oil_shield"/>
 						<case additional="generator:source=diesel" icon="generator_source_diesel" shield="generator_oil_shield"/>
@@ -8000,15 +8170,15 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 
 				<!-- Food and Drink -->
 				<!-- مأكولات ومشروبات -->
-				<switch shield="orange_round_shield" iconVisibleSize="24">
-					<case minzoom="16" tag="amenity" value="restaurant" icon="amenity_restaurant" iconVisibleSize="32" iconOrder="159"/><!-- ماطاعم -->
-					<case minzoom="16" tag="amenity" value="cafe" icon="amenity_cafe" iconVisibleSize="40" iconOrder="160"/><!-- مقاهي -->
-					<case minzoom="16" tag="amenity" value="fast_food" icon="amenity_fast_food" iconVisibleSize="32" iconOrder="159"/><!-- وجبات سريعة -->
-					<case minzoom="16" tag="amenity" value="food_court" icon="amenity_food_court" iconOrder="158"/><!-- صالة أكل -->
-					<case minzoom="23" tag="amenity" value="pub" icon="amenity_pub" iconVisibleSize="32" iconOrder="159"/>
-					<case minzoom="23" tag="amenity" value="bar" icon="amenity_bar" iconVisibleSize="32" iconOrder="159"/>
-					<case minzoom="23" tag="amenity" value="biergarten" icon="amenity_biergarten" iconOrder="159"/>
-					<case minzoom="16" tag="amenity" value="ice_cream" icon="ice_cream" iconOrder="159"/><!-- مثلجات -->
+				<switch shield="orange_round_shield" iconVisibleSize="24" iconOrder="156">
+					<case minzoom="16" tag="amenity" value="restaurant" icon="amenity_restaurant" iconVisibleSize="32"/>
+					<case minzoom="16" tag="amenity" value="cafe" icon="amenity_cafe" iconVisibleSize="40" iconOrder="157"/>
+					<case minzoom="16" tag="amenity" value="fast_food" icon="amenity_fast_food" iconVisibleSize="32"/>
+					<case minzoom="16" tag="amenity" value="food_court" icon="amenity_food_court"/>
+					<case minzoom="23" tag="amenity" value="pub" icon="amenity_pub" iconVisibleSize="1"/>
+					<case minzoom="23" tag="amenity" value="bar" icon="amenity_bar" iconVisibleSize="1"/>
+					<case minzoom="23" tag="amenity" value="biergarten" icon="amenity_biergarten"/>
+					<case minzoom="16" tag="amenity" value="ice_cream" icon="ice_cream"/><!-- مثلجات -->
 					<case minzoom="17" tag="leisure" value="outdoor_seating" icon="outdoor_seating" iconOrder="250"/><!-- جلسات خارجية -->
 					<case minzoom="17" tag="amenity" value="hookah_lounge" icon="hookah_lounge"/>
 					<switch iconOrder="171">
@@ -8061,6 +8231,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="17" tag="shop" value="carpet" icon="carpet"/><!-- سجاد -->
 					<case minzoom="17" tag="shop" value="chocolate" icon="chocolate"/><!-- شوكلاته -->
 					<case minzoom="17" tag="shop" value="coffee" icon="coffee"/><!-- بن وقهوة -->
+					<case minzoom="17" tag="shop" value="collector" icon="collector"/>
 					<case minzoom="17" tag="shop" value="computer" icon="shop_computer"/><!-- حاسب آلي -->
 					<case minzoom="17" tag="shop" value="confectionery" icon="shop_confectionery"/>
 					<case minzoom="16" tag="shop" value="convenience" icon="shop_convenience" iconVisibleSize="22" iconOrder="157"/>
@@ -8072,7 +8243,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="17" tag="shop" value="curtain" icon="curtain"/>
 					<case minzoom="17" tag="shop" value="dairy" icon="shop_dairy"/>
 					<case minzoom="17" tag="shop" value="deli" icon="deli"/>
-					<case minzoom="15" tag="shop" value="department_store" icon="shop_department_store" iconVisibleSize="32" iconOrder="158"/>
+					<case minzoom="15" tag="shop" value="department_store" icon="shop_department_store" iconVisibleSize="32" iconOrder="156"/>
 					<case minzoom="17" tag="shop" value="dive" icon="dive"/><!-- معدات غوص -->
 					<case minzoom="17" tag="shop" value="doityourself" icon="shop_doityourself" iconVisibleSize="32"/>
 					<case minzoom="17" tag="shop" value="doors" icon="doors"/><!-- ابواب -->
@@ -8120,8 +8291,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="17" tag="shop" value="lighting" icon="lighting"/>
 					<case minzoom="17" tag="shop" value="locksmith" icon="locksmith"/>
 					<case minzoom="23" tag="shop" value="lottery" icon="lottery"/>
-					<case minzoom="15" tag="shop" value="mall" icon="shop_mall" iconVisibleSize="22" iconOrder="156"/>
-					<case minzoom="15" tag="amenity" value="marketplace" icon="amenity_marketplace" iconVisibleSize="32" iconOrder="157"/>
+					<case minzoom="15" tag="shop" value="mall" icon="shop_mall" iconVisibleSize="22" iconOrder="154"/>
+					<case minzoom="15" tag="amenity" value="marketplace" icon="amenity_marketplace" iconVisibleSize="32" iconOrder="155"/>
 					<case minzoom="17" tag="shop" value="medical_supply" icon="medical_supply"/><!-- معدات ومستلزمات طبية -->
 					<case minzoom="17" tag="shop" value="mobile_phone" icon="shop_mobile_phone" iconVisibleSize="32"/>
 					<case minzoom="17" tag="shop" value="model" icon="model"/>
@@ -8156,14 +8327,18 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="17" tag="shop" value="scuba_diving" icon="scuba_diving_shop"/>
 					<case minzoom="17" tag="shop" value="shoes" icon="shop_shoes" iconVisibleSize="32" iconOrder="158"/>
 					<case minzoom="17" tag="shop" value="shoe_repair" icon="shoe_repair"/><!-- اسكافي -->
+					<case minzoom="17" tag="shop" value="skate" icon="skate"/>
 					<case minzoom="17" tag="shop" value="sports" icon="shop_sports"/>
 					<case minzoom="17" tag="shop" value="stationery" icon="stationery"/><!-- قرطاسية وأدوات مدرسية -->
-					<case minzoom="15" tag="shop" value="supermarket" icon="shop_supermarket" iconVisibleSize="22" iconOrder="157"/><!-- سوبر ماركت -->
+					<case minzoom="15" tag="shop" value="supermarket" icon="shop_supermarket" iconVisibleSize="22" iconOrder="140"/><!-- سوبر ماركت -->
 					<case minzoom="17" tag="shop" value="spices" icon="spices"/><!-- بهارات -->
 					<case minzoom="23" tag="shop" value="tattoo" icon="tattoo"/>
 					<case minzoom="17" tag="shop" value="tea" icon="tea"/><!-- شاي -->
+					<case minzoom="17" tag="shop" value="telecommunication" icon="telecommunication"/>
 					<case minzoom="17" tag="shop" value="ticket" icon="shop_ticket"/>
+					<case minzoom="17" tag="shop" value="tiles" icon="tiles"/>
 					<case minzoom="23" tag="shop" value="tobacco" icon="shop_tobacco"/>
+					<case minzoom="17" tag="shop" value="tool_hire" icon="tool_hire"/><!-- محلات تأجير الأدوات والمعدات -->
 					<case minzoom="17" tag="shop" value="toys" icon="shop_toys"/>
 					<case minzoom="17" tag="shop" value="trade" icon="trade"/>
 					<case minzoom="17" tag="shop" value="trophy" icon="trophy"/>
@@ -8338,11 +8513,12 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			<!-- Barriers -->
 			<!-- كل ما يتعلق بالحواجز -->
 			<switch>
-				<switch iconOrder="162">
+				<switch iconOrder="138">
 					<switch>
 						<case minzoom="16" tag="barrier" value="gate" icon="barrier_gate" shield="barrier_gate_shield"/><!-- بوابات الحواجز -->
 						<case minzoom="16" tag="barrier" value="yes" icon="barrier_gate" shield="barrier_gate_shield"/>
 						<case minzoom="16" tag="barrier" value="lift_gate" icon="barrier_lift_gate" shield="barrier_lift_gate_shield"/>
+						<case minzoom="16" tag="barrier" value="hampshire_gate" icon="barrier_hampshire_gate" shield="barrier_hampshire_gate_shield"/>
 						<case minzoom="16" tag="barrier" value="swing_gate" icon="barrier_swing_gate" shield="barrier_swing_gate_shield"/>
 						<case minzoom="16" tag="barrier" value="bump_gate" icon="barrier_bump_gate" shield="barrier_bump_gate_shield"/>
 						<case minzoom="16" tag="barrier" value="bus_trap" icon="barrier_bus_trap" shield="barrier_bus_trap_shield"/>
@@ -8486,9 +8662,9 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 
 			<case minzoom="18" tag="highway" value="elevator" icon="elevator" shield="elevator_shield"/>
 			<case minzoom="$powerTowerIconMinZoom" tag="power" value="tower">
-				<case maxzoom="14" icon="power_tower_small2" iconVisibleSize="3"/>
-				<case maxzoom="15" icon="power_tower_small" iconVisibleSize="3"/>
-				<case maxzoom="17" icon="power_tower_square" iconVisibleSize="7"/>
+				<case maxzoom="14" icon="barrier_small_black_3" iconVisibleSize="3"/>
+				<case maxzoom="15" icon="barrier_small_black_3" iconVisibleSize="3"/>
+				<case maxzoom="17" icon="power_tower" iconVisibleSize="5"/>
 				<case minzoom="18" icon="power_tower" shield="power_tower_big_shield"/>
 			</case>
 			<case minzoom="17" tag="power" value="portal" icon="power_portal" shield="power_portal_shield"/>
@@ -8532,21 +8708,21 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<apply iconVisibleSize="0" iconOrder="128" intersectsWith="" intersectionSizeFactor="0"/>
 			</switch>
 
-			<switch OSMMapperAssistant="true" iconVisibleSize="0" intersectionSizeFactor="0" iconOrder="128">
-				<switch minzoom="12" tag="fixme_tag" value="yes">
+			<switch iconVisibleSize="0" intersectionSizeFactor="0" iconOrder="128">
+				<switch OSMMapperAssistantFixme="true" minzoom="12" tag="fixme_tag" value="yes">
 					<case maxzoom="12" icon="fixme_tag_lowzoom_yes"/>
 					<case maxzoom="15" icon="fixme_tag_lowzoom2_yes"/>
 					<case minzoom="16" icon="fixme_tag_yes" icon_shift_px="0.5" icon_shift_py="-0.5"/>
 				</switch>
-				<switch minzoom="12" tag="osm_note" value="yes">
+				<switch OSMMapperAssistantNote="true" minzoom="12" tag="osm_note" value="yes">
 					<case maxzoom="12" icon="osm_note_dot"/>
 					<case maxzoom="17" icon="osm_note_dot_2"/>
 				</switch>
-				<case minzoom="16" tag="note_tag" value="yes" icon="note_tag_yes" icon_shift_px="-0.5" icon_shift_py="-0.5"/>
+				<case OSMMapperAssistantNote="true" minzoom="16" tag="note_tag" value="yes" icon="note_tag_yes" icon_shift_px="-0.5" icon_shift_py="-0.5"/>
 				<!--<case minzoom="16" tag="description_tag" value="yes" icon="note_tag_yes"/>-->
 			</switch>
 
-			<switch OSMMapperAssistant="true" minzoom="16" iconVisibleSize="7" intersectionSizeFactor="0.5">
+			<switch OSMMapperAssistantIconsLowZooms="true" minzoom="16" iconVisibleSize="7" intersectionSizeFactor="0.5">
 				<case tag="amenity" value="" icon="stub_amenity" iconOrder="171"/>
 				<case tag="club" value="" icon="stub_club" iconOrder="163"/>
 				<case tag="craft" value="" icon="stub_craft" iconOrder="164"/>
@@ -8711,7 +8887,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="13" maxzoom="14" icon="railway_station_small">
 					<apply_if additional="disused=yes" icon="railway_station_small_disused" iconVisibleSize="10" intersectionSizeFactor="0.8"/>
 					<apply_if additional="station=subway" icon="railway_station_subway_small">
-						<!--						<apply_if nightMode="true" shield="blue_arc_night_big_shield"/>-->
+						<apply_if nightMode="true" icon="railway_station_subway_small_night"/>
 					</apply_if>
 				</case>
 				<case minzoom="15">
@@ -9084,6 +9260,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="16" tag="amenity" value="fountain"/>
 					<case minzoom="16" tag="natural" value="hot_spring"/>
 					<case minzoom="16" tag="natural" value="geyser"/>
+					<case minzoom="16" tag="natural" value="blowhole"/>
 					<apply color_2="#7479ec" strokeWidth_2="1.3:0"/>
 				</switch>
 				<case minzoom="10" tag="waterway" value="dock" color_2="#aa8387d5" strokeWidth_2="3"/>
@@ -9111,6 +9288,9 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<apply_if additional="disused=yes">
 						<apply_if nightMode="true" color="#88666666"/>
 					</apply_if>
+					<apply_if baseAppMode="public_transport" strokeWidth_2="2" color_2="#666666">
+						<apply_if nightMode="true" color_2="#999999"/>
+					</apply_if>
 				</case>
 				<case tag="amenity" value="bus_station">
 					<apply_if nightMode="true" color="#685454"/>
@@ -9122,11 +9302,11 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			<!-- مساحات المطارات والخطوط الجوية -->
 			<switch minzoom="12">
 				<case tag="aeroway" value="aerodrome" color="$aerodromeColor">
-					<apply_if additional="aerodrome:type=military" shader="danger" color_0="$landuseMilitaryColor0" color_2="#c8ffa0c0" strokeWidth_2="1:1">
+					<apply_if maxzoom="17" additional="aerodrome:type=military" shader="danger" color_0="$landuseMilitaryColor0" color_2="#c8ffa0c0" strokeWidth_2="1:1">
 						<apply_if nightMode="true" shader="danger_night"/>
 					</apply_if>
 				</case>
-				<case tag="abandoned:aeroway" value="aerodrome" shader="diagonal_gray_shader">
+				<case maxzoom="17" tag="abandoned:aeroway" value="aerodrome" shader="diagonal_gray_shader">
 					<apply_if nightMode="true" shader="diagonal_lightgray_shader"/>
 				</case>
 			</switch>
@@ -9324,6 +9504,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				</apply>
 			</case>
 			<case minzoom="12" tag="landuse" value="commercial" color="$landuseCommercialColor"/>
+			<case minzoom="13" tag="amenity" value="marketplace" color="$amenityMarketplaceColor"/>
 
 			<switch>
 				<case minzoom="12" tag="landuse" value="landfill"/>
@@ -9343,6 +9524,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case tag="amenity" value="college"/><!-- كلية -->
 				<case tag="amenity" value="university"/><!-- جامعة -->
 				<case tag="amenity" value="childcare"/><!-- حضانة -->
+				<case tag="amenity" value="driver_training"/>
 				<apply color="$amenityEducationalColor" color_2="$amenityEducationalStrokeColor" strokeWidth_2=":1"/>
 			</switch>
 			<switch minzoom="15">
@@ -9533,7 +9715,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			<case minzoom="11" tag="natural" value="beach" shader="beach2"><!-- شاطئ -->
 				<apply_if nightMode="true" shader="beach2night"/>
 			</case>
-			<case minzoom="$sandMinZoom" tag="natural" value="sand" shader="sand_shader"><!-- رمل -->
+			<case minzoom="$sandMinZoom" tag="natural" value="sand" color_0="#ffe1ba" shader="topo_sand"><!-- رمل -->
 				<apply_if nightMode="true" shader="" color="#1c362d"/>
 			</case>
 			<case minzoom="$wetlandMinZoom" tag="natural" value="wetland"><!-- مناطق رطبه مثل القيعان والسباخ -->
@@ -9552,7 +9734,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case additional="wetland=fen" shader="wetland_fen"/><!-- مستنقع أعشاب مغذى من المياة الجوفية -->
 					<case additional="wetland=palsa_bog" shader="wetland_palsa_bog"/>
 					<case additional="wetland=mud" shader="wetland_tidalflat" color_0="#e4ddd1"/><!-- وحل -->
-					<case shader="wetland"/>
+					<case shader="wetland_tidalflat"/>
 					<apply_if nightMode="true" shader="" color="$wetlandColorNight" color_0="$null"/>
 				</switch>
 				<apply_if minzoom="15" additional="intermittent=yes" strokeWidth_2="1" color_2="#7479ec" pathEffect_2="12_5"/><!-- اللون في حال كانت الأرض الرطبة ليست رطبة بشكل دائم وإنما أجزاء من السنة -->
@@ -9677,23 +9859,34 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				</apply_if>
 			</case>
 			<switch>
-				<switch noNatureReserveBoundaries="false">
-					<case minzoom="6" tag="leisure" value="nature_reserve" color_2="$natureReserveStrokeColor"/><!-- محمية طبيعية -->
+				<switch natureReserves="true">
+					<case minzoom="6" tag="leisure" value="nature_reserve" color_2="$natureReserveStrokeColor"/>
 					<case minzoom="8" tag="boundary" value="national_park" color_2="#4400ae3d"/>
 					<apply color="$null" strokeWidth_2="2:2"/>
+					<apply_if maxzoom="16" shader="nr3"/>
+					<apply_if maxzoom="16" nightMode="true" shader="nr3_night"/>
 					<apply_if maxzoom="11" strokeWidth_2="1:1"/>
 					<apply_if minzoom="12" maxzoom="13" strokeWidth_2="2:2"/>
 					<apply_if minzoom="14" strokeWidth_2="3.5:3.5"/>
 				</switch>
 				<switch>
-					<case showLez="true" minzoom="11" tag="boundary" value="low_emission_zone" color_2="#9900ae3d">
-						<apply_if maxzoom="16" shader="lez"/>
-					</case>
-					<case noNatureReserveBoundaries="false" minzoom="8" tag="boundary" value="protected_area" color="$null" color_2="#4400ae3d"/><!-- حدود منطقة محمية -->
+					<switch>
+						<case showLez="true" minzoom="11" tag="boundary" value="low_emission_zone" color_2="#9900ae3d">
+							<apply_if maxzoom="16" shader="lez"/>
+						</case>
+						<case natureReserves="true" minzoom="8" tag="boundary" value="protected_area" color="$null" color_2="#4400ae3d"/>
+						<apply>
+							<case maxzoom="11" pathEffect_2="6_3"/>
+							<case maxzoom="13" pathEffect_2="10_5"/>
+							<case minzoom="14" pathEffect_2="13_8"/>
+						</apply>
+					</switch>
+					<case minzoom="8" tag="boundary" value="aboriginal_lands" color="$null" color_2="$boundaryAboriginalLandsColor"/>
+					<case minzoom="10" tag="boundary" value="border_zone" color="$null" color_2="$boundaryBorderZoneColor"/>
 					<apply>
-						<case maxzoom="11" strokeWidth_2="1:1" pathEffect_2="6_3"/>
-						<case maxzoom="13" strokeWidth_2="2:2" pathEffect_2="10_5"/>
-						<case minzoom="14" strokeWidth_2="3.5:3.5" pathEffect_2="13_8"/>
+						<case maxzoom="11" strokeWidth_2="1:1"/>
+						<case maxzoom="13" strokeWidth_2="2:2"/>
+						<case minzoom="14" strokeWidth_2="3.5:3.5"/>
 					</apply>
 				</switch>
 				<switch minzoom="12">
@@ -9718,8 +9911,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 								<case additional="motorcar=private"/>
 								<case additional="motorcar=no"/>
 								<apply color_2="$accessPrivateColor" cap_2="ROUND"/>
-								<apply_if noNatureReserveBoundaries="false" tag="leisure" value="nature_reserve" shader="nature_reserve_access_no"/>
-								<apply_if noNatureReserveBoundaries="false" tag="boundary" value="protected_area" shader="protected_area_access_no"/>
+								<apply_if natureReserves="true" tag="leisure" value="nature_reserve" shader="nature_reserve_access_no"/>
+								<apply_if natureReserves="true" tag="boundary" value="protected_area" shader="protected_area_access_no"/>
 								<apply_if tag="landuse" value="quarry" shader="quarry3_access_no" color_0="#c4c2c1">
 									<apply_if nightMode="true" shader="quarry3_access_no_night" color_0="#585858"/>
 								</apply_if>
@@ -9732,8 +9925,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 							<switch>
 								<case additional="foot=private" color_2="$accessPrivateColor" cap_2="ROUND"/>
 								<case additional="foot=no" color_2="$accessPrivateColor" cap_2="ROUND"/>
-								<apply_if noNatureReserveBoundaries="false" tag="leisure" value="nature_reserve" shader="nature_reserve_access_no"/>
-								<apply_if noNatureReserveBoundaries="false" tag="boundary" value="protected_area" shader="protected_area_access_no"/>
+								<apply_if natureReserves="true" tag="leisure" value="nature_reserve" shader="nature_reserve_access_no"/>
+								<apply_if natureReserves="true" tag="boundary" value="protected_area" shader="protected_area_access_no"/>
 								<apply_if tag="landuse" value="quarry" shader="quarry3_access_no" color_0="#c4c2c1">
 									<apply_if nightMode="true" shader="quarry3_access_no_night" color_0="#585858"/>
 								</apply_if>
@@ -9744,8 +9937,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 							<switch>
 								<case additional="bicycle=private" color_2="$accessPrivateColor" cap_2="ROUND"/>
 								<case additional="bicycle=no" color_2="$accessPrivateColor" cap_2="ROUND"/>
-								<apply_if noNatureReserveBoundaries="false" tag="leisure" value="nature_reserve" shader="nature_reserve_access_no"/>
-								<apply_if noNatureReserveBoundaries="false" tag="boundary" value="protected_area" shader="protected_area_access_no"/>
+								<apply_if natureReserves="true" tag="leisure" value="nature_reserve" shader="nature_reserve_access_no"/>
+								<apply_if natureReserves="true" tag="boundary" value="protected_area" shader="protected_area_access_no"/>
 								<apply_if tag="landuse" value="quarry" shader="quarry3_access_no" color_0="#c4c2c1">
 									<apply_if nightMode="true" shader="quarry3_access_no_night" color_0="#585858"/>
 								</apply_if>
@@ -9755,8 +9948,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<switch>
 							<case additional="access=private" color_2="$accessPrivateColor" cap_2="ROUND"/>
 							<case additional="access=no" color_2="$accessPrivateColor" cap_2="ROUND"/>
-							<apply_if noNatureReserveBoundaries="false" tag="leisure" value="nature_reserve" shader="nature_reserve_access_no"/>
-							<apply_if noNatureReserveBoundaries="false" tag="boundary" value="protected_area" shader="protected_area_access_no"/>
+							<apply_if natureReserves="true" tag="leisure" value="nature_reserve" shader="nature_reserve_access_no"/>
+							<apply_if natureReserves="true" tag="boundary" value="protected_area" shader="protected_area_access_no"/>
 							<apply_if tag="landuse" value="quarry" shader="quarry3_access_no" color_0="#c4c2c1">
 								<apply_if nightMode="true" shader="quarry3_access_no_night" color_0="#585858"/>
 							</apply_if>
@@ -9787,9 +9980,9 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<apply_if nightMode="true" shader="hazard_night"/>
 			</case>
 			<case minzoom="11" maxzoom="14" tag="hazard" value="" shader="hazard"/>
-			<switch OSMMapperAssistant="true" minzoom="12">
-				<case tag="fixme_tag" value="yes" color_2="#77f800e0"/>
-				<case tag="note_tag" value="yes" color_2="#00CC24"/>
+			<switch minzoom="12">
+				<case OSMMapperAssistantFixme="true" tag="fixme_tag" value="yes" color_2="#77f800e0"/>
+				<case OSMMapperAssistantNote="true" tag="note_tag" value="yes" color_2="#00CC24"/>
 				<apply>
 					<case maxzoom="14" strokeWidth_2="2:2"/>
 					<case maxzoom="15" strokeWidth_2="3:3"/>
@@ -10288,21 +10481,21 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 									<case minzoom="19" strokeWidth_0="9.9:9.9"/>
 								</apply>
 							</switch>
-							<switch roadStyle="boldOutline">
-								<case maxzoom="14" strokeWidth_0="3.5:3.5"/>
-								<case maxzoom="15" strokeWidth_0="4.9:4.9"/>
-								<case maxzoom="16" strokeWidth_0="5.8:5.8"/>
-								<case maxzoom="17" strokeWidth_0="6.7:6.7"/>
-								<case maxzoom="18" strokeWidth_0="7.8:7.8"/>
-								<case minzoom="19" strokeWidth_0="9.1:9.1"/>
-							</switch>
-							<switch>
+							<switch roadStyle="الافتراضي">
 								<case maxzoom="14" strokeWidth_0="3.4:3.4"/>
 								<case maxzoom="15" strokeWidth_0="4.8:4.8"/>
 								<case maxzoom="16" strokeWidth_0="5.2:5.2"/>
 								<case maxzoom="17" strokeWidth_0="6.3:6.3"/>
 								<case maxzoom="18" strokeWidth_0="7.3:7.3"/>
 								<case minzoom="19" strokeWidth_0="8.8:8.8"/>
+							</switch>
+							<switch>
+								<case maxzoom="14" strokeWidth_0="3.5:3.5"/>
+								<case maxzoom="15" strokeWidth_0="4.9:4.9"/>
+								<case maxzoom="16" strokeWidth_0="5.8:5.8"/>
+								<case maxzoom="17" strokeWidth_0="6.7:6.7"/>
+								<case maxzoom="18" strokeWidth_0="7.8:7.8"/>
+								<case minzoom="19" strokeWidth_0="9.1:9.1"/>
 							</switch>
 							<apply_if nightMode="true" color_0="#ffffff"/>
 							<apply_if hideOverground="true" color_0="$hideOvergroundBridgeUnderlayColor"/>
@@ -10694,16 +10887,17 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<apply_if additional="ice_road=yes" minzoom="11" strokeWidth_4="2:2"/>
 						<apply color_4="$null" color_5="$trackColor" pathEffect_5="$trackPathEffect"/>
 						<apply>
-							<!-- Dash pattern: solid(100%), long-dashed(77%), short-dashed(63%), dash-dotted(50%), dotted(50%), dotted2(40%), short-dashed-narrow-spaced(66%) for not-specified -->
+							<!-- Dash pattern: solid(100%), long-dashed(77%), medium-dashed(63%), short-dashed(50%), dotted(40%), dash-dotted(64%) for non-specified -->
 							<!-- تخصيص حسب تصنيف السطح -->
 							<!-- للمزيد راجع https://wiki.openstreetmap.org/wiki/Key:tracktype -->
 							<case additional="tracktype=grade1" pathEffect_5=""/><!-- التأثير على رسم خط الردمية حسب التصنيف الأول -->
 							<case additional="tracktype=grade2" pathEffect_5="10_3"/><!-- نفس السابق لكن للتصيف الثاني وهكذا -->
 							<case additional="tracktype=grade3" pathEffect_5="5_3"/>
-							<case additional="tracktype=grade4" pathEffect_5="4_3_2_3"/>
+							<case additional="tracktype=grade4" pathEffect_5="3_3"/>
 							<case additional="tracktype=grade5" pathEffect_5="2_3"/>
 							<apply_if maxzoom="13" pathEffect_5="$trackPathEffect"/><!-- التأثير على الخط للمستوى 13 وأعلى -->
 						</apply>
+						<apply_if nightMode="true" color_5="#e5e5e5"/>
 					</case>
 
 					<case minzoom="$pathMinZoom" tag="highway" value="path"><!-- الممرات والمسارات -->
@@ -11049,8 +11243,103 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			<case minzoom="16" tag="cycleway" value="opposite" strokeWidth="1:1" pathEffect="2_4"/>
 			<case minzoom="14" tag="bicycle_road" value="yes" strokeWidth="1:1" pathEffect="2_4"/>
 			<apply color="$cyclewayColor"/>
+			<!-- Disable cycleways in OpenGL engine if cycleway:left/right is present. This is needed for backward compatibility -->
+			<apply_if engine_v1="false" additional="osmand_cycleway=no" disable="true"/>
 		</switch>
-
+		<switch engine_v1="false" minzoom="14">
+			<case tag="osmand_cycleway_trunk_left" value="true">
+				<apply_if maxzoom="14" hmargin="4"/>
+				<apply_if minzoom="15" maxzoom="15" hmargin="5.5"/>
+				<apply_if minzoom="16" maxzoom="16" hmargin="7"/>
+				<apply_if minzoom="17" maxzoom="17" hmargin="8.5"/>
+				<apply_if minzoom="18" maxzoom="18" hmargin="10"/>
+				<apply_if minzoom="19" hmargin="11.5"/>
+			</case>
+			<case tag="osmand_cycleway_trunk_right" value="true">
+				<apply_if maxzoom="14" hmargin="-4"/>
+				<apply_if minzoom="15" maxzoom="15" hmargin="-5.5"/>
+				<apply_if minzoom="16" maxzoom="16" hmargin="-7"/>
+				<apply_if minzoom="17" maxzoom="17" hmargin="-8.5"/>
+				<apply_if minzoom="18" maxzoom="18" hmargin="-10"/>
+				<apply_if minzoom="19" hmargin="-11.5"/>
+			</case>
+			<case tag="osmand_cycleway_trunk_link_left" value="true">
+				<apply_if maxzoom="14" hmargin="2.5"/>
+				<apply_if minzoom="15" maxzoom="15" hmargin="3.7"/>
+				<apply_if minzoom="16" maxzoom="16" hmargin="4"/>
+				<apply_if minzoom="17" maxzoom="17" hmargin="5"/>
+				<apply_if minzoom="18" maxzoom="18" hmargin="6"/>
+				<apply_if minzoom="19" hmargin="7"/>
+			</case>
+			<case tag="osmand_cycleway_trunk_link_right" value="true">
+				<apply_if maxzoom="14" hmargin="-2.5"/>
+				<apply_if minzoom="15" maxzoom="15" hmargin="-3.7"/>
+				<apply_if minzoom="16" maxzoom="16" hmargin="-4"/>
+				<apply_if minzoom="17" maxzoom="17" hmargin="-5"/>
+				<apply_if minzoom="18" maxzoom="18" hmargin="-6"/>
+				<apply_if minzoom="19" hmargin="-7"/>
+			</case>
+			<case tag="osmand_cycleway_tertiary_left" value="true">
+				<apply_if maxzoom="14" hmargin="3"/>
+				<apply_if minzoom="15" maxzoom="15" hmargin="4"/>
+				<apply_if minzoom="16" maxzoom="16" hmargin="5"/>
+				<apply_if minzoom="17" maxzoom="17" hmargin="6.75"/>
+				<apply_if minzoom="18" maxzoom="18" hmargin="9"/>
+				<apply_if minzoom="19" hmargin="10.5"/>
+			</case>
+			<case tag="osmand_cycleway_tertiary_right" value="true">
+				<apply_if maxzoom="14" hmargin="-3"/>
+				<apply_if minzoom="15" maxzoom="15" hmargin="-4"/>
+				<apply_if minzoom="16" maxzoom="16" hmargin="-5"/>
+				<apply_if minzoom="17" maxzoom="17" hmargin="-6.75"/>
+				<apply_if minzoom="18" maxzoom="18" hmargin="-9"/>
+				<apply_if minzoom="19" hmargin="-10.5"/>
+			</case>
+			<case tag="osmand_cycleway_residential_left" value="true">
+				<apply_if minzoom="15" maxzoom="15" hmargin="2.5"/>
+				<apply_if minzoom="16" maxzoom="16" hmargin="4.5"/>
+				<apply_if minzoom="17" maxzoom="17" hmargin="6"/>
+				<apply_if minzoom="18" maxzoom="18" hmargin="9"/>
+				<apply_if minzoom="19" hmargin="10.5"/>
+			</case>
+			<case tag="osmand_cycleway_residential_right" value="true">
+				<apply_if minzoom="15" maxzoom="15" hmargin="-2.5"/>
+				<apply_if minzoom="16" maxzoom="16" hmargin="-4.5"/>
+				<apply_if minzoom="17" maxzoom="17" hmargin="-6"/>
+				<apply_if minzoom="18" maxzoom="18" hmargin="-9"/>
+				<apply_if minzoom="19" hmargin="-10.5"/>
+			</case>
+			<case tag="osmand_cycleway_service_left" value="true">
+				<apply_if minzoom="15" maxzoom="15" hmargin="2"/>
+				<apply_if minzoom="16" maxzoom="16" hmargin="3"/>
+				<apply_if minzoom="17" maxzoom="17" hmargin="4"/>
+				<apply_if minzoom="18" maxzoom="18" hmargin="5.5"/>
+				<apply_if minzoom="19" hmargin="7"/>
+			</case>
+			<case tag="osmand_cycleway_service_right" value="true">
+				<apply_if minzoom="15" maxzoom="15" hmargin="-2"/>
+				<apply_if minzoom="16" maxzoom="16" hmargin="-3"/>
+				<apply_if minzoom="17" maxzoom="17" hmargin="-4"/>
+				<apply_if minzoom="18" maxzoom="18" hmargin="-5.5"/>
+				<apply_if minzoom="19" hmargin="-7"/>
+			</case>
+			<case tag="osmand_cycleway_footway_left" value="true">
+				<apply_if minzoom="15" maxzoom="15" hmargin="2"/>
+				<apply_if minzoom="16" maxzoom="16" hmargin="3"/>
+				<apply_if minzoom="17" maxzoom="17" hmargin="4"/>
+				<apply_if minzoom="18" maxzoom="18" hmargin="5.5"/>
+				<apply_if minzoom="19" hmargin="7"/>
+			</case>
+			<case tag="osmand_cycleway_footway_right" value="true">
+				<apply_if minzoom="15" maxzoom="15" hmargin="-2"/>
+				<apply_if minzoom="16" maxzoom="16" hmargin="-3"/>
+				<apply_if minzoom="17" maxzoom="17" hmargin="-4"/>
+				<apply_if minzoom="18" maxzoom="18" hmargin="-5.5"/>
+				<apply_if minzoom="19" hmargin="-7"/>
+			</case>
+			<apply strokeWidth="0.9" pathEffect="8_4"/>
+			<apply color="$cyclewayColor"/>
+		</switch>
 		<case minzoom="15" tag="sidewalk" value="yes">
 			<apply strokeWidth="0.9" color="$footwayColor" pathEffect="4_2"/>
 		</case>
@@ -11183,6 +11472,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			<case tag="barrier" value="entrance"/><!-- مدخل -->
 			<case tag="barrier" value="gate"/><!-- بوابة -->
 			<case tag="barrier" value="lift_gate"/><!-- بوابة عامودية -->
+			<case tag="barrier" value="hampshire_gate"/>
 			<case tag="barrier" value="stile"/>
 			<case tag="barrier" value="horse_stile"/>
 			<case tag="barrier" value="kissing_gate"/>
@@ -11427,7 +11717,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			<apply_if engine_v1="true" onewayArrowsColor="$waterwayArrowsColor"/>
 			<!-- Waterway color -->
 			<!-- ألوان المجاري المائية -->
-			<apply color="$waterColor" color_2="#ffffff"><!-- لون الماء بشكل عام -->
+			<apply color="#4592AB" color_2="#ffffff"><!-- لون الماء بشكل عام -->
 				<apply_if nightMode="true" color_2="#7340D9"/>
 			</apply>
 			<apply_if whiteWaterSports="true"><!-- خاص بالرياضات البيضاء -->
@@ -12204,9 +12494,9 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			<apply strokeWidth="1" color="$null"/>
 		</switch>
 
-		<switch OSMMapperAssistant="true" minzoom="12">
-			<case tag="fixme_tag" value="yes" color="#aaf800e0"/>
-			<case tag="note_tag" value="yes" color="#00CC24"/>
+		<switch minzoom="12">
+			<case OSMMapperAssistantFixme="true" tag="fixme_tag" value="yes" color="#aaf800e0"/>
+			<case OSMMapperAssistantNote="true" tag="note_tag" value="yes" color="#00CC24"/>
 			<apply>
 				<case maxzoom="14" strokeWidth="4:4"/>
 				<case maxzoom="15" strokeWidth="6:6"/>
@@ -12314,7 +12604,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<apply color="$boundaryColorOuter" color_0="$boundaryColorInner" strokeWidth="3:3" strokeWidth_0="0.6"/>
 			</switch>
 		</switch>
-		<switch noNatureReserveBoundaries="false">
+		<switch natureReserves="true">
 			<case tag="boundary" value="national_park" minzoom="7"><!-- الحدائق الوطنية -->
 				<case maxzoom="9" strokeWidth="1.5:1.5"/>
 				<case minzoom="10" strokeWidth="3:3"/>
@@ -12326,6 +12616,14 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="14" strokeWidth="3.5:3.5" pathEffect="13_8"/>
 				</apply>
 			</case>
+		</switch>
+		<switch>
+			<case minzoom="8" tag="boundary" value="aboriginal_lands" color="$boundaryAboriginalLandsColor"/>
+			<case minzoom="10" tag="boundary" value="border_zone" color="$boundaryBorderZoneColor"/>
+			<apply>
+				<case maxzoom="13" strokeWidth="2:2"/>
+				<case minzoom="14" strokeWidth="3.5:3.5"/>
+			</apply>
 		</switch>
 		<case showLez="true" minzoom="11" tag="boundary" value="low_emission_zone" color="#9900ae3d"/>
 		<!-- <case tag="indoor" value="wall" color="#777777" strokeWidth="2"/>
