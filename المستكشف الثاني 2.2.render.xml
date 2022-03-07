@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<renderingStyle name="المستكشف الثاني" depends="default" defaultColor="#ebe7e4" version="2">
+<renderingStyle name="المستكشف الثاني 2.2" depends="default" defaultColor="#ebe7e4" version="2">
 
 	<!--  Documentation of the rendering syntax:
 		Elements:
@@ -5613,9 +5613,10 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="8" tag="boundary" value="aboriginal_lands" textOrder="104" textColor="$boundaryAboriginalLandsTextColor" textHaloColor="$boundaryAboriginalLandsTextHaloColor"/>
 					<case minzoom="11" tag="boundary" value="border_zone" textOrder="105" textColor="$boundaryBorderZoneTextColor" textHaloColor="$boundaryBorderZoneTextHaloColor" textOnPath="true"/>
 				</switch>
-				<switch textSize="13" textColor="$tourismTextColor" textHaloRadius="$textHaloRadius" textHaloColor="$tourismTextHaloColorDay" textWrapWidth="20">
+				<switch textSize="13" textColor="#741B47" textHaloRadius="2" textHaloColor="$tourismTextHaloColorDay" textWrapWidth="20">
 					<case minzoom="$naturalSandTextMinZoom" tag="natural" value="sand" textOrder="25"/><!-- نصوص المساحات الرملية -->
 					<case minzoom="13" tag="natural" value="dune" textOrder="55"/><!-- نصوص أماكن النفود -->
+					<apply_if minzoom="14" textSize="20" textColor="#000000"/>
 					<apply_if nightMode="true" textColor="#ffe7c2" textHaloColor="#88644e2c"/>
 				</switch>
 				<apply_if showAccess="true">
@@ -9234,6 +9235,31 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<apply color="#44acd8f3"/>
 				<apply_if nightMode="true" color="#44330099" color_2="$waterStrokeColorNight"/>
 			</case>
+				<case minzoom="$scrubMinZoom" tag="natural" value="scrub" color="$woodColor"><!-- الفياض والرياض وأراضي الشجيرات الصغيرة -->
+					<apply_if moreDetailed="true" minzoom="8" color="$moreDetailedScrubColor"/>
+					<apply_if moreDetailed="true" minzoom="11" color_0="$moreDetailedScrubColor" shader="scrub"/>
+				</case>
+			<case minzoom="$wetlandMinZoom" tag="natural" value="wetland"><!-- مناطق رطبه مثل القيعان والسباخ -->
+				<case additional="wetland=tidalflat" shader="wetland_tidalflat">
+					<apply_if nightMode="true" shader="" color="#323b69"/>
+				</case>
+				<switch>
+					<case additional="wetland=bog" shader="wetland_bog"/><!-- رخاخ -->
+					<case additional="wetland=marsh" shader="wetland_marsh"/><!-- اهوار/سباخ -->
+					<case additional="wetland=swamp" shader="wetland_swamp"/><!-- مستنقع -->
+					<case additional="wetland=reedbed" shader="wetland_reedbed"/><!-- رطب صعب المشي فيه قصب -->
+					<case additional="wetland=mangrove" shader="wetland_mangrove"/><!-- غابات المانغروف -->
+					<case additional="wetland=wet_meadow" shader="wetland_wet_meadow"/><!-- مرعى/مرج رطب طوال العام -->
+					<case additional="wetland=string_bog" shader="wetland_string_bog"/><!-- سلسلة رخاخ -->
+					<case additional="wetland=saltmarsh" shader="wetland_saltmarsh"/><!-- مستنقع/سبخة ملحية -->
+					<case additional="wetland=fen" shader="wetland_fen"/><!-- مستنقع أعشاب مغذى من المياة الجوفية -->
+					<case additional="wetland=palsa_bog" shader="wetland_palsa_bog"/>
+					<case additional="wetland=mud" shader="wetland_tidalflat" color_0="#e4ddd1"/><!-- وحل -->
+					<case shader="wetland_tidalflat"/>
+					<apply_if nightMode="true" shader="" color="$wetlandColorNight" color_0="$null"/>
+				</switch>
+				<apply_if minzoom="15" additional="intermittent=yes" strokeWidth_2="1" color_2="#7479ec" pathEffect_2="12_5"/><!-- اللون في حال كانت الأرض الرطبة ليست رطبة بشكل دائم وإنما أجزاء من السنة -->
+			</case>
 			<switch>
 				<switch>
 					<case minzoom="1" tag="natural" value="coastline"/> <!--  color_2="#2Aff7c00" strokeWidth_2=":1"-->
@@ -9718,28 +9744,6 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			<case minzoom="$sandMinZoom" tag="natural" value="sand" color_0="#ffe1ba" shader="topo_sand"><!-- رمل -->
 				<apply_if nightMode="true" shader="" color="#1c362d"/>
 			</case>
-			<case minzoom="$wetlandMinZoom" tag="natural" value="wetland"><!-- مناطق رطبه مثل القيعان والسباخ -->
-				<case additional="wetland=tidalflat" shader="wetland_tidalflat">
-					<apply_if nightMode="true" shader="" color="#323b69"/>
-				</case>
-				<switch>
-					<case additional="wetland=bog" shader="wetland_bog"/><!-- رخاخ -->
-					<case additional="wetland=marsh" shader="wetland_marsh"/><!-- اهوار/سباخ -->
-					<case additional="wetland=swamp" shader="wetland_swamp"/><!-- مستنقع -->
-					<case additional="wetland=reedbed" shader="wetland_reedbed"/><!-- رطب صعب المشي فيه قصب -->
-					<case additional="wetland=mangrove" shader="wetland_mangrove"/><!-- غابات المانغروف -->
-					<case additional="wetland=wet_meadow" shader="wetland_wet_meadow"/><!-- مرعى/مرج رطب طوال العام -->
-					<case additional="wetland=string_bog" shader="wetland_string_bog"/><!-- سلسلة رخاخ -->
-					<case additional="wetland=saltmarsh" shader="wetland_saltmarsh"/><!-- مستنقع/سبخة ملحية -->
-					<case additional="wetland=fen" shader="wetland_fen"/><!-- مستنقع أعشاب مغذى من المياة الجوفية -->
-					<case additional="wetland=palsa_bog" shader="wetland_palsa_bog"/>
-					<case additional="wetland=mud" shader="wetland_tidalflat" color_0="#e4ddd1"/><!-- وحل -->
-					<case shader="wetland_tidalflat"/>
-					<apply_if nightMode="true" shader="" color="$wetlandColorNight" color_0="$null"/>
-				</switch>
-				<apply_if minzoom="15" additional="intermittent=yes" strokeWidth_2="1" color_2="#7479ec" pathEffect_2="12_5"/><!-- اللون في حال كانت الأرض الرطبة ليست رطبة بشكل دائم وإنما أجزاء من السنة -->
-			</case>
-
 			<switch>
 				<!-- <case minzoom="12" tag="natural" value="mud" color="#d6cbc6">
 					<apply_if minzoom="13" shader="mud2"/>
@@ -9763,10 +9767,6 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case additional="religion=christian" shader="cemetery_christian"/>
 					<case additional="religion=muslim" shader="cemetery_muslim"/><!-- مقابر المسلمين -->
 					<case additional="religion=jewish" shader="cemetery_jewish"/>
-				</case>
-				<case minzoom="$scrubMinZoom" tag="natural" value="scrub" color="$woodColor"><!-- الفياض والرياض وأراضي الشجيرات الصغيرة -->
-					<apply_if moreDetailed="true" minzoom="8" color="$moreDetailedScrubColor"/>
-					<apply_if moreDetailed="true" minzoom="11" color_0="$moreDetailedScrubColor" shader="scrub"/>
 				</case>
 				<case minzoom="$orchardMinZoom" tag="landuse" value="orchard" color="$landuseOrchardColor"><!-- البساتين -->
 					<apply_if moreDetailed="true" minzoom="14" maxzoom="15" color_0="$landuseOrchardColor" shader="plant_nursery_small"/>
@@ -11717,7 +11717,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			<apply_if engine_v1="true" onewayArrowsColor="$waterwayArrowsColor"/>
 			<!-- Waterway color -->
 			<!-- ألوان المجاري المائية -->
-			<apply color="#4592AB" color_2="#ffffff"><!-- لون الماء بشكل عام -->
+			<apply color="#4783B9" color_2="#ffffff"><!-- لون الماء بشكل عام -->
 				<apply_if nightMode="true" color_2="#7340D9"/>
 			</apply>
 			<apply_if whiteWaterSports="true"><!-- خاص بالرياضات البيضاء -->
