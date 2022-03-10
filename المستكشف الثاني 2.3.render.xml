@@ -1808,6 +1808,10 @@ dp
 		<case moreDetailed="true" attrColorValue="#D7F1C6"/>
 		<case attrColorValue="#94d77b"/><!-- ألوان مساحات الحشائش -->
 	</renderingAttribute>
+	<renderingAttribute name="greeneryColor">
+		<case moreDetailed="true" attrColorValue="#D7F1C6"/>
+		<case attrColorValue="#94d77b"/>
+	</renderingAttribute>
 	<renderingAttribute name="heathColor">
 		<case attrColorValue="#d7ebba"/>
 	</renderingAttribute>
@@ -2073,6 +2077,10 @@ dp
 	<renderingAttribute name="landuseMilitaryStrokeColor">
 		<case nightMode="true" attrColorValue="#84EC94B2"/>
 		<case attrColorValue="#d1fc86ae"/>
+	</renderingAttribute>
+	<renderingAttribute name="abandonedLanduseMilitaryStrokeColor">
+		<case nightMode="true" attrColorValue="#42e1bdc9"/>
+		<case attrColorValue="#c9debfc9"/>
 	</renderingAttribute>
 	<!--	<renderingConstant name="landusePrisonColorDay" value="#dfd1d6"/>-->
 	<renderingConstant name="landusePrisonColorNight" value="#3b3b3b"/>
@@ -2913,6 +2921,10 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 		<case nightMode="true" attrColorValue="#B45D5D"/>
 		<case attrColorValue="#feb3b3"/>
 	</renderingAttribute>
+	<renderingAttribute name="accessPermitColor">
+		<case nightMode="true" attrColorValue="#3C9D7A"/>
+		<case attrColorValue="#7FE7C1"/>
+	</renderingAttribute>
 	<renderingAttribute name="accessSkiNoColor">
 		<case nightMode="true" attrColorValue="$null"/>
 		<case attrColorValue="$null"/>
@@ -3527,12 +3539,12 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<apply_if layer="-1" order="62" orderByDensity="84"/>
 						<apply_if additional="layer=-2" order="41" orderByDensity="84"/>
 					</case>
-					<case tag="highway" value="motorway_link" order="71">
-						<apply_if layer="1" order="94"/>
-						<apply_if additional="layer=2" order="124"/>
-						<apply_if additional="layer=3" order="152"/>
-						<apply_if layer="-1" order="49" orderByDensity="71"/>
-						<apply_if additional="layer=-2" order="25" orderByDensity="71"/>
+					<case tag="highway" value="motorway_link" order="72">
+						<apply_if layer="1" order="95"/>
+						<apply_if additional="layer=2" order="125"/>
+						<apply_if additional="layer=3" order="153"/>
+						<apply_if layer="-1" order="50" orderByDensity="72"/>
+						<apply_if additional="layer=-2" order="26" orderByDensity="72"/>
 					</case>
 					<case tag="highway" value="trunk" order="83">
 						<apply_if layer="1" order="106"/>
@@ -3541,12 +3553,12 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<apply_if layer="-1" order="61" orderByDensity="83"/>
 						<apply_if additional="layer=-2" order="40" orderByDensity="83"/>
 					</case>
-					<case tag="highway" value="trunk_link" order="70">
-						<apply_if layer="1" order="93"/>
-						<apply_if additional="layer=2" order="123"/>
-						<apply_if additional="layer=3" order="151"/>
-						<apply_if layer="-1" order="48" orderByDensity="70"/>
-						<apply_if additional="layer=-2" order="24" orderByDensity="70"/>
+					<case tag="highway" value="trunk_link" order="71">
+						<apply_if layer="1" order="94"/>
+						<apply_if additional="layer=2" order="124"/>
+						<apply_if additional="layer=3" order="152"/>
+						<apply_if layer="-1" order="49" orderByDensity="71"/>
+						<apply_if additional="layer=-2" order="25" orderByDensity="71"/>
 					</case>
 					<case tag="highway" value="primary" order="82">
 						<apply_if layer="1" order="105"/>
@@ -3555,12 +3567,12 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<apply_if layer="-1" order="60"  orderByDensity="82"/>
 						<apply_if additional="layer=-2" order="39"  orderByDensity="82"/>
 					</case>
-					<case tag="highway" value="primary_link" order="69">
-						<apply_if layer="1" order="92"/>
-						<apply_if additional="layer=2" order="122"/>
-						<apply_if additional="layer=3" order="150"/>
-						<apply_if layer="-1" order="47"/>
-						<apply_if additional="layer=-2" order="23"/>
+					<case tag="highway" value="primary_link" order="70">
+						<apply_if layer="1" order="93"/>
+						<apply_if additional="layer=2" order="123"/>
+						<apply_if additional="layer=3" order="151"/>
+						<apply_if layer="-1" order="48"/>
+						<apply_if additional="layer=-2" order="24"/>
 					</case>
 					<case tag="highway" value="secondary" order="81">
 						<apply_if layer="1" order="104"/>
@@ -3569,12 +3581,12 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<apply_if layer="-1" order="59"/>
 						<apply_if additional="layer=-2" order="38"/>
 					</case>
-					<case tag="highway" value="secondary_link" order="68">
-						<apply_if layer="1" order="91"/>
-						<apply_if additional="layer=2" order="121"/>
-						<apply_if additional="layer=3" order="149"/>
-						<apply_if layer="-1" order="46"/>
-						<apply_if additional="layer=-2" order="22"/>
+					<case tag="highway" value="secondary_link" order="69">
+						<apply_if layer="1" order="92"/>
+						<apply_if additional="layer=2" order="122"/>
+						<apply_if additional="layer=3" order="150"/>
+						<apply_if layer="-1" order="47"/>
+						<apply_if additional="layer=-2" order="23"/>
 					</case>
 					<case tag="highway" value="tertiary" order="80">
 						<apply_if layer="1" order="103"/>
@@ -3583,12 +3595,12 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<apply_if layer="-1" order="58"/>
 						<apply_if additional="layer=-2" order="37"/>
 					</case>
-					<case tag="highway" value="tertiary_link" order="67">
-						<apply_if layer="1" order="90"/>
-						<apply_if additional="layer=2" order="120"/>
-						<apply_if additional="layer=3" order="148"/>
-						<apply_if layer="-1" order="45"/>
-						<apply_if additional="layer=-2" order="21"/>
+					<case tag="highway" value="tertiary_link" order="68">
+						<apply_if layer="1" order="91"/>
+						<apply_if additional="layer=2" order="121"/>
+						<apply_if additional="layer=3" order="149"/>
+						<apply_if layer="-1" order="46"/>
+						<apply_if additional="layer=-2" order="22"/>
 					</case>
 					<case tag="highway" value="road" order="79">
 						<apply_if layer="1" order="102"/>
@@ -3611,19 +3623,19 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<apply_if layer="-1" order="56"/>
 						<apply_if additional="layer=-2" order="35"/>
 					</case>
-					<case tag="highway" value="service" order="77">
-						<apply_if layer="1" order="100"/>
-						<apply_if additional="layer=2" order="130"/>
-						<apply_if additional="layer=3" order="158"/>
-						<apply_if layer="-1" order="55"/>
-						<apply_if additional="layer=-2" order="34"/>
+					<case tag="highway" value="service" order="67">
+						<apply_if layer="1" order="90"/>
+						<apply_if additional="layer=2" order="120"/>
+						<apply_if additional="layer=3" order="148"/>
+						<apply_if layer="-1" order="45"/>
+						<apply_if additional="layer=-2" order="21"/>
 					</case>
-					<case tag="highway" value="busway" order="77">
-						<apply_if layer="1" order="100"/>
-						<apply_if additional="layer=2" order="130"/>
-						<apply_if additional="layer=3" order="158"/>
-						<apply_if layer="-1" order="55"/>
-						<apply_if additional="layer=-2" order="34"/>
+					<case tag="highway" value="busway" order="67">
+						<apply_if layer="1" order="90"/>
+						<apply_if additional="layer=2" order="120"/>
+						<apply_if additional="layer=3" order="148"/>
+						<apply_if layer="-1" order="45"/>
+						<apply_if additional="layer=-2" order="21"/>
 					</case>
 					<case tag="highway" value="living_street" order="77">
 						<apply_if layer="1" order="100"/>
@@ -4630,6 +4642,15 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 									<case textLength="6" textShield="yellow_square_6_road_shield">
 										<case additional="road_shield_shape_#SEQ=pentagon" textShield="yellow_pentagon_6_road_shield"/>
 									</case>
+									<case textLength="7" textShield="yellow_square_7_road_shield">
+										<case additional="road_shield_shape_#SEQ=pentagon" textShield="yellow_pentagon_7_road_shield"/>
+									</case>
+									<case textLength="8" textShield="yellow_square_8_road_shield">
+										<case additional="road_shield_shape_#SEQ=pentagon" textShield="yellow_pentagon_8_road_shield"/>
+									</case>
+									<case textLength="9" textShield="yellow_square_9_road_shield">
+										<case additional="road_shield_shape_#SEQ=pentagon" textShield="yellow_pentagon_9_road_shield"/>
+									</case>
 									<case textHaloColor="#ffe237" textHaloRadius="5"/>
 									<apply_if additional="road_shield_order_#SEQ=1" textOrder="$roadShieldOrder1"/>
 									<apply_if additional="road_shield_order_#SEQ=2" textOrder="$roadShieldOrder2"/>
@@ -5575,6 +5596,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<case minzoom="12" tag="landuse" value="vineyard" textOrder="240"/>
 						<case minzoom="17" tag="landuse" value="village_green" textOrder="240"/>
 						<case minzoom="17" tag="landuse" value="grass" textOrder="247"/><!-- مساحة الأعشاب التي تكون صغيرة ومدارة ومعتنى بها -->
+						<case minzoom="17" tag="landuse" value="greenery" textOrder="247"/>
 						<case minzoom="12" tag="landuse" value="farmland" textOrder="248"/><!-- مساحة الأراضي الزراعية  وأماكن الحرث -->
 						<case minzoom="14" tag="natural" value="grassland" textOrder="250"/><!-- المساحة المغطاة بالأعشاب -->
 						<case minzoom="12" tag="natural" value="fell" textOrder="250"/>
@@ -6519,6 +6541,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="17" tag="shop" value="greengrocer"/>
 				<case minzoom="17" tag="shop" value="groundskeeping"/>
 				<case minzoom="17" tag="shop" value="hairdresser" textOrder="159"/>
+				<case minzoom="17" tag="shop" value="hairdresser_supply"/>
 				<case minzoom="17" tag="shop" value="hardware"/>
 				<case minzoom="17" tag="shop" value="health_food"/>
 				<case minzoom="17" tag="shop" value="hearing_aids"/>
@@ -6971,6 +6994,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case tag="military" value="checkpoint" icon="military_checkpoint" shield="military_checkpoint_shield"/>
 					<apply_if minzoom="17" showAccess="true" additional="access=private" icon_2="access_private_red_overlay"/>
 					<apply_if minzoom="17" showAccess="true" additional="access=no" icon_2="access_private_red_overlay"/>
+					<apply_if minzoom="17" showAccess="true" additional="access=permit" icon_2="access_permit_overlay"/>
 					<apply_if minzoom="17" showAccess="true" additional="vehicle=yes" icon_2=""/>
 					<apply_if minzoom="17" showAccess="true" additional="motor_vehicle=yes" icon_2=""/>
 				</switch>
@@ -7056,6 +7080,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case tag="barrier" value="kissing_gate" icon="barrier_kissing_gate" shield="barrier_kissing_gate_shield"/>
 					<apply_if minzoom="18" showAccess="true" additional="access=private" icon_2="access_private_red_overlay"/>
 					<apply_if minzoom="18" showAccess="true" additional="access=no" icon_2="access_private_red_overlay"/>
+					<apply_if minzoom="18" showAccess="true" additional="access=permit" icon_2="access_permit_overlay"/>
 					<apply_if minzoom="18" showAccess="true" additional="bicycle=yes" icon_2=""/>
 				</switch>
 			</switch>
@@ -7695,6 +7720,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case additional="information=guidepost" icon="information_guidepost" shield="information_guidepost_shield"/>
 					<case additional="information=map" icon="information_map" shield="information_map_shield"/>
 					<case additional="information=terminal" icon="information_terminal" shield="information_terminal_shield"/>
+					<case additional="information=route_marker" icon="information_route_marker" shield="information_route_marker_shield"/>
 				</case>
 				<switch iconOrder="85">
 					<case minzoom="$picnicSiteIconMinZoom" tag="tourism" value="picnic_site" icon="tourism_picnic_site" shield="picnic_shield"/>
@@ -8275,6 +8301,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="17" tag="shop" value="greengrocer" icon="shop_greengrocer" iconVisibleSize="32"/>
 					<case minzoom="17" tag="shop" value="groundskeeping" icon="groundskeeping"/>
 					<case minzoom="17" tag="shop" value="hairdresser" icon="shop_hairdresser" iconVisibleSize="32" iconOrder="159"/>
+					<case minzoom="17" tag="shop" value="hairdresser_supply" icon="hairdresser_supply"/>
 					<case minzoom="17" tag="shop" value="hardware" icon="shop_hardware" iconVisibleSize="32"/>
 					<case minzoom="17" tag="shop" value="health_food" icon="health_food" iconVisibleSize="32"/>
 					<case minzoom="17" tag="shop" value="hearing_aids" icon="shop_hearing_aids" iconVisibleSize="32"/>
@@ -8335,7 +8362,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="17" tag="shop" value="spices" icon="spices"/><!-- بهارات -->
 					<case minzoom="23" tag="shop" value="tattoo" icon="tattoo"/>
 					<case minzoom="17" tag="shop" value="tea" icon="tea"/><!-- شاي -->
-					<case minzoom="17" tag="shop" value="telecommunication" icon="telecommunication"/>
+					<case minzoom="15" tag="shop" value="telecommunication" icon="telecommunication"/>
 					<case minzoom="17" tag="shop" value="ticket" icon="shop_ticket"/>
 					<case minzoom="17" tag="shop" value="tiles" icon="tiles"/>
 					<case minzoom="23" tag="shop" value="tobacco" icon="shop_tobacco"/>
@@ -8608,6 +8635,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<case minzoom="18"/>
 						<apply_if additional="access=private" icon_2="access_private_red_overlay"/>
 						<apply_if additional="access=no" icon_2="access_private_red_overlay"/>
+						<apply_if additional="access=permit" icon_2="access_permit_overlay"/>
 						<apply_if baseAppMode="pedestrian" additional="foot=yes" icon_2=""/>
 					</switch>
 				</apply_if>
@@ -8625,6 +8653,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<apply_if minzoom="18" maxzoom="18" showAccess="true">
 						<apply_if additional="access=private" icon_2="access_private_red_overlay"/>
 						<apply_if additional="access=no" icon_2="access_private_red_overlay"/>
+						<apply_if additional="access=permit" icon_2="access_permit_overlay"/>
 					</apply_if>
 				</switch>
 				<switch tag="entrance" value="exit">
@@ -8658,6 +8687,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<apply_if minzoom="19" showAccess="true">
 					<apply_if additional="access=private" icon_2="access_private_red_overlay"/>
 					<apply_if additional="access=no" icon_2="access_private_red_overlay"/>
+					<apply_if additional="access=permit" icon_2="access_permit_overlay"/>
 				</apply_if>
 			</switch>
 
@@ -9091,6 +9121,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<switch>
 					<case additional="access=private" color_2="$accessPrivateColor"/><!-- تخصيص في حال كان الطريق خاص -->
 					<case additional="access=no" color_2="$accessPrivateColor"/><!-- تخصيص في حال كان الطريق ممنوع الوصول إليه -->
+					<case additional="access=permit" color_2="$accessPermitColor"/>
 					<case additional="access=destination" color_2="$accessDestinationColor"/><!-- تخصيص في حال كان الطريق مخصص لبلوغ وجه معينة -->
 					<case additional="access=permissive" color_2="$accessPermissiveColor"/><!-- تخصيص في حال كان الطريق بتصريح -->
 					<case additional="access=agricultural" color_2="$accessAgriculturalColor"/><!-- تخصيص في حال كان الطريق للمركبات الزراعية -->
@@ -9398,6 +9429,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="11" tag="natural" value="grassland" color="$grasslandColor"/><!-- المساحة المغطاة بالأعشاب -->
 				<case minzoom="11" tag="landuse" value="greenfield" color="$greenfieldColor"/><!--  حقول خضراء ستتحول لمباني -->
 				<case minzoom="11" tag="landuse" value="grass" color="$grassColor"/><!-- مساحة الأعشاب التي تكون صغيرة ومدارة ومعتنى بها -->
+				<case minzoom="11" tag="landuse" value="greenery" color="$greeneryColor"/>
 				<case minzoom="11" tag="landuse" value="brownfield" color="$brownfieldColor"/><!-- أرض صناعية سابقة -->
 				<case minzoom="12" tag="leisure" value="common" color="$leisureCommonColor"/>
 				<case minzoom="14" tag="leisure" value="dog_park" color="$leisureCommonColor"/>
@@ -9444,9 +9476,10 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="12" tag="leisure" value="garden" color="$gardenColor"/>
 				<apply>
 					<switch minzoom="16" showAccess="true">
-						<case additional="access=private"/>
-						<case additional="access=no"/>
-						<apply color_2="$accessPrivateColor" strokeWidth_2="3" pathEffect_2="1_6" cap_2="ROUND"/>
+						<case additional="access=private" color_2="$accessPrivateColor"/>
+						<case additional="access=no" color_2="$accessPrivateColor"/>
+						<case additional="access=permit" color_2="$accessPermitColor"/>
+						<apply strokeWidth_2="3" pathEffect_2="1_6" cap_2="ROUND"/>
 					</switch>
 				</apply>
 			</switch>
@@ -9659,10 +9692,11 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case tag="man_made" value="pier" color="$pierColor"/>
 				<apply minzoom="15">
 					<switch showAccess="true">
-						<case additional="access=no"/>
-						<case additional="access=private"/>
 						<case baseAppMode="bicycle" additional="bicycle=no"/>
-						<apply color_2="$accessPrivateColor" strokeWidth_2="3" pathEffect_2="1_7" cap_2="ROUND"/>
+						<case additional="access=private" color_2="$accessPrivateColor"/>
+						<case additional="access=no" color_2="$accessPrivateColor"/>
+						<case additional="access=permit" color_2="$accessPermitColor"/>
+						<apply strokeWidth_2="3" pathEffect_2="1_6" cap_2="ROUND"/>
 					</switch>
 				</apply>
 			</switch>
@@ -9948,6 +9982,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<switch>
 							<case additional="access=private" color_2="$accessPrivateColor" cap_2="ROUND"/>
 							<case additional="access=no" color_2="$accessPrivateColor" cap_2="ROUND"/>
+							<case additional="access=permit" color_2="$accessPermitColor" cap_2="ROUND"/>
 							<apply_if natureReserves="true" tag="leisure" value="nature_reserve" shader="nature_reserve_access_no"/>
 							<apply_if natureReserves="true" tag="boundary" value="protected_area" shader="protected_area_access_no"/>
 							<apply_if tag="landuse" value="quarry" shader="quarry3_access_no" color_0="#c4c2c1">
@@ -9965,13 +10000,13 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			</switch>
 
 			<switch minzoom="10">
-				<case tag="landuse" value="military" shader="$landuseMilitaryShaderDay" color_0="$landuseMilitaryColor0">
+				<case tag="landuse" value="military" shader="$landuseMilitaryShaderDay" color_0="$landuseMilitaryColor0" color_2="$landuseMilitaryStrokeColor">
 					<apply_if nightMode="true" shader="$landuseMilitaryShaderNight"/>
 				</case>
-				<case tag="abandoned:landuse" value="military" shader="military_abandoned">
+				<case tag="abandoned:landuse" value="military" shader="military_abandoned" color_2="$abandonedLanduseMilitaryStrokeColor">
 					<apply_if nightMode="true" shader="military_abandoned_night"/>
 				</case>
-				<apply color_2="$landuseMilitaryStrokeColor" strokeWidth_2="1:1"/>
+				<apply strokeWidth_2="1:1"/>
 			</switch>
 			<case legend="true" minzoom="18" tag="military" value="danger_area" shader="hazard" color_2="$landuseMilitaryStrokeColor" strokeWidth_2="1:1"/>
 			<case minzoom="7" tag="military" value="danger_area">
@@ -11189,6 +11224,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<switch minzoom="15">
 						<case additional="access=private" color_3="$accessPrivateColor"/>
 						<case additional="access=no" color_3="$accessPrivateColor"/>
+						<case additional="access=permit" color_3="$accessPermitColor"/>
 						<case additional="access=destination" color_3="$accessDestinationColor"/>
 						<case additional="access=permissive" color_3="$accessPermissiveColor"/>
 						<case additional="access=agricultural" color_3="$accessAgriculturalColor"/>
@@ -12118,10 +12154,11 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 
 		<case minzoom="13" tag="man_made" value="pier" color="$pierColor">
 			<switch minzoom="15" showAccess="true">
-				<case additional="access=no"/>
-				<case additional="access=private"/>
-				<case baseAppMode="bicycle" additional="bicycle=no"/>
-				<apply color_2="$accessPrivateColor" strokeWidth_2="3" pathEffect_2="1_7" cap_2="ROUND"/>
+				<case additional="access=no" color_2="$accessPrivateColor"/>
+				<case additional="access=private" color_2="$accessPrivateColor"/>
+				<case additional="access=permit" color_2="$accessPermitColor"/>
+				<case baseAppMode="bicycle" additional="bicycle=no" color_2="$accessPrivateColor"/>
+				<apply strokeWidth_2="3" pathEffect_2="1_7" cap_2="ROUND"/>
 			</switch>
 			<apply_if maxzoom="13" strokeWidth="0.6"/>
 			<apply_if minzoom="14" maxzoom="15" strokeWidth="1.5:1.5"/>
