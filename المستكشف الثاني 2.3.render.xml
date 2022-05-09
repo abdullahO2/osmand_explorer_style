@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<renderingStyle name="المستكشف الثاني 2.2" depends="default" defaultColor="#ebe7e4" version="2">
+<renderingStyle name="المستكشف الثاني 2.5" depends="default" defaultColor="#ebe7e4" version="2">
 
 	<!--  Documentation of the rendering syntax:
 		Elements:
@@ -98,9 +98,21 @@ dp
 		type="string" possibleValues="default, car, bicycle, pedestrian, public_transport, boat, ski"/><!-- هذا المحدد للتخصيص حسب الوضع (قيادة،دراجة،حافلة...الخ)  -->
 	<renderingProperty attr="transportStops" name="Transport stops" description="Public transport stops"
 		type="boolean" possibleValues="" category="transport"/>
-	<renderingProperty attr="publicTransportMode" name="Public transport mode" description="Public transport rendering mode"
+	<renderingProperty attr="showBusRoutes" name="Show bus routes" description="Show bus routes"
 		type="boolean" possibleValues="" category="transport"/>
-	<renderingProperty attr="tramTrainRoutes" name="Tram and trains" description="Tram and train routes"
+	<renderingProperty attr="showTrolleybusRoutes" name="Show trolleybus routes" description="Show trolleybus routes"
+		type="boolean" possibleValues="" category="transport"/>
+	<renderingProperty attr="showShareTaxiRoutes" name="Show share taxi routes" description="Show share taxi routes"
+		type="boolean" possibleValues="" category="transport"/>
+	<renderingProperty attr="showTramRoutes" name="Show tram routes" description="Show tram routes"
+		type="boolean" possibleValues="" category="transport"/>
+	<renderingProperty attr="showTrainRoutes" name="Show train routes" description="Show train routes"
+		type="boolean" possibleValues="" category="transport"/>
+	<renderingProperty attr="showLightRailRoutes" name="Show light rail routes" description="Show light rail routes"
+		type="boolean" possibleValues="" category="transport"/>
+	<renderingProperty attr="showMonorailRoutes" name="Show monorail routes" description="Show monorail routes"
+		type="boolean" possibleValues="" category="transport"/>
+	<renderingProperty attr="showFunicularRoutes" name="Show funicular routes" description="Show funicular routes"
 		type="boolean" possibleValues="" category="transport"/>
 	<renderingProperty attr="subwayMode" name="Subway mode" description="Subway rendering mode"
 		type="boolean" possibleValues="" category="transport"/>
@@ -136,7 +148,14 @@ dp
 		type="boolean" possibleValues="" category="osm_assistant"/><!-- هذا المحدد لإظهار العناصر التي تحتاج إلى إصلاح في الخريطة (مساعد تخطيط OSM)  -->
 	<renderingProperty attr="depthContours" name="Depth contours" description="Show depth contours and points"
 		type="boolean" possibleValues="" category="details"/><!-- هذا المحدد لتخصيص ظهور عمق الخطوط الكنتورية والنقاط  -->
+
+    <renderingProperty attr="weatherTempContours" name="Temperature isolines" description="Show temperature isolines"
+        type="boolean" possibleValues="" category="details"/>
+    <renderingProperty attr="weatherPressureContours" name="Pressure isolines" description="Show pressure isolines"
+        type="boolean" possibleValues="" category="details"/>
 	<renderingProperty attr="natureReserves" name="Nature reserves" description="Show nature reserve, protected areas and national parks"
+		type="boolean" possibleValues="" category="details"/>
+    <renderingProperty attr="horseScale" name="Difficulty of horse trails" description="Render paths according to difficulty of horse trails"
 		type="boolean" possibleValues="" category="details"/>
 	<renderingProperty attr="noAdminboundaries" name="Hide boundaries" description="Suppress display of admin levels 5-9"
 		type="boolean" possibleValues="" category="hide"/><!-- هذا المحدد لتخصيص إخفاء الحدود الإدارية  -->
@@ -158,12 +177,11 @@ dp
 		type="boolean" possibleValues="" category="hide"/><!-- هذا المحدد لتخصيص إخفاء ما تحت مستوى سطح الأرض  -->
 	<renderingProperty attr="hideOverground" name="Hide overground objects" description="Hide overground objects"
 		type="boolean" possibleValues="" category="hide"/><!-- هذا المحدد لتخصيص إخفاء ما فوق مستوى سطح الأرض  -->
-
-	<renderingProperty attr="showCycleRoutes" name="Show cycle routes" description="Show long distance cycle routes in bicycle mode"
+	<renderingProperty attr="showCycleRoutes" name="Show cycle routes" description="Show long distance cycle routes"
 		type="boolean" possibleValues="" category="routes"/>
-	<renderingProperty attr="showCycleNodeNetworkRoutes" name="Show node network cycle routes" description="Show node network cycle routes in bicycle mode"
+	<renderingProperty attr="showCycleNodeNetworkRoutes" name="Show node network cycle routes" description="Show node network cycle routes"
 		type="boolean" possibleValues="" category="routes"/>
-	<renderingProperty attr="showMtbRoutes" name="Show MTB routes" description="Show mountain bike routes (*cn_networks) in bicycle mode"
+	<renderingProperty attr="showMtbRoutes" name="Show MTB routes" description="Show mountain bike routes (*cn_networks)"
 		type="boolean" possibleValues="" category="routes"/>
 	<renderingProperty attr="hikingRoutesOSMC" name="Hiking symbol overlay" description="Render symbols of OSMC hiking traces"
 		type="string" possibleValues="walkingRoutesOSMC,walkingRoutesScopeOSMC,walkingRoutesOSMCNodes" defaultValueDescription="disabled" category="routes"/>
@@ -171,6 +189,11 @@ dp
 		type="boolean" possibleValues="" category="routes"/>
 	<renderingProperty attr="horseRoutes" name="Horse routes" description="Horse routes"
 		type="boolean" possibleValues="" category="routes"/> <!-- هذا المحدد لتخصيص إخفاء مسارات الخيول  -->
+
+	<renderingProperty attr="showFitnessTrails" name="Show fitness trails" description="Show fitness trails"
+		type="boolean" possibleValues="" category="routes"/>
+	<renderingProperty attr="showRunningRoutes" name="Show running routes" description="Show running routes"
+		type="boolean" possibleValues="" category="routes"/>
 	<renderingProperty attr="whiteWaterSports" name="Whitewater sports" description="Whitewater sports"
 		type="boolean" possibleValues="" category="routes"/>
 
@@ -193,6 +216,28 @@ dp
 		type="string" possibleValues="Always - never show regular maps,Where no regular map is available,Never"/>
 	-->
 	<renderingProperty attr="engine_v1" type="boolean"/>
+
+    <renderingAttribute name="weatherContourLevels">
+        <case minzoom="4" maxzoom="5" additional="weatherType=temp_C" attrStringValue="-70,-60,-50,-40,-30,-20,-10,0,10,20,30,40,50,60"/>
+        <case minzoom="6" maxzoom="9" additional="weatherType=temp_C" attrStringValue="-70,-65,-60,-55,-50,-45,-40,-35,-30,-25,-20,-15,-10,-5,0,5,10,15,20,25,30,35,40,45,50,55,60"/>
+        <case minzoom="10" additional="weatherType=temp_C" attrStringValue="-70,-68,-66,-64,-62,-60,-58,-56,-54,-52,-50,-48,-46,-44,-42,-40,-38,-36,-34,-32,-30,-28,-26,-24,-22,-20,-18,-16,-14,-12,-10,-8,-6,-4,-2,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60"/>
+        <case minzoom="4" maxzoom="6" additional="weatherType=temp_F" attrStringValue="-30,-20,-10,0,10,20,30,40,50,60,70,80,90,100,110,120"/>
+        <case minzoom="7" maxzoom="9" additional="weatherType=temp_F" attrStringValue="-30,-25,-20,-15,-10,-5,0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100,105,110,115,120"/>
+        <case minzoom="10" additional="weatherType=temp_F" attrStringValue="-30,-28,-26,-24,-22,-20,-18,-16,-14,-12,-10,-8,-6,-4,-2,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70,72,74,76,78,80,82,84,86,88,90,92,94,96,98,100,102,104,106,108,110,112,114,116,118,120"/>
+        <case minzoom="4" additional="weatherType=pressure_hPa" attrStringValue="850,875,900,925,950,975,1000,1010,1020,1030,1040,1050,1075,1100,1125,1150,1175,1200"/>
+        <case minzoom="4" additional="weatherType=pressure_mmHg" attrStringValue="700,705,710,715,720,725,730,735,740,745,750,755,760,765,770,775,780,785,790,795,800"/>
+        <case minzoom="4" additional="weatherType=pressure_inHg" attrStringValue="28.0,28.25,28.5,28.75,29.0,29.25,29.5,29.75,30.0,30.25,30.5,30.75,31.0,31.25,31.5,31.75,32.0"/>
+    </renderingAttribute>
+
+    <renderingAttribute name="weatherContourTypes">
+        <!-- Isoline type will be converted to tag/value like contourtype=5C or contourtype=950hPa -->
+        <case minzoom="4" additional="weatherType=temp_C" attrStringValue="-30,-20,-10,-5,0,5,10,20,30"/>
+        <case minzoom="4" additional="weatherType=temp_F" attrStringValue="-30,-10,10,30,50,80,100,120"/>
+        <case minzoom="4" additional="weatherType=pressure_hPa" attrStringValue="900,950,1000,1100"/>
+        <case minzoom="4" additional="weatherType=pressure_mmHg" attrStringValue="730,740,750,760,770,780"/>
+        <case minzoom="4" additional="weatherType=pressure_inHg" attrStringValue="29.0,29.5,30.0,30.5,31.0"/>
+    </renderingAttribute>
+
 	<renderingAttribute name="defaultColor">
 		<!-- next line should should make background transparent for underlays to be visible, but this curretnly does not work as desired -->
 		<!-- To change default color completely you should do that also for tag="place" value="island" and tag="natural" value="land" (search this file) -->
@@ -1308,6 +1353,24 @@ dp
 		<case nightMode="true" attrColorValue="#13447C"/><!-- الوضع الليلي -->
 		<case attrColorValue="#244955C1"/><!-- اللون -->
 	</renderingAttribute>
+    <renderingAttribute name="weatherTempColor">
+        <case nightMode="true" attrColorValue="#FF0000"/>
+        <case attrColorValue="#FF0000"/>
+    </renderingAttribute>
+    <renderingAttribute name="weatherTempTextColor">
+        <case nightMode="true" attrColorValue="#aaaaaaaa"/>
+        <case attrColorValue="#333333"/>
+    </renderingAttribute>
+
+    <renderingAttribute name="weatherPressureColor">
+        <case nightMode="true" attrColorValue="#FF0000"/>
+        <case attrColorValue="#FF0000"/>
+    </renderingAttribute>
+    <renderingAttribute name="weatherPressureTextColor">
+        <case nightMode="true" attrColorValue="#aaaaaaaa"/>
+        <case attrColorValue="#333333"/>
+    </renderingAttribute>
+
 	<!-- هنا يتم يوضع الألوان المرجعية حيث يرجع إليها لاحقا في الأقسام الأخرى  -->
 <!-- لون مسار توجيه الدراجات -->
 	<renderingAttribute name="cycleRoutelcnColor">
@@ -1485,6 +1548,41 @@ dp
 		<case engine_v1="true" attrColorValue="#660058a2"/>
 		<case attrColorValue="#280058a2"/>
 	</renderingAttribute>
+
+	<renderingAttribute name="osmcRedTextColor">
+		<case attrColorValue="#FF0000"/>
+	</renderingAttribute>
+	<renderingAttribute name="osmcBrownTextColor">
+		<case attrColorValue="#775200"/>
+	</renderingAttribute>
+	<renderingAttribute name="osmcOrangeTextColor">
+		<case attrColorValue="#EE9D00"/>
+	</renderingAttribute>
+	<renderingAttribute name="osmcDarkyellowTextColor">
+		<case attrColorValue="#8C9800"/>
+	</renderingAttribute>
+	<renderingAttribute name="osmcYellowTextColor">
+		<case attrColorValue="#F0E600"/>
+	</renderingAttribute>
+	<renderingAttribute name="osmcLightgreenTextColor">
+		<case attrColorValue="#C5FF7A"/>
+	</renderingAttribute>
+	<renderingAttribute name="osmcGreenTextColor">
+		<case attrColorValue="#00DE02"/>
+	</renderingAttribute>
+	<renderingAttribute name="osmcLightblueTextColor">
+		<case attrColorValue="#6FC8FA"/>
+	</renderingAttribute>
+	<renderingAttribute name="osmcBlueTextColor">
+		<case attrColorValue="#3B00FF"/>
+	</renderingAttribute>
+	<renderingAttribute name="osmcPurpleTextColor">
+		<case attrColorValue="#CC00FF"/>
+	</renderingAttribute>
+	<renderingAttribute name="osmcGrayTextColor">
+		<case attrColorValue="#B9B9B9"/>
+	</renderingAttribute>
+
 	<renderingAttribute name="iwnColor">
 		<case attrColorValue="#d94545"/>
 	</renderingAttribute>
@@ -1535,12 +1633,20 @@ dp
 	<renderingAttribute name="hikingRoutesTextColor">
 		<case attrColorValue="#DD5407"/>
 	</renderingAttribute>
-
+	<renderingAttribute name="fitnessTrailTextColor">
+		<case nightMode="true" attrColorValue="#BFE3FA"/>
+		<case attrColorValue="#3C8DC2"/>
+	</renderingAttribute>
 	<renderingAttribute name="horseRouteDefaultColor">
 		<case engine_v1="true" attrColorValue="#8000ad88"/>
 		<case attrColorValue="#3500ad88"/>
 	</renderingAttribute>
-
+	<renderingAttribute name="fitnessTrailDefaultColor">
+		<case attrColorValue="#660074C1"/>
+	</renderingAttribute>
+	<renderingAttribute name="runningRouteDefaultColor">
+		<case attrColorValue="#66AA72FB"/>
+	</renderingAttribute>
 	<renderingAttribute name="whiteColor">
 		<case attrColorValue="#88ffffff"/>
 	</renderingAttribute>
@@ -1864,6 +1970,10 @@ dp
 		<case moreDetailed="true" attrColorValue="#66666666"/>
 		<case attrColorValue="$defaultColor"/>
 	</renderingAttribute>
+	<renderingAttribute name="golfHoleColor">
+		<case nightMode="true" attrColorValue="#999999"/>
+		<case attrColorValue="#999999"/>
+	</renderingAttribute>
 	<renderingAttribute name="standsColor">
 		<case nightMode="true" attrColorValue="$woodColor"/>
 		<case moreDetailed="true" attrColorValue="#8DE9D0"/>
@@ -1887,14 +1997,11 @@ dp
 	<renderingAttribute name="stadiumStrokeColor">
 		<case attrColorValue="#888888"/>
 	</renderingAttribute>
-	<renderingAttribute name="sportsCentreColor">
+<!--	<renderingAttribute name="sportsCentreColor">
 		<case nightMode="true" attrColorValue="#04382c"/>
 		<case moreDetailed="true" attrColorValue="#8DE9A1"/>
 		<case attrColorValue="$defaultColor"/>
-	</renderingAttribute>
-	<renderingAttribute name="sportsCentreStrokeColor">
-		<case attrColorValue="#888888"/>
-	</renderingAttribute>
+	</renderingAttribute>-->
 
 	<renderingAttribute name="leisureCommonColor">
 		<case moreDetailed="true" attrColorValue="#c0e5a1"/>
@@ -2251,6 +2358,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 		<case attrColorValue="#e8e8e8"/>
 	</renderingAttribute>
 
+
+
 	<renderingAttribute name="routeInfo_roadClass"> <!-- Used in route details info -->
 		<case tag="highway" value="motorway" attrColorValue="$motorwayRoadColor" attrStringValue="highway_class_motorway"/>
 		<case tag="highway" value="motorway_link" attrColorValue="$motorwayRoadColor" attrStringValue="highway_class_motorway"/>
@@ -2363,6 +2472,16 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 		<case attrColorValue="#995FBCFF"/>
 	</renderingAttribute>
 
+	<renderingAttribute name="horseScaleColorLow">
+		<case attrColorValue="#008FEB"/>
+	</renderingAttribute>
+	<renderingAttribute name="horseScaleColorMiddle">
+		<case attrColorValue="#008FEB"/>
+	</renderingAttribute>
+	<renderingAttribute name="horseScaleColorHigh">
+		<case attrColorValue="#E94D00"/>
+	</renderingAttribute>
+
 	<renderingAttribute name="routeInfo_winter_ice_road"> <!-- Used in route details info -->
 		<case additional="winter_road=yes" attrColorValue="$winterroadShadowColor" attrStringValue="winter_road"/>
 		<case additional="ice_road=yes" attrColorValue="$iceroadColor" attrStringValue="ice_road"/>
@@ -2374,6 +2493,15 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 		<case additional="tracktype=grade3" attrColorValue="$tracktypeGrade3Color" attrStringValue="tracktype_grade3"/>
 		<case additional="tracktype=grade4" attrColorValue="$tracktypeGrade4Color" attrStringValue="tracktype_grade4"/>
 		<case additional="tracktype=grade5" attrColorValue="$tracktypeGrade5Color" attrStringValue="tracktype_grade5"/>
+	</renderingAttribute>
+
+	<renderingAttribute name="routeInfo_horse_scale"> <!-- Used in route details info -->
+		<case tag="horse_scale" value="common" attrColorValue="$horseScaleColorLow" attrStringValue="horse_scale_common"/>
+		<case tag="horse_scale" value="demanding" attrColorValue="#007FD1" attrStringValue="horse_scale_demanding"/>
+		<case tag="horse_scale" value="difficult" attrColorValue="#0074BF" attrStringValue="horse_scale_difficult"/>
+		<case tag="horse_scale" value="critical" attrColorValue="#0065A6" attrStringValue="horse_scale_critical"/>
+		<case tag="horse_scale" value="dangerous" attrColorValue="#005A94" attrStringValue="horse_scale_dangerous"/>
+		<case tag="horse_scale" value="impossible" attrColorValue="$horseScaleColorHigh" attrStringValue="horse_scale_impossible"/>
 	</renderingAttribute>
 
 	<renderingAttribute name="subwayLineDefaultColor">
@@ -3433,6 +3561,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case tag="historic" value="ruins"/>
 				<case tag="historic" value="ship"/>
 				<case tag="amenity" value="ferry_terminal" ignorePolygonArea="true"/>
+				<case tag="amenity" value="hunting_stand" ignorePolygonAsPointArea="true"/>
 				<case tag="geological" value="palaeontological_site" order="6"/>
 				<case tag="geological" value="outcrop" order="6"/>
 				<case tag="tourism" value="attraction" order="6"/>
@@ -3479,6 +3608,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case tag="man_made" value="reinforced_slope"/>
 				<case tag="whitewater" value="rapid"/>
 				<case tag="leisure" value="park"/>
+				<case tag="leisure" value="bird_hide" ignorePolygonAsPointArea="true"/>
 				<case tag="landuse" value="residential" order="4"/>
 				<case tag="historic" value="quarry" order="4"/>
 				<case tag="landuse" value="quarry" order="4"/>
@@ -3654,6 +3784,31 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<apply_if layer="-1" order="54"/>
 						<apply_if additional="layer=-2" order="33"/>
 					</case>
+					<case tag="horse_scale" value="" order="85">
+						<apply_if additional="horse_scale_highway=residential">
+							<apply_if maxzoom="12" moreDetailed="false" order="-1"/>
+						</apply_if>
+						<apply_if additional="horse_scale_highway=service">
+							<apply_if maxzoom="14" moreDetailed="false" order="-1"/>
+							<apply_if maxzoom="13" moreDetailed="true" order="-1"/>
+						</apply_if>
+						<apply_if additional="horse_scale_highway=track">
+							<apply_if maxzoom="13" moreDetailed="false" order="-1"/>
+							<apply_if maxzoom="11" moreDetailed="true" order="-1"/>
+						</apply_if>
+						<apply_if additional="horse_scale_highway=path">
+							<apply_if maxzoom="14" moreDetailed="false" order="-1"/>
+							<apply_if maxzoom="11" moreDetailed="true" order="-1"/>
+						</apply_if>
+						<apply_if additional="horse_scale_highway=footway">
+							<apply_if maxzoom="14" moreDetailed="false" order="-1"/>
+							<apply_if maxzoom="11" moreDetailed="true" order="-1"/>
+						</apply_if>
+						<apply_if additional="horse_scale_highway=bridleway">
+							<apply_if maxzoom="15" moreDetailed="false" order="-1"/>
+							<apply_if maxzoom="12" moreDetailed="true" order="-1"/>
+						</apply_if>
+					</case>
 					<apply_if maxzoom="13" additional="construction=yes" order="-1"/>
 				</switch>
 				<switch>
@@ -3818,6 +3973,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<switch hikingRoutesOSMC="walkingRoutesScopeOSMC" order="206">
 						<case tag="route_hiking" value=""/>
 					</switch>
+					<case tag="route_fitness_trail" value="" order="205"/>
+					<case tag="route_running" value="" order="205"/>
 					<case tag="admin_level" value="" order="207">
 						<case baseAppMode="pedestrian"/>
 						<case baseAppMode="bicycle"/>
@@ -3967,7 +4124,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<apply_if contourDensity="low" additional="contourtype=20f" order="-1"/>
 						<apply_if contourDensity="low" additional="contourtype=40f" order="-1"/>
 					</case>
-
+                    <case tag="contour" value="temperature" order="15"/>
+                    <case tag="contour" value="pressure" order="15"/>
 					<case baseAppMode="car" maxzoom="17" tag="barrier" value="hedge" order="-1"/>
 
 					<case tag="barrier" value="" order="20">
@@ -4063,9 +4221,12 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<switch textOrder="44" seq="1:10">
 					<!-- مسارات التوجيه -->
 						<case tag="route_hiking" value="" nameTag="hiking_route_name" textOnPath="true" textSize="13"/>
-						<case tag="route_hiking" value="" nameTag="hiking_route_ref" textSize="13"/>
 						<case horseRoutes="true" minzoom="13" tag="route_horse" value="" nameTag="horse_route_name" textOnPath="true" textOrder="8"/>
 						<case horseRoutes="true" tag="route_horse" value="" nameTag="horse_route_ref" textOnPath="true" textSize="13"/>
+						<case showFitnessTrails="true" minzoom="13" tag="route_fitness_trail" value="" nameTag="fitness_route_name" textOnPath="true" textOrder="8"/>
+						<case showFitnessTrails="true" tag="route_fitness_trail" value="" nameTag="fitness_route_ref" textOnPath="true" textSize="13"/>
+						<case showRunningRoutes="true" minzoom="13" tag="route_running" value="" nameTag="running_route_name" textOnPath="true" textOrder="8"/>
+						<case showRunningRoutes="true" tag="route_running" value="" nameTag="running_route_ref" textOnPath="true" textSize="13"/>
 						<apply>
 							<switch>
 								<case hikingRoutesOSMC="walkingRoutesOSMC" textSize="11" textColor="$hikingRoutesTextColor" textHaloColor="#ccebf4ff">
@@ -4076,6 +4237,12 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 								</case>
 								<case horseRoutes="true" textColor="#00745b" textSize="11" textHaloColor="#ccffffff">
 									<apply_if nightMode="true" textHaloColor="#00745b"/>
+								</case>
+								<case showFitnessTrails="true" tag="route_fitness_trail" value="" textColor="#0074C1" textSize="11" textHaloColor="#ccffffff">
+									<apply_if nightMode="true" textColor="#BFE3FA" textHaloColor="#99176287"/>
+								</case>
+								<case showRunningRoutes="true" tag="route_running" value="" textColor="#895CC9" textSize="11" textHaloColor="#ccffffff">
+									<apply_if nightMode="true" textHaloColor="#99895CC9"/>
 								</case>
 								<apply textMinDistance="100" textBold="true" textHaloRadius="2" textWrapWidth="30"/>
 								<apply_if nightMode="true" textColor="#ffffff"/>
@@ -4161,16 +4328,161 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				</switch>
 				<!-- OSMC symbols -->
 				<switch minzoom="12" textMinDistance="101" textOnPath="false" textSize="12" textColor="#00ffffff" textOrder="43" seq="1:10">
+					<!-- Hiking -->
 					<switch>
-						<case hikingRoutesOSMC="walkingRoutesOSMC" tag="route_hiking" value="" nameTag="route_hiking_#SEQ_osmc_stub_name"/>
-						<case hikingRoutesOSMC="walkingRoutesScopeOSMC" tag="route_hiking" value="" nameTag="route_hiking_#SEQ_osmc_stub_name"/>
+						<case hikingRoutesOSMC="walkingRoutesOSMC" tag="route_hiking" value="" nameTag="route_hiking_#SEQ_osmc_text"/>
+						<case hikingRoutesOSMC="walkingRoutesScopeOSMC" tag="route_hiking" value="" nameTag="route_hiking_#SEQ_osmc_text"/>
+						<apply textBold="true" textColor="#000000"/>
+						<apply_if textLength="2" textShield="osmc_white_bg_2"/>
+						<apply_if textLength="3" textShield="osmc_white_bg_3"/>
+						<apply_if textLength="4" textShield="osmc_white_bg_4"/>
+						<apply_if textLength="5" textShield="osmc_white_bg_4"/>
+						<apply_if textLength="6" textShield="osmc_white_bg_4"/>
 						<apply textShield="osmc_?route_hiking_#SEQ_osmc_background?_bg" icon="osmc_?route_hiking_#SEQ_osmc_foreground?"/>
-						<!-- <case additional="route_hiking_#SEQ_osmc_background" textShield="osmc_white_bg"/> -->
+						<apply_if additional="route_hiking_#SEQ_osmc_textcolor=red" textColor="$osmcRedTextColor"/>
+						<apply_if additional="route_hiking_#SEQ_osmc_textcolor=brown" textColor="$osmcBrownTextColor"/>
+						<apply_if additional="route_hiking_#SEQ_osmc_textcolor=orange" textColor="$osmcOrangeTextColor"/>
+						<apply_if additional="route_hiking_#SEQ_osmc_textcolor=darkyellow" textColor="$osmcDarkyellowTextColor"/>
+						<apply_if additional="route_hiking_#SEQ_osmc_textcolor=yellow" textColor="$osmcYellowTextColor"/>
+						<apply_if additional="route_hiking_#SEQ_osmc_textcolor=lightgreen" textColor="$osmcLightgreenTextColor"/>
+						<apply_if additional="route_hiking_#SEQ_osmc_textcolor=green" textColor="$osmcGreenTextColor"/>
+						<apply_if additional="route_hiking_#SEQ_osmc_textcolor=lightblue" textColor="$osmcLightblueTextColor"/>
+						<apply_if additional="route_hiking_#SEQ_osmc_textcolor=blue" textColor="$osmcBlueTextColor"/>
+						<apply_if additional="route_hiking_#SEQ_osmc_textcolor=purple" textColor="$osmcPurpleTextColor"/>
+						<apply_if additional="route_hiking_#SEQ_osmc_textcolor=gray" textColor="$osmcGrayTextColor"/>
+						<apply_if additional="route_hiking_#SEQ_osmc_textcolor=black" textColor="#000000" textHaloRadius="1" textHaloColor="#30ffffff"/>
+						<apply_if additional="route_hiking_#SEQ_osmc_textcolor=white" textColor="#ffffff" textHaloRadius="1" textHaloColor="#22000000"/>
 					</switch>
-					<case showCycleRoutes="true" tag="route_bicycle" value="" nameTag="route_bicycle_#SEQ_osmc_stub_name" textShield="osmc_?route_bicycle_#SEQ_osmc_background?_bg" icon="osmc_?route_bicycle_#SEQ_osmc_foreground?"/>
-					<case showMtbRoutes="true" tag="route_mtb" value="" nameTag="route_mtb_#SEQ_osmc_stub_name" textShield="osmc_?route_mtb_#SEQ_osmc_background?_bg" icon="osmc_?route_mtb_#SEQ_osmc_foreground?"/>
-					<case horseRoutes="true" tag="route_horse" value="" nameTag="route_horse_#SEQ_osmc_stub_name" textShield="osmc_?route_horse_#SEQ_osmc_background?_bg" icon="osmc_?route_horse_#SEQ_osmc_foreground?"/>
-					<case tag="route_piste" value="" nameTag="route_piste_#SEQ_osmc_stub_name" textShield="osmc_?route_piste_#SEQ_osmc_background?_bg" icon="osmc_?route_piste_#SEQ_osmc_foreground?"/>
+					<switch>
+						<case hikingRoutesOSMC="walkingRoutesOSMC" tag="route_hiking" value="" nameTag="route_hiking_#SEQ_osmc_stub_name_v2"/>
+						<case hikingRoutesOSMC="walkingRoutesScopeOSMC" tag="route_hiking" value="" nameTag="route_hiking_#SEQ_osmc_stub_name_v2"/>
+						<apply textShield="osmc_?route_hiking_#SEQ_osmc_background?_bg" icon="osmc_?route_hiking_#SEQ_osmc_foreground?"/>
+					</switch>
+					<!-- Bicycle -->
+					<switch>
+						<case showCycleRoutes="true" tag="route_bicycle" value="" nameTag="route_bicycle_#SEQ_osmc_text"/>
+						<apply textBold="true" textColor="#000000"/>
+						<apply_if textLength="2" textShield="osmc_white_bg_2"/>
+						<apply_if textLength="3" textShield="osmc_white_bg_3"/>
+						<apply_if textLength="4" textShield="osmc_white_bg_4"/>
+						<apply_if textLength="5" textShield="osmc_white_bg_4"/>
+						<apply_if textLength="6" textShield="osmc_white_bg_4"/>
+						<apply textShield="osmc_?route_bicycle_#SEQ_osmc_background?_bg" icon="osmc_?route_bicycle_#SEQ_osmc_foreground?"/>
+						<apply_if additional="route_bicycle_#SEQ_osmc_textcolor=red" textColor="$osmcRedTextColor"/>
+						<apply_if additional="route_bicycle_#SEQ_osmc_textcolor=brown" textColor="$osmcBrownTextColor"/>
+						<apply_if additional="route_bicycle_#SEQ_osmc_textcolor=orange" textColor="$osmcOrangeTextColor"/>
+						<apply_if additional="route_bicycle_#SEQ_osmc_textcolor=darkyellow" textColor="$osmcDarkyellowTextColor"/>
+						<apply_if additional="route_bicycle_#SEQ_osmc_textcolor=yellow" textColor="$osmcYellowTextColor"/>
+						<apply_if additional="route_bicycle_#SEQ_osmc_textcolor=lightgreen" textColor="$osmcLightgreenTextColor"/>
+						<apply_if additional="route_bicycle_#SEQ_osmc_textcolor=green" textColor="$osmcGreenTextColor"/>
+						<apply_if additional="route_bicycle_#SEQ_osmc_textcolor=lightblue" textColor="$osmcLightblueTextColor"/>
+						<apply_if additional="route_bicycle_#SEQ_osmc_textcolor=blue" textColor="$osmcBlueTextColor"/>
+						<apply_if additional="route_bicycle_#SEQ_osmc_textcolor=purple" textColor="$osmcPurpleTextColor"/>
+						<apply_if additional="route_bicycle_#SEQ_osmc_textcolor=gray" textColor="$osmcGrayTextColor"/>
+						<apply_if additional="route_bicycle_#SEQ_osmc_textcolor=black" textColor="#000000" textHaloRadius="1" textHaloColor="#30ffffff"/>
+						<apply_if additional="route_bicycle_#SEQ_osmc_textcolor=white" textColor="#ffffff" textHaloRadius="1" textHaloColor="#22000000"/>
+					</switch>
+					<case showCycleRoutes="true" tag="route_bicycle" value="" nameTag="route_bicycle_#SEQ_osmc_stub_name_v2" textShield="osmc_?route_bicycle_#SEQ_osmc_background?_bg" icon="osmc_?route_bicycle_#SEQ_osmc_foreground?"/>
+					<!-- MTB -->
+					<switch>
+						<case showMtbRoutes="true" tag="route_mtb" value="" nameTag="route_mtb_#SEQ_osmc_text"/>
+						<apply textBold="true" textColor="#000000"/>
+						<apply_if textLength="2" textShield="osmc_white_bg_2"/>
+						<apply_if textLength="3" textShield="osmc_white_bg_3"/>
+						<apply_if textLength="4" textShield="osmc_white_bg_4"/>
+						<apply_if textLength="5" textShield="osmc_white_bg_4"/>
+						<apply_if textLength="6" textShield="osmc_white_bg_4"/>
+						<apply textShield="osmc_?route_mtb_#SEQ_osmc_background?_bg" icon="osmc_?route_mtb_#SEQ_osmc_foreground?"/>
+						<apply_if additional="route_mtb_#SEQ_osmc_textcolor=red" textColor="$osmcRedTextColor"/>
+						<apply_if additional="route_mtb_#SEQ_osmc_textcolor=brown" textColor="$osmcBrownTextColor"/>
+						<apply_if additional="route_mtb_#SEQ_osmc_textcolor=orange" textColor="$osmcOrangeTextColor"/>
+						<apply_if additional="route_mtb_#SEQ_osmc_textcolor=darkyellow" textColor="$osmcDarkyellowTextColor"/>
+						<apply_if additional="route_mtb_#SEQ_osmc_textcolor=yellow" textColor="$osmcYellowTextColor"/>
+						<apply_if additional="route_mtb_#SEQ_osmc_textcolor=lightgreen" textColor="$osmcLightgreenTextColor"/>
+						<apply_if additional="route_mtb_#SEQ_osmc_textcolor=green" textColor="$osmcGreenTextColor"/>
+						<apply_if additional="route_mtb_#SEQ_osmc_textcolor=lightblue" textColor="$osmcLightblueTextColor"/>
+						<apply_if additional="route_mtb_#SEQ_osmc_textcolor=blue" textColor="$osmcBlueTextColor"/>
+						<apply_if additional="route_mtb_#SEQ_osmc_textcolor=purple" textColor="$osmcPurpleTextColor"/>
+						<apply_if additional="route_mtb_#SEQ_osmc_textcolor=gray" textColor="$osmcGrayTextColor"/>
+						<apply_if additional="route_mtb_#SEQ_osmc_textcolor=black" textColor="#000000" textHaloRadius="1" textHaloColor="#30ffffff"/>
+						<apply_if additional="route_mtb_#SEQ_osmc_textcolor=white" textColor="#ffffff" textHaloRadius="1" textHaloColor="#22000000"/>
+					</switch>
+					<case showMtbRoutes="true" tag="route_mtb" value="" nameTag="route_mtb_#SEQ_osmc_stub_name_v2" textShield="osmc_?route_mtb_#SEQ_osmc_background?_bg" icon="osmc_?route_mtb_#SEQ_osmc_foreground?"/>
+					<!-- Horse -->
+					<switch>
+						<case horseRoutes="true" tag="route_horse" value="" nameTag="route_horse_#SEQ_osmc_text"/>
+						<apply textBold="true" textColor="#000000"/>
+						<apply_if textLength="2" textShield="osmc_white_bg_2"/>
+						<apply_if textLength="3" textShield="osmc_white_bg_3"/>
+						<apply_if textLength="4" textShield="osmc_white_bg_4"/>
+						<apply_if textLength="5" textShield="osmc_white_bg_4"/>
+						<apply_if textLength="6" textShield="osmc_white_bg_4"/>
+						<apply textShield="osmc_?route_horse_#SEQ_osmc_background?_bg" icon="osmc_?route_horse_#SEQ_osmc_foreground?"/>
+						<apply_if additional="route_horse_#SEQ_osmc_textcolor=red" textColor="$osmcRedTextColor"/>
+						<apply_if additional="route_horse_#SEQ_osmc_textcolor=brown" textColor="$osmcBrownTextColor"/>
+						<apply_if additional="route_horse_#SEQ_osmc_textcolor=orange" textColor="$osmcOrangeTextColor"/>
+						<apply_if additional="route_horse_#SEQ_osmc_textcolor=darkyellow" textColor="$osmcDarkyellowTextColor"/>
+						<apply_if additional="route_horse_#SEQ_osmc_textcolor=yellow" textColor="$osmcYellowTextColor"/>
+						<apply_if additional="route_horse_#SEQ_osmc_textcolor=lightgreen" textColor="$osmcLightgreenTextColor"/>
+						<apply_if additional="route_horse_#SEQ_osmc_textcolor=green" textColor="$osmcGreenTextColor"/>
+						<apply_if additional="route_horse_#SEQ_osmc_textcolor=lightblue" textColor="$osmcLightblueTextColor"/>
+						<apply_if additional="route_horse_#SEQ_osmc_textcolor=blue" textColor="$osmcBlueTextColor"/>
+						<apply_if additional="route_horse_#SEQ_osmc_textcolor=purple" textColor="$osmcPurpleTextColor"/>
+						<apply_if additional="route_horse_#SEQ_osmc_textcolor=gray" textColor="$osmcGrayTextColor"/>
+						<apply_if additional="route_horse_#SEQ_osmc_textcolor=black" textColor="#000000" textHaloRadius="1" textHaloColor="#30ffffff"/>
+						<apply_if additional="route_horse_#SEQ_osmc_textcolor=white" textColor="#ffffff" textHaloRadius="1" textHaloColor="#22000000"/>
+					</switch>
+					<case horseRoutes="true" tag="route_horse" value="" nameTag="route_horse_#SEQ_osmc_stub_name_v2" textShield="osmc_?route_horse_#SEQ_osmc_background?_bg" icon="osmc_?route_horse_#SEQ_osmc_foreground?"/>
+					<!-- Piste -->
+					<switch>
+						<case tag="route_piste" value="" nameTag="route_piste_#SEQ_osmc_text"/>
+						<apply textBold="true" textColor="#000000"/>
+						<apply_if textLength="2" textShield="osmc_white_bg_2"/>
+						<apply_if textLength="3" textShield="osmc_white_bg_3"/>
+						<apply_if textLength="4" textShield="osmc_white_bg_4"/>
+						<apply_if textLength="5" textShield="osmc_white_bg_4"/>
+						<apply_if textLength="6" textShield="osmc_white_bg_4"/>
+						<apply textShield="osmc_?route_piste_#SEQ_osmc_background?_bg" icon="osmc_?route_piste_#SEQ_osmc_foreground?"/>
+						<apply_if additional="route_piste_#SEQ_osmc_textcolor=red" textColor="$osmcRedTextColor"/>
+						<apply_if additional="route_piste_#SEQ_osmc_textcolor=brown" textColor="$osmcBrownTextColor"/>
+						<apply_if additional="route_piste_#SEQ_osmc_textcolor=orange" textColor="$osmcOrangeTextColor"/>
+						<apply_if additional="route_piste_#SEQ_osmc_textcolor=darkyellow" textColor="$osmcDarkyellowTextColor"/>
+						<apply_if additional="route_piste_#SEQ_osmc_textcolor=yellow" textColor="$osmcYellowTextColor"/>
+						<apply_if additional="route_piste_#SEQ_osmc_textcolor=lightgreen" textColor="$osmcLightgreenTextColor"/>
+						<apply_if additional="route_piste_#SEQ_osmc_textcolor=green" textColor="$osmcGreenTextColor"/>
+						<apply_if additional="route_piste_#SEQ_osmc_textcolor=lightblue" textColor="$osmcLightblueTextColor"/>
+						<apply_if additional="route_piste_#SEQ_osmc_textcolor=blue" textColor="$osmcBlueTextColor"/>
+						<apply_if additional="route_piste_#SEQ_osmc_textcolor=purple" textColor="$osmcPurpleTextColor"/>
+						<apply_if additional="route_piste_#SEQ_osmc_textcolor=gray" textColor="$osmcGrayTextColor"/>
+						<apply_if additional="route_piste_#SEQ_osmc_textcolor=black" textColor="#000000" textHaloRadius="1" textHaloColor="#30ffffff"/>
+						<apply_if additional="route_piste_#SEQ_osmc_textcolor=white" textColor="#ffffff" textHaloRadius="1" textHaloColor="#22000000"/>
+					</switch>
+					<case tag="route_piste" value="" nameTag="route_piste_#SEQ_osmc_stub_name_v2" textShield="osmc_?route_piste_#SEQ_osmc_background?_bg" icon="osmc_?route_piste_#SEQ_osmc_foreground?"/>
+					<!-- Running -->
+					<switch>
+						<case showRunningRoutes="true" tag="route_running" value="" nameTag="route_running_#SEQ_osmc_text"/>
+						<apply textBold="true" textColor="#000000"/>
+						<apply_if textLength="2" textShield="osmc_white_bg_2"/>
+						<apply_if textLength="3" textShield="osmc_white_bg_3"/>
+						<apply_if textLength="4" textShield="osmc_white_bg_4"/>
+						<apply_if textLength="5" textShield="osmc_white_bg_4"/>
+						<apply_if textLength="6" textShield="osmc_white_bg_4"/>
+						<apply textShield="osmc_?route_running_#SEQ_osmc_background?_bg" icon="osmc_?route_running_#SEQ_osmc_foreground?"/>
+						<apply_if additional="route_running_#SEQ_osmc_textcolor=red" textColor="$osmcRedTextColor"/>
+						<apply_if additional="route_running_#SEQ_osmc_textcolor=brown" textColor="$osmcBrownTextColor"/>
+						<apply_if additional="route_running_#SEQ_osmc_textcolor=orange" textColor="$osmcOrangeTextColor"/>
+						<apply_if additional="route_running_#SEQ_osmc_textcolor=darkyellow" textColor="$osmcDarkyellowTextColor"/>
+						<apply_if additional="route_running_#SEQ_osmc_textcolor=yellow" textColor="$osmcYellowTextColor"/>
+						<apply_if additional="route_running_#SEQ_osmc_textcolor=lightgreen" textColor="$osmcLightgreenTextColor"/>
+						<apply_if additional="route_running_#SEQ_osmc_textcolor=green" textColor="$osmcGreenTextColor"/>
+						<apply_if additional="route_running_#SEQ_osmc_textcolor=lightblue" textColor="$osmcLightblueTextColor"/>
+						<apply_if additional="route_running_#SEQ_osmc_textcolor=blue" textColor="$osmcBlueTextColor"/>
+						<apply_if additional="route_running_#SEQ_osmc_textcolor=purple" textColor="$osmcPurpleTextColor"/>
+						<apply_if additional="route_running_#SEQ_osmc_textcolor=gray" textColor="$osmcGrayTextColor"/>
+						<apply_if additional="route_running_#SEQ_osmc_textcolor=black" textColor="#000000" textHaloRadius="1" textHaloColor="#30ffffff"/>
+						<apply_if additional="route_running_#SEQ_osmc_textcolor=white" textColor="#ffffff" textHaloRadius="1" textHaloColor="#22000000"/>
+					</switch>
+					<case showRunningRoutes="true" tag="route_running" value="" nameTag="route_running_#SEQ_osmc_stub_name_v2" textShield="osmc_?route_running_#SEQ_osmc_background?_bg" icon="osmc_?route_running_#SEQ_osmc_foreground?"/>
 				</switch>
 
 				<!-- Highway shields -->
@@ -4957,18 +5269,14 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				</switch>
 
 				<switch minzoom="13" textOnPath="true" textBold="true" textOrder="41" textColor="#ffffff" textHaloRadius="2" intersectsWith="transport">
-					<switch publicTransportMode="true">
-						<case tag="route_bus" value="" nameTag="bus_ref" textHaloColor="$routeBusColor"/>
-						<case tag="route_share_taxi" value="" nameTag="share_taxi_ref" textHaloColor="$routeShareTaxiColor"/>
-						<case tag="route_trolleybus" value="" nameTag="trolleybus_ref" textHaloColor="$routeTrolleybusColor"/>
-					</switch>
-					<switch tramTrainRoutes="true">
-						<case tag="route_tram" value="" nameTag="tram_ref" textHaloColor="$routeTramColor"/>
-						<case tag="route_train" value="" nameTag="train_ref" textHaloColor="$routeTrainColor"/>
-						<case tag="route_light_rail" value="" nameTag="lightrail_ref" textHaloColor="$routeLightrailColor"/>
-						<case tag="route_monorail" value="" nameTag="monorail_ref" textHaloColor="$routeLightrailColor"/>
-						<case tag="route_funicular" value="" nameTag="funicular_ref" textHaloColor="$routeFunicularColor"/>
-					</switch>
+					<case showBusRoutes="true" tag="route_bus" value="" nameTag="bus_ref" textHaloColor="$routeBusColor"/>
+					<case showShareTaxiRoutes="true" tag="route_share_taxi" value="" nameTag="share_taxi_ref" textHaloColor="$routeShareTaxiColor"/>
+					<case showTrolleybusRoutes="true" tag="route_trolleybus" value="" nameTag="trolleybus_ref" textHaloColor="$routeTrolleybusColor"/>
+					<case showTramRoutes="true" tag="route_tram" value="" nameTag="tram_ref" textHaloColor="$routeTramColor"/>
+					<case showTrainRoutes="true" tag="route_train" value="" nameTag="train_ref" textHaloColor="$routeTrainColor"/>
+					<case showLightRailRoutes="true" tag="route_light_rail" value="" nameTag="lightrail_ref" textHaloColor="$routeLightrailColor"/>
+					<case showMonorailRoutes="true" tag="route_monorail" value="" nameTag="monorail_ref" textHaloColor="$routeLightrailColor"/>
+					<case showFunicularRoutes="true" tag="route_funicular" value="" nameTag="funicular_ref" textHaloColor="$routeFunicularColor"/>
 					<apply_if minzoom="13" maxzoom="14" textSize="6"/>
 					<apply_if minzoom="15" maxzoom="15" textSize="9"/>
 					<apply_if minzoom="16" maxzoom="16" textSize="10"/>
@@ -5205,7 +5513,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				</switch>
 
 				<switch>
-					<case minzoom="$placeVillageMinZoom" tag="place" value="village" textSize="14" textOrder="23" nameTag="" intersectionMargin="1">
+					<case minzoom="$placeVillageMinZoom" tag="place" value="village" textSize="14" textOrder="37" nameTag="" textColor="#8716ec" intersectionMargin="1">
 						<apply_if minzoom="9" textSize="14"/><!-- النص الخاص بالقرى -->
 						<apply_if minzoom="17" textSize="16"/>
 					</case>
@@ -5241,8 +5549,44 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<case additional="population_rounded=100" textOrder="45"/>
 					</apply>
 				</switch>
+				<switch>
+					<case minzoom="$placeVillageMinZoom" tag="place" value="hamlet" textSize="13" textOrder="37" nameTag="" textColor="#8716ec" intersectionMargin="1">
+						<apply_if minzoom="9" textSize="14"/><!-- النص الخاص بالهجر -->
+						<apply_if minzoom="17" textSize="15"/>
+					</case>
+					<apply>
+						<case additional="population_rounded=1500000000" textOrder="8"/><!-- مليار ونصف نسمة وأعلى -->
+						<case additional="population_rounded=400000000" textOrder="9"/><!-- نفس السابق مع تغير الرقم وهكذا في التالي -->
+						<case additional="population_rounded=200000000" textOrder="10"/>
+						<case additional="population_rounded=100000000" textOrder="11"/>
+						<case additional="population_rounded=50000000" textOrder="12"/>
+						<case additional="population_rounded=25000000" textOrder="13"/>
+						<case additional="population_rounded=20000000" textOrder="14"/>
+						<case additional="population_rounded=15000000" textOrder="15"/>
+						<case additional="population_rounded=12000000" textOrder="16"/>
+						<case additional="population_rounded=9000000" textOrder="17"/>
+						<case additional="population_rounded=7000000" textOrder="18"/>
+						<case additional="population_rounded=5000000" textOrder="19"/>
+						<case additional="population_rounded=3000000" textOrder="20"/>
+						<case additional="population_rounded=2000000" textOrder="21"/>
+						<case additional="population_rounded=1000000" textOrder="22"/>
+						<case additional="population_rounded=700000" textOrder="23"/>
+						<case additional="population_rounded=400000" textOrder="23"/>
+						<case additional="population_rounded=200000" textOrder="23"/>
+						<case additional="population_rounded=100000" textOrder="23"/>
+						<case additional="population_rounded=70000" textOrder="23"/>
+						<case additional="population_rounded=40000" textOrder="23"/>
+						<case additional="population_rounded=20000" textOrder="23"/>
+						<case additional="population_rounded=10000" textOrder="23"/>
+						<case additional="population_rounded=5000" textOrder="23"/>
+						<case additional="population_rounded=2500" textOrder="23"/>
+						<case additional="population_rounded=1000" textOrder="23"/>
+						<case additional="population_rounded=500" textOrder="43"/>
+						<case additional="population_rounded=200" textOrder="44"/>
+						<case additional="population_rounded=100" textOrder="45"/>
+					</apply>
+				</switch>
 			</switch>
-
 			<switch textWrapWidth="20" textHaloRadius="$placeTextHaloRadiusDay" textHaloColor="$placeCityVillageTextHaloColor" intersectionMargin="1">
 				<switch>
 					<case minzoom="$placeSuburbMinZoom" maxzoom="17" tag="place" value="suburb" nameTag="" textColor="$placeSuburbHamletTextColor" textSize="15" textItalic="true" textOrder="40" intersectionMargin="1"><!-- النص الخاص بالضواحي -->
@@ -5253,7 +5597,6 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<case minzoom="12" tag="place" value="borough" textItalic="true" nameTag="" textOrder="38"/><!-- النص الخاص بمقاطعات المدن -->
 						<case minzoom="13" tag="place" value="quarter" textItalic="true" nameTag="" textOrder="37"/><!-- النص الخاص بالأرباع (أجزاء المدن) -->
 						<case minzoom="14" tag="place" value="city_block" textItalic="true" nameTag="" textOrder="36"/><!-- النص الخاص بالمربعات السكنية -->
-						<case minzoom="9" tag="place" value="hamlet" nameTag="" textOrder="42"/><!-- النص الخاص بالهجر -->
 						<case minzoom="$placeHamletMinZoom" tag="place" value="farm" nameTag="" textOrder="109"/><!-- النص الخاص بالمزارع -->
 						<case minzoom="12" tag="place" value="plot" nameTag="" textOrder="108"/><!-- النص الخاص بقطع الأراضي -->
 						<case minzoom="12" tag="place" value="municipality" nameTag="" textOrder="107"/><!-- النص الخاص بالبلديات أو الأمانات -->
@@ -5609,6 +5952,9 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<case hidePOILabels="false" minzoom="18" tag="natural" value="tree" textSize="11" textDy="5" textOrder="252"/><!-- الأشجار المفردة -->
 						<case hidePOILabels="false" minzoom="19" tag="natural" value="shrub" textSize="11" textDy="5" textOrder="252"/>
 						<case hidePOILabels="false" minzoom="18" tag="natural" value="stone" textSize="11" textDy="4"/>
+						<case minzoom="19" tag="natural" value="birds_nest" textSize="10" textDy="5"/>
+						<case minzoom="19" tag="natural" value="termite_mound" textSize="10" textDy="5"/>
+						<case minzoom="19" tag="natural" value="anthill" textSize="10" textDy="5"/>
 						<case minzoom="17" tag="natural" value="rock" textSize="11" textDy="4"/><!-- الصخور -->
 						<case minzoom="13" tag="natural" value="bare_rock" textSize="11" textDy="4"/><!-- مساحات الأرض العارية والصخرية -->
 						<case minzoom="15" tag="natural" value="scree" textSize="11" textDy="4"/><!-- حصى / ركام حجارة -->
@@ -5624,8 +5970,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case hidePOILabels="false" minzoom="12" tag="leisure" value="garden" textOrder="168"/>
 					<case minzoom="14" tag="leisure" value="common" textOrder="169"/>
 					<switch>
-						<case minzoom="12" tag="leisure" value="golf_course" textOrder="167"/>
-						<case minzoom="14" tag="leisure" value="pitch" textOrder="254"/>
+						<case minzoom="15" tag="leisure" value="golf_course" textOrder="105" textDy="5"/>
+						<case minzoom="15" tag="leisure" value="pitch" textOrder="254"/>
 						<case minzoom="14" tag="leisure" value="bleachers" textOrder="254"/>
 						<apply_if moreDetailed="false" maxzoom="15" disable="true"/>
 					</switch>
@@ -5745,7 +6091,9 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			<case minzoom="18" tag="man_made" value="pipeline" textSize="10" textColor="#333333" textHaloRadius="$textHaloRadius" textHaloColor="#ccffffff" textOnPath="true" textWrapWidth="30" textOrder="230">
 				<apply_if nightMode="true" textColor="#aaaaaa" textHaloColor="#66222222"/>
 			</case>
-
+			<case minzoom="16" tag="golf" value="hole" nameTag="" nameTag2="ref" textSize="10" textColor="#333333" textHaloRadius="$textHaloRadius" textHaloColor="#ccffffff" textOnPath="true" textWrapWidth="30" textOrder="230">
+				<apply_if nightMode="true" textColor="#aaaaaa" textHaloColor="#66222222"/>
+			</case>
 			<!-- Cycling: texts for the cycle networks -->
 			<switch textHaloColor="$cycleRouteTextHaloColor" textWrapWidth="30">
 				<switch minzoom="14" textHaloRadius="$textHaloRadius">
@@ -5832,28 +6180,56 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="17" tag="public_transport" value="platform" additional="disused=yes" textColor="#999999" textSize="12" textOnPath="true" nameTag="">
 					<apply_if nightMode="true" textColor="#dddddd" textHaloColor="$publicTransportModeStopTextHaloColorNight"/>
 				</case>
-				<switch minzoom="15" maxzoom="15" textSize="13" textColor="$publicTransportModeStopTextColor" textHaloColor="$publicTransportModeStopTextHaloColor" textOrder="1">
-					<case publicTransportMode="true" tag="public_transport" value="platform" nameTag="" nameTag2="local_ref" textOnPath="true"/>
-					<case publicTransportMode="true" tag="public_transport" value="platform" nameTag="" textOnPath="true"/>
-					<case tramTrainRoutes="true" tag="public_transport" value="platform" additional="train=yes" nameTag="" textOnPath="true"/>
-					<case tramTrainRoutes="true" tag="public_transport" value="platform" additional="tram=yes" nameTag="" textOnPath="true"/>
-					<case publicTransportMode="true" tag="amenity" value="bus_station" nameTag=""/>
-					<case publicTransportMode="true" tag="highway" value="bus_stop" nameTag=""/>
-					<case tramTrainRoutes="true" tag="railway" value="tram_stop" nameTag=""/>
+				<switch minzoom="15" maxzoom="15" textSize="12" textColor="$publicTransportModeStopTextColor" textHaloColor="$publicTransportModeStopTextHaloColor" textOrder="1">
+					<switch tag="public_transport" value="platform" nameTag="" textOnPath="true">
+						<case showBusRoutes="true" additional="bus=yes" nameTag2="local_ref"/>
+						<case showBusRoutes="true" additional="bus=yes"/>
+						<case showTrolleybusRoutes="true" additional="trolleybus=yes" nameTag2="local_ref"/>
+						<case showTrolleybusRoutes="true" additional="trolleybus=yes"/>
+						<case showShareTaxiRoutes="true" additional="share_taxi=yes" nameTag2="local_ref"/>
+						<case showShareTaxiRoutes="true" additional="share_taxi=yes"/>
+					</switch>
+					<switch tag="highway" value="bus_stop" nameTag="" textOnPath="true">
+						<case showBusRoutes="true" additional="bus=yes" nameTag2="local_ref"/>
+						<case showBusRoutes="true" additional="bus=yes"/>
+						<case showTrolleybusRoutes="true" additional="trolleybus=yes" nameTag2="local_ref"/>
+						<case showTrolleybusRoutes="true" additional="trolleybus=yes"/>
+						<case showShareTaxiRoutes="true" additional="share_taxi=yes" nameTag2="local_ref"/>
+						<case showShareTaxiRoutes="true" additional="share_taxi=yes"/>
+					</switch>
+					<case showTramRoutes="true" tag="public_transport" value="platform" additional="tram=yes" nameTag="" textOnPath="true"/>
+					<case showTrainRoutes="true" tag="public_transport" value="platform" additional="train=yes" nameTag="" textOnPath="true"/>
+					<case showBusRoutes="true" tag="amenity" value="bus_station" nameTag=""/>
+					<case showTramRoutes="true" tag="railway" value="tram_stop" nameTag=""/>
 					<apply_if nightMode="true" textColor="$publicTransportModeStopTextColorNight" textHaloRadius="2" textHaloColor="$publicTransportModeStopTextHaloColorNight"/>
 				</switch>
 				<switch minzoom="16" textSize="13"> <!-- When public transport is selected -->
-					<case publicTransportMode="true" tag="public_transport" value="platform" nameTag="" nameTag2="local_ref" textOnPath="true" textOrder="1"/>
-					<case publicTransportMode="true" tag="public_transport" value="platform" nameTag2="local_ref" textOnPath="true" textOrder="1"/>
-					<switch tramTrainRoutes="true" tag="public_transport" value="platform" textOnPath="true" textOrder="1">
-						<case additional="train=yes" nameTag="" nameTag2="local_ref"/>
-						<case additional="train=yes" nameTag="local_ref"/>
-						<case additional="tram=yes" nameTag="" nameTag2="local_ref"/>
-						<case additional="tram=yes" nameTag="local_ref"/>
+					<switch tag="public_transport" value="platform" nameTag="" textOnPath="true" textOrder="1">
+						<case showBusRoutes="true" additional="bus=yes" nameTag2="local_ref"/>
+						<case showBusRoutes="true" additional="bus=yes"/>
+						<case showTrolleybusRoutes="true" additional="trolleybus=yes" nameTag2="local_ref"/>
+						<case showTrolleybusRoutes="true" additional="trolleybus=yes"/>
+						<case showShareTaxiRoutes="true" additional="share_taxi=yes" nameTag2="local_ref"/>
+						<case showShareTaxiRoutes="true" additional="share_taxi=yes"/>
 					</switch>
-					<case publicTransportMode="true" tag="amenity" value="bus_station" textOrder="10"/>
-					<case publicTransportMode="true" tag="highway" value="bus_stop" nameTag="" textOrder="1"/>
-					<case tramTrainRoutes="true" tag="railway" value="tram_stop" textOrder="1"/>
+					<switch tag="highway" value="bus_stop" nameTag="" textOnPath="true" textOrder="1">
+						<case showBusRoutes="true" additional="bus=yes" nameTag2="local_ref"/>
+						<case showBusRoutes="true" additional="bus=yes"/>
+						<case showTrolleybusRoutes="true" additional="trolleybus=yes" nameTag2="local_ref"/>
+						<case showTrolleybusRoutes="true" additional="trolleybus=yes"/>
+						<case showShareTaxiRoutes="true" additional="share_taxi=yes" nameTag2="local_ref"/>
+						<case showShareTaxiRoutes="true" additional="share_taxi=yes"/>
+					</switch>
+					<switch tag="public_transport" value="platform" textOnPath="true" textOrder="1">
+						<case showTramRoutes="true" additional="tram=yes" nameTag="" nameTag2="local_ref"/>
+						<case showTramRoutes="true" additional="tram=yes" nameTag="local_ref"/>
+						<case showTrainRoutes="true" additional="train=yes" nameTag="" nameTag2="local_ref"/>
+						<case showTrainRoutes="true" additional="train=yes" nameTag="local_ref"/>
+						<case showLightRailRoutes="true" additional="light_rail=yes" nameTag="" nameTag2="local_ref"/>
+						<case showLightRailRoutes="true" additional="light_rail=yes" nameTag="local_ref"/>
+					</switch>
+					<case showBusRoutes="true" tag="amenity" value="bus_station" textOrder="10"/>
+					<case showTramRoutes="true" tag="railway" value="tram_stop" textOrder="1"/>
 					<apply textColor="$publicTransportModeStopTextColor" textHaloColor="$publicTransportModeStopTextHaloColor">
 						<apply_if nightMode="true" textColor="$publicTransportModeStopTextColorNight" textHaloRadius="2" textHaloColor="$publicTransportModeStopTextHaloColorNight"/>
 					</apply>
@@ -5871,7 +6247,6 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						</switch>
 						<apply textOnPath="true" intersectionMargin="15"/>
 					</switch>
-
 					<!--<case tag="public_transport" value="platform" nameTag="" nameTag2="local_ref" textOnPath="true" textOrder="71" intersectionMargin="15"/>
 					<case tag="public_transport" value="platform" nameTag="" nameTag2="ref" textOnPath="true" textOrder="71" intersectionMargin="15"/>
 					<case baseAppMode="public_transport" minzoom="17" tag="public_transport" value="platform" nameTag="local_ref" textOnPath="true" textOrder="71" intersectionMargin="15"/>
@@ -5897,17 +6272,21 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="15" tag="public_transport" value="station" textSize="13" textOrder="69"/>
 					<apply_if nightMode="true" textColor="#d4d4ff" textHaloRadius="2" textHaloColor="#994563a7"/>
 				</switch>
-
 				<apply_if engine_v1="true" textDy="3"/>
 				<apply>
 					<switch>
-						<case publicTransportMode="true"/>
-						<case tramTrainRoutes="true"/>
+						<case showBusRoutes="true"/>
+						<case showTrolleybusRoutes="true"/>
+						<case showShareTaxiRoutes="true"/>
+						<case showTramRoutes="true"/>
+						<case showTrainRoutes="true"/>
+						<case showLightRailRoutes="true"/>
+						<case showMonorailRoutes="true"/>
+						<case showFunicularRoutes="true"/>
 						<apply intersectsWith="transport"/>
 					</switch>
 				</apply>
 			</switch>
-
 			<switch subwayMode="true">
 				<switch minzoom="12" tag="railway" value="station" nameTag="">
 					<!-- <case additional="route=subway"/>-->
@@ -6529,6 +6908,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="17" tag="shop" value="frame"/>
 				<case minzoom="17" tag="shop" value="free_flying"/>
 				<case minzoom="17" tag="shop" value="frozen_food"/>
+				<case minzoom="17" tag="shop" value="fuel"/>
 				<case minzoom="17" tag="shop" value="funeral_directors"/>
 				<case minzoom="17" tag="shop" value="furnace"/>
 				<case minzoom="17" tag="shop" value="furniture"/><!-- أثاث -->
@@ -6565,6 +6945,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="17" tag="shop" value="mobile_phone"/>
 				<case minzoom="17" tag="shop" value="model"/>
 				<case minzoom="17" tag="shop" value="motorcycle"/>
+				<case minzoom="17" tag="shop" value="motorcycle_parts"/>
 				<case minzoom="17" tag="shop" value="motorcycle_repair"/>
 				<case minzoom="23" tag="shop" value="music"/>
 				<case minzoom="23" tag="shop" value="musical_instrument"/>
@@ -6586,6 +6967,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="17" tag="shop" value="pyrotechnics"/>
 				<case minzoom="17" tag="shop" value="radiotechnics"/>
 				<case minzoom="17" tag="shop" value="religion"/>
+				<case minzoom="17" tag="shop" value="rice"/>
 				<case minzoom="17" tag="shop" value="outdoor"/><!-- محلات الرحلات وأغراض التخييم -->
 				<case minzoom="17" tag="shop" value="outpost"/>
 				<case minzoom="17" tag="shop" value="seafood"/><!-- مأكولات بحرية -->
@@ -6618,9 +7000,11 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="17" tag="shop" value="video_games"/>
 				<case minzoom="17" tag="shop" value="watches"/><!-- ساعات -->
 				<case minzoom="17" tag="shop" value="water"/><!-- مياه -->
+				<case minzoom="17" tag="shop" value="water_sports"/>
 				<case minzoom="17" tag="shop" value="weapons"/><!-- أسلحة -->
 				<case minzoom="17" tag="shop" value="wholesale"/><!-- بيع بالجملة -->
 				<case minzoom="17" tag="shop" value="window_blind"/>
+				<case minzoom="17" tag="shop" value="wool"/>
 				<case minzoom="17" tag="shop" value=""/>
 				<apply_if engine_v1="true" textDy="5"/>
 				<apply_if nightMode="true" textColor="#ffe0ff" textHaloColor="#556f3f6e"/>
@@ -6643,77 +7027,84 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			<!-- Sport + Leisure -->
 			<!-- رياضة -->
 			<switch textSize="12" nameTag="" textColor="$sportTextColorDay" textWrapWidth="19" textHaloColor="$sportTextHaloColorDay" textHaloRadius="$textHaloRadius" textOrder="166">
-				<switch hidePOILabels="false">
-					<case minzoom="17" tag="sport" value="american_football"/>
-					<case minzoom="17" tag="sport" value="equestrian"/>
-					<case minzoom="17" tag="sport" value="climbing"/>
-					<case minzoom="17" tag="sport" value="climbing_adventure"/>
-					<case minzoom="17" tag="sport" value="cricket"/>
-					<case minzoom="17" tag="sport" value="soccer"/>
-					<case minzoom="17" tag="sport" value="ice_skating"/>
-					<case minzoom="17" tag="sport" value="roller_skating"/>
-					<case minzoom="17" tag="sport" value="archery"/>
-					<case minzoom="17" tag="sport" value="bandy"/>
-					<case minzoom="17" tag="sport" value="baseball"/>
-					<case minzoom="17" tag="sport" value="beachvolleyball"/>
-					<case minzoom="17" tag="sport" value="canoe"/>
-					<case minzoom="17" tag="sport" value="tennis"/>
-					<case minzoom="17" tag="sport" value="shooting"/>
-					<case minzoom="17" tag="sport" value="golf" textOrder="155"/>
-					<case minzoom="17" tag="sport" value="sailing"/>
-					<case minzoom="17" tag="sport" value="skiing"/>
-					<case minzoom="17" tag="sport" value="swimming"/>
-					<case minzoom="17" tag="sport" value="diving"/>
-					<case minzoom="17" tag="sport" value="scuba_diving"/>
-					<case minzoom="16" tag="amenity" value="dive_centre"/>
-					<case minzoom="17" tag="sport" value="billiard"/>
-					<case minzoom="17" tag="sport" value="gymnastics"/>
-					<case minzoom="17" tag="sport" value="motor"/>
-					<case minzoom="17" tag="sport" value="free_flying"/>
-					<case minzoom="17" tag="sport" value="bmx"/>
-					<case minzoom="17" tag="sport" value="skateboard"/>
-					<case minzoom="17" tag="sport" value="ice_hockey"/>
-					<case minzoom="17" tag="sport" value="field_hockey"/>
-					<case minzoom="17" tag="sport" value="9pin"/>
-					<case minzoom="17" tag="sport" value="10pin"/>
-					<case minzoom="17" tag="sport" value="cycling"/>
-					<case minzoom="17" tag="sport" value="rugby_union"/>
-					<case minzoom="17" tag="sport" value="rugby_league"/>
-					<case minzoom="17" tag="sport" value="table_tennis"/>
-					<case minzoom="17" tag="sport" value="base"/>
-					<case minzoom="17" tag="sport" value="athletics"/>
-					<case minzoom="17" tag="sport" value="surfing"/>
-					<case minzoom="17" tag="sport" value="handball"/>
-					<case minzoom="17" tag="sport" value="team_handball"/>
-					<case minzoom="17" tag="sport" value="volleyball"/>
-					<case minzoom="17" tag="sport" value="basketball"/>
-					<case minzoom="17" tag="sport" value="model_aerodrome"/>
-					<case minzoom="17" tag="sport" value="multi"/>
-					<case minzoom="17" tag="sport" value="judo"/>
-					<case minzoom="17" tag="sport" value="rc_car"/>
-					<case minzoom="17" tag="sport" value="ultralight_aviation"/>
+				<switch>
+					<switch hidePOILabels="false">
+						<case minzoom="17" tag="sport" value="american_football"/>
+						<case minzoom="17" tag="sport" value="equestrian"/>
+						<case minzoom="17" tag="sport" value="climbing"/>
+						<case minzoom="17" tag="sport" value="climbing_adventure"/>
+						<case minzoom="17" tag="sport" value="cricket"/>
+						<case minzoom="17" tag="sport" value="soccer"/>
+						<case minzoom="17" tag="sport" value="ice_skating"/>
+						<case minzoom="17" tag="sport" value="roller_skating"/>
+						<case minzoom="17" tag="sport" value="archery"/>
+						<case minzoom="17" tag="sport" value="bandy"/>
+						<case minzoom="17" tag="sport" value="baseball"/>
+						<case minzoom="17" tag="sport" value="beachvolleyball"/>
+						<case minzoom="17" tag="sport" value="canoe"/>
+						<case minzoom="17" tag="sport" value="tennis"/>
+						<case minzoom="17" tag="sport" value="shooting"/>
+						<case minzoom="17" tag="sport" value="golf" textOrder="155"/>
+						<case minzoom="17" tag="sport" value="sailing"/>
+						<case minzoom="17" tag="sport" value="skiing"/>
+						<case minzoom="17" tag="sport" value="swimming"/>
+						<case minzoom="17" tag="sport" value="diving"/>
+						<case minzoom="17" tag="sport" value="scuba_diving"/>
+						<case minzoom="16" tag="amenity" value="dive_centre"/>
+						<case minzoom="17" tag="sport" value="billiard"/>
+						<case minzoom="17" tag="sport" value="gymnastics"/>
+						<case minzoom="17" tag="sport" value="motor"/>
+						<case minzoom="17" tag="sport" value="free_flying"/>
+						<case minzoom="17" tag="sport" value="bmx"/>
+						<case minzoom="17" tag="sport" value="skateboard"/>
+						<case minzoom="17" tag="sport" value="ice_hockey"/>
+						<case minzoom="17" tag="sport" value="field_hockey"/>
+						<case minzoom="17" tag="sport" value="9pin"/>
+						<case minzoom="17" tag="sport" value="10pin"/>
+						<case minzoom="17" tag="sport" value="cycling"/>
+						<case minzoom="17" tag="sport" value="rugby_union"/>
+						<case minzoom="17" tag="sport" value="rugby_league"/>
+						<case minzoom="17" tag="sport" value="table_tennis"/>
+						<case minzoom="17" tag="sport" value="base"/>
+						<case minzoom="17" tag="sport" value="athletics"/>
+						<case minzoom="17" tag="sport" value="surfing"/>
+						<case minzoom="17" tag="sport" value="handball"/>
+						<case minzoom="17" tag="sport" value="team_handball"/>
+						<case minzoom="17" tag="sport" value="volleyball"/>
+						<case minzoom="17" tag="sport" value="basketball"/>
+						<case minzoom="17" tag="sport" value="model_aerodrome"/>
+						<case minzoom="17" tag="sport" value="multi"/>
+						<case minzoom="17" tag="sport" value="judo"/>
+						<case minzoom="17" tag="sport" value="rc_car"/>
+						<case minzoom="17" tag="sport" value="ultralight_aviation"/>
 
-					<case minzoom="15" tag="leisure" value="stadium" textOrder="155"/>
-					<case minzoom="17" tag="leisure" value="playground" textOrder="167"/>
-					<case minzoom="17" tag="leisure" value="fitness_station"/>
-					<case minzoom="16" tag="leisure" value="horse_riding"/>
-					<case minzoom="16" tag="leisure" value="water_park"/>
-					<case minzoom="17" tag="leisure" value="sauna" textOrder="167"/>
-					<case minzoom="17" tag="amenity" value="public_bath" textOrder="167"/>
-					<case minzoom="18" tag="leisure" value="tanning_salon"/>
-					<case minzoom="16" tag="leisure" value="sports_centre" textOrder="166"/>
-					<case minzoom="17" tag="leisure" value="fitness_centre" textOrder="166"/>
-					<case minzoom="16" tag="leisure" value="sports_hall" textOrder="167"/>
-					<case minzoom="16" tag="leisure" value="ice_rink"/>
-					<case minzoom="17" tag="leisure" value="fishing"/>
-					<case minzoom="17" tag="leisure" value="bird_hide"/>
-					<case minzoom="16" tag="leisure" value="miniature_golf"/>
-					<case minzoom="16" tag="leisure" value="bowling_alley"/>
-					<case minzoom="18" tag="leisure" value="bandstand" textOrder="254"/>
-					<apply_if engine_v1="true" textDy="9"/>
+						<case minzoom="15" tag="leisure" value="stadium" textOrder="155"/>
+						<case minzoom="17" tag="leisure" value="playground" textOrder="167"/>
+						<case minzoom="17" tag="golf" value="pin" textOrder="167"/>
+						<case minzoom="16" tag="leisure" value="horse_riding"/>
+						<case minzoom="16" tag="leisure" value="water_park"/>
+						<case minzoom="17" tag="leisure" value="sauna" textOrder="167"/>
+						<case minzoom="17" tag="amenity" value="public_bath" textOrder="167"/>
+						<case minzoom="18" tag="leisure" value="tanning_salon"/>
+						<case minzoom="16" tag="leisure" value="sports_centre" textOrder="166"/>
+						<case minzoom="17" tag="leisure" value="fitness_centre" textOrder="166"/>
+						<case minzoom="16" tag="leisure" value="sports_hall" textOrder="167"/>
+						<case minzoom="16" tag="leisure" value="ice_rink"/>
+						<case minzoom="17" tag="leisure" value="fishing"/>
+						<case minzoom="17" tag="leisure" value="bird_hide"/>
+						<case minzoom="16" tag="leisure" value="miniature_golf"/>
+						<case minzoom="16" tag="leisure" value="bowling_alley"/>
+						<case minzoom="18" tag="leisure" value="bandstand" textOrder="254"/>
+						<apply_if engine_v1="true" textDy="9"/>
+					</switch>
+					<case minzoom="16" tag="leisure" value="track" textOnPath="true"/>
+					<apply_if nightMode="true" textColor="#9effa9" textHaloColor="#99013b27"/>
 				</switch>
-				<case minzoom="16" tag="leisure" value="track" textOnPath="true"/>
-				<apply_if nightMode="true" textColor="#9effa9" textHaloColor="#99013b27"/>
+				<case minzoom="17" tag="leisure" value="fitness_station">
+					<apply_if showFitnessTrails="true" additional="route_fitness_trail=yes" textColor="$fitnessTrailTextColor">
+						<apply_if nightMode="true" textHaloColor="#dd176287"/>
+					</apply_if>
+				</case>
 				<apply_if legend="true" textDy="0"/>
 			</switch>
 
@@ -6843,6 +7234,13 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			<apply_if minzoom="10" maxzoom="10" intersectionMargin="7"/>
 			<apply_if engine_v1="true" textDy="-11"/>
 		</case>
+
+        <switch weatherTempContours="true" minzoom="4" tag="contour" value="temperature" textOnPath="true" textOrder="100" textColor="$weatherTempTextColor">
+            <case maxzoom="12" textSize="12" textMinDistance="100"/>
+        </switch>
+        <switch weatherPressureContours="true" minzoom="4" tag="contour" value="pressure" textOnPath="true" textOrder="100" textColor="$weatherPressureTextColor">
+            <case maxzoom="12" textSize="12" textMinDistance="100"/>
+        </switch>
 	</text>
 
 
@@ -7251,10 +7649,13 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="16" tag="natural" value="arch" icon="arch" shield="arch_shield"/><!-- القوس الصخري -->
 				<switch>
 					<case minzoom="15" tag="natural" value="cave_entrance" icon="natural_cave_entrance" iconOrder="85"/><!-- مدخل الكهف أو الغار -->
-					<case minzoom="16" tag="man_made" value="adit" icon="man_made_adit"/><!-- مدخل المنجم الأفقي -->
-					<case minzoom="17" tag="man_made" value="cellar_entrance" icon="cellar_entrance"/>
-					<case minzoom="15" tag="natural" value="fumarole" icon="fumarole"/>
-					<apply shield="gray_round_shield" iconOrder="60">
+					<case minzoom="16" tag="man_made" value="adit" icon="man_made_adit" iconOrder="60"/>
+					<case minzoom="17" tag="man_made" value="cellar_entrance" icon="cellar_entrance" iconOrder="60"/>
+					<case minzoom="15" tag="natural" value="fumarole" icon="fumarole" iconOrder="60"/>
+					<case minzoom="18" tag="natural" value="birds_nest" icon="birds_nest"/>
+					<case minzoom="18" tag="natural" value="anthill" icon="anthill"/>
+					<case minzoom="18" tag="natural" value="termite_mound" icon="termite_mound"/>
+					<apply shield="gray_round_shield">
 						<apply_if nightMode="true" shield="gray_round_night_shield"/>
 					</apply>
 				</switch>
@@ -7714,6 +8115,9 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 
 				<!-- Tourism, Entertainment -->
 				<case minzoom="16" tag="tourism" value="information" icon="tourism_information" iconOrder="86" shield="information_shield">
+					<case additional="board_type=wildlife" icon="board_type_wildlife" shield="information_board_shield"/>
+					<case additional="board_type=nature" icon="board_type_nature" shield="information_board_shield"/>
+					<case additional="board_type=plants" icon="board_type_plants" shield="information_board_shield"/>
 					<case additional="information=office" icon="information_office" shield="information_office_shield"/>
 					<case additional="information=audioguide" icon="information_audioguide" shield="information_audioguide_shield"/>
 					<case additional="information=board" icon="information_board" shield="information_board_shield"/>
@@ -7820,6 +8224,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case minzoom="17" tag="leisure" value="dog_park" icon="dog_park" shield="green_round_shield" iconOrder="250" iconVisibleSize="40" intersectionSizeFactor="2.5">
 					<apply_if nightMode="true" shield="green_round_night_shield"/>
 				</case>
+				<case minzoom="16" tag="golf" value="pin" icon="golf_pin" iconOrder="167" iconVisibleSize="10" intersectionSizeFactor="0.7"/>
 				<switch iconOrder="166" shield="green_round_shield" iconVisibleSize="40" intersectionSizeFactor="2.5">
 					<case minzoom="15" tag="leisure" value="stadium" icon="sport_stadium" iconOrder="155">
 						<apply_if moreDetailed="false" maxzoom="15" icon=""/>
@@ -7876,6 +8281,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="16" tag="leisure" value="fishing" icon="leisure_fishing"/>
 					<case minzoom="17" tag="leisure" value="bird_hide" icon="leisure_bird_hide"/>
 					<case minzoom="17" tag="leisure" value="miniature_golf" icon="leisure_miniature_golf"/>
+					<case minzoom="15" tag="leisure" value="golf_course" icon="sport_golf" iconOrder="105"/>
 					<case minzoom="17" tag="leisure" value="bowling_alley" icon="sport_10pin"/>
 					<case minzoom="17" tag="leisure" value="sauna" icon="sauna" iconOrder="167"/>
 					<case minzoom="17" tag="amenity" value="public_bath" icon="public_bath" iconOrder="167"/>
@@ -7890,11 +8296,17 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case tag="leisure" value="sports_centre" icon="leisure_sports_centre"/>
 					<case tag="leisure" value="sports_hall" icon="sports_hall"/>
 					<case minzoom="17" tag="leisure" value="fitness_centre" icon="fitness_centre"/>
-					<case minzoom="17" tag="leisure" value="fitness_station" icon="fitness_station" iconVisibleSize="24" iconOrder="166"/>
 					<apply shield="green_round_shield" iconVisibleSize="32" iconOrder="166"/>
 					<apply_if nightMode="true" shield="green_round_night_shield"/>
 				</switch>
 
+				<switch minzoom="17">
+					<case tag="leisure" value="fitness_station" icon="fitness_station" iconVisibleSize="24"/>
+					<apply shield="green_round_shield" iconVisibleSize="32" iconOrder="166"/>
+					<apply_if showFitnessTrails="true" additional="route_fitness_trail=yes" shield="blue_round_shield"/>
+					<apply_if nightMode="true" shield="green_round_night_shield"/>
+					<apply_if nightMode="true" showFitnessTrails="true" additional="route_fitness_trail=yes" shield="blue_round_night_shield"/>
+				</switch>
 				<case minzoom="16" tag="geocache" value="found" icon="geocache_found"/>
 				<case minzoom="16" tag="geocache" value="" icon="geocache_not_found"/>
 
@@ -8289,6 +8701,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="17" tag="shop" value="frame" icon="frame"/>
 					<case minzoom="17" tag="shop" value="free_flying" icon="free_flying"/>
 					<case minzoom="17" tag="shop" value="frozen_food" icon="frozen_food"/>
+					<case minzoom="17" tag="shop" value="fuel" icon="shop_fuel"/>
 					<case minzoom="17" tag="shop" value="funeral_directors" icon="funeral_directors"/>
 					<case minzoom="17" tag="shop" value="furnace" icon="furnace"/>
 					<case minzoom="17" tag="shop" value="furniture" icon="shop_furniture"/>
@@ -8325,6 +8738,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="17" tag="shop" value="mobile_phone" icon="shop_mobile_phone" iconVisibleSize="32"/>
 					<case minzoom="17" tag="shop" value="model" icon="model"/>
 					<case minzoom="17" tag="shop" value="motorcycle" icon="shop_motorcycle"/><!-- دراجات نارية -->
+					<case minzoom="17" tag="shop" value="motorcycle_parts" icon="motorcycle_parts"/>
 					<case minzoom="17" tag="shop" value="motorcycle_repair" icon="motorcycle_repair"/>
 					<case minzoom="23" tag="shop" value="music" icon="music"/>
 					<case minzoom="23" tag="shop" value="musical_instrument" icon="shop_musical_instrument"/>
@@ -8345,9 +8759,11 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="23" tag="shop" value="photo" icon="photo"/>
 					<case minzoom="23" tag="shop" value="photo_studio" icon="photo_studio"/>
 					<case minzoom="17" tag="shop" value="pottery" icon="pottery"/>
+					<case minzoom="17" tag="shop" value="printer_ink" icon="printer_ink"/>
 					<case minzoom="17" tag="shop" value="pyrotechnics" icon="pyrotechnics"/>
 					<case minzoom="17" tag="shop" value="radiotechnics" icon="radiotechnics"/>
 					<case minzoom="17" tag="shop" value="religion" icon="religion"/>
+					<case minzoom="17" tag="shop" value="rice" icon="rice"/>
 					<case minzoom="17" tag="shop" value="seafood" icon="shop_seafood"/><!-- مأكولات بحرية -->
 					<case minzoom="17" tag="shop" value="security" icon="shop_security"/>
 					<case minzoom="17" tag="shop" value="second_hand" icon="second_hand"/><!-- محلات بضائع مستعملة -->
@@ -8375,11 +8791,13 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="17" tag="shop" value="variety_store" icon="variety_store"/>
 					<case minzoom="17" tag="shop" value="video" icon="shop_video"/>
 					<case minzoom="17" tag="shop" value="video_games" icon="video_games"/>
-					<case minzoom="17" tag="shop" value="water" icon="water_point"/>
 					<case minzoom="17" tag="shop" value="watches" icon="watches"/><!-- ساعات -->
+					<case minzoom="17" tag="shop" value="water" icon="water_point"/>
+					<case minzoom="17" tag="shop" value="water_sports" icon="water_sports"/>
 					<case minzoom="17" tag="shop" value="weapons" icon="weapons"/><!-- أسلحة -->
 					<case minzoom="17" tag="shop" value="window_blind" icon="window_blind"/>
 					<case minzoom="17" tag="shop" value="wholesale" icon="shop_wholesale"/><!-- بيع بالجملة -->
+					<case minzoom="17" tag="shop" value="wool" icon="wool"/>
 					<!-- <case minzoom="17" tag="shop" value="wine" icon="wine" iconVisibleSize="32"/>-->
 					<case minzoom="17" tag="shop" value="" icon="shop_yes"/><!-- متاجر أخرى غير السابقة -->
 					<apply_if moreDetailed="false" maxzoom="15" icon=""/>
@@ -8776,9 +9194,14 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case tag="public_transport" value="platform"/>
 				<apply>
 					<switch minzoom="14" maxzoom="14" iconVisibleSize="7" iconOrder="55">
-						<case publicTransportMode="true" icon="highway_bus_stop_round_small">
-							<apply_if nightMode="true" icon="highway_bus_stop_round_small_night"/>
-						</case>
+						<switch>
+							<case showBusRoutes="true" additional="bus=yes"/>
+							<case showTrolleybusRoutes="true" additional="trolleybus=yes"/>
+							<case showShareTaxiRoutes="true" additional="share_taxi=yes"/>
+							<apply icon="highway_bus_stop_round_small">
+								<apply_if nightMode="true" icon="highway_bus_stop_round_small_night"/>
+							</apply>
+						</switch>
 						<case tramTrainRoutes="true" hideIcons="false" icon="highway_bus_stop_small"/>
 					</switch>
 				</apply>
@@ -8792,11 +9215,6 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						</switch>
 						<case icon="highway_bus_stop_small"/>
 					</switch>
-					<case publicTransportMode="true">
-						<apply icon="highway_bus_stop_round_big" iconVisibleSize="7" iconOrder="55">
-							<apply_if nightMode="true" icon="highway_bus_stop_round_big_night"/>
-						</apply>
-					</case>
 				</apply_if>
 				<apply_if hideIcons="false" minzoom="17">
 					<switch>
@@ -8815,7 +9233,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					</switch>
 				</apply_if>
 			</switch>
-			<switch tramTrainRoutes="true" iconOrder="55">
+			<switch showTramRoutes="true" iconOrder="55">
 				<case tag="railway" value="tram_stop"/>
 				<case tag="public_transport" value="stop_position" additional="tram=yes"/>
 				<case tag="public_transport" value="platform" additional="tram=yes"/>
@@ -8840,6 +9258,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					<case minzoom="16" icon="halt" shield="blue_square_small_shield">
 						<apply_if nightMode="true" shield="blue_square_night_small_shield"/>
 					</case>
+					<apply_if showLightRailRoutes="true" additional="light_rail=yes" iconOrder="5"/>
 				</case>
 				<case minzoom="15" tag="railway" value="tram_stop">
 					<case maxzoom="16" icon="tram_stop_small" iconVisibleSize="10"/>
@@ -9483,6 +9902,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 					</switch>
 				</apply>
 			</switch>
+			<case minzoom="16" tag="golf" value="rough" shader="golf_rough"/>
 
 			<case minzoom="$farmyardMinZoom" tag="landuse" value="farmyard" color="$farmyardColor"/>
 			<case minzoom="17" tag="landuse" value="flowerbed" color="$flowerbedColor"/>
@@ -9678,7 +10098,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			</case>
 			<switch>
 				<case minzoom="13" tag="leisure" value="stadium" color="$stadiumColor" color_2="$stadiumStrokeColor"/>
-				<case minzoom="13" tag="leisure" value="sports_centre" color="$sportsCentreColor" color_2="$sportsCentreStrokeColor"/>
+				<case minzoom="13" tag="leisure" value="sports_centre" color="$buildingEducationalColor"/>
 				<apply strokeWidth_2="1"/>
 			</switch>
 			<switch minzoom="13">
@@ -11488,6 +11908,14 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			</case>
 			<!-- <apply_if minzoom="15" pathIcon="stroke_lightorange_left" pathIconStep="100"/>-->
 		</switch>
+        <switch weatherTempContours="true" tag="contour" value="temperature" strokeWidth="1">
+            <case minzoom="4" maxzoom="12" color="$weatherTempColor"/>
+        </switch>
+
+        <switch weatherPressureContours="true" tag="contour" value="pressure" strokeWidth="1">
+            <case minzoom="4" maxzoom="12" color="$weatherPressureColor"/>
+        </switch>
+
 
 		<!-- Barriers -->
 		<!-- الحواجز -->
@@ -11789,7 +12217,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			</apply_if>
 		</switch>
 		<switch minzoom="18">
-			<case tag="waterway" value="fish_pass"/><!-- مجرى يعبر فيه الأسماك -->
+			<case tag="waterway" value="fish_pass" pathIcon="fish_pass_map" pathIconStep="70"/><!-- مجرى يعبر فيه الأسماك -->
 			<apply_if color="#45B1E5" strokeWidth="1.1:1.1"/>
 			<apply_if nightMode="true" color="#1859A8"/>
 		</switch>
@@ -11863,23 +12291,18 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			</apply_if>
 		</switch>
 
+
 		<switch minzoom="11" cap="ROUND">
-			<switch publicTransportMode="true">
-				<case tag="route_bus" value="" color="$routeBusColor"/>
-				<case tag="route_share_taxi" value="" color="$routeShareTaxiColor"/>
+			<switch>
+				<case showBusRoutes="true" tag="route_bus" value="" color="$routeBusColor"/>
+				<case showShareTaxiRoutes="true" tag="route_share_taxi" value="" color="$routeShareTaxiColor"/>
 				<apply>
 					<case maxzoom="11" strokeWidth="0.8"/>
 					<case maxzoom="12" strokeWidth="1:1"/>
-					<case maxzoom="13" strokeWidth="1.25:1.25"/>
-					<case maxzoom="14" strokeWidth="1.25:1.25"/>
-					<case maxzoom="15" strokeWidth="1.75:1.75"/>
-					<case maxzoom="16" strokeWidth="2.2:2.2"/>
-					<case maxzoom="17" strokeWidth="2.7:2.7"/>
-					<case maxzoom="18" strokeWidth="3.2:3.2"/>
 					<case minzoom="19" strokeWidth="3.7:3.7"/>
 				</apply>
 			</switch>
-			<case publicTransportMode="true" tag="route_trolleybus" value="" color="$routeTrolleybusColor">
+			<case showTrolleybusRoutes="true" tag="route_trolleybus" value="" color="$routeTrolleybusColor">
 				<case maxzoom="11" strokeWidth="0.8"/>
 				<case maxzoom="12" strokeWidth="1:1"/>
 				<case maxzoom="13" strokeWidth="1.25:1.25"/>
@@ -11889,11 +12312,11 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<case maxzoom="17" strokeWidth="4.2:4.2"/>
 				<case minzoom="18" strokeWidth="5:5"/>
 			</case>
-			<switch tramTrainRoutes="true">
-				<case tag="route_tram" value="" color="$routeTramColor"/>
-				<case tag="route_light_rail" value="" color="$routeLightrailColor"/>
-				<case tag="route_funicular" value="" color="$routeFunicularColor"/>
-				<case tag="route_monorail" value="" color="$routeLightrailColor" cap="ROUND">
+			<switch>
+				<case showTramRoutes="true" tag="route_tram" value="" color="$routeTramColor"/>
+				<case showLightRailRoutes="true" tag="route_light_rail" value="" color="$routeLightrailColor"/>
+				<case showFunicularRoutes="true" tag="route_funicular" value="" color="$routeFunicularColor"/>
+				<case showMonorailRoutes="true" tag="route_monorail" value="" color="$routeLightrailColor" cap="ROUND">
 					<apply_if minzoom="11" maxzoom="11" pathEffect="1_1"/>
 					<apply_if minzoom="12" maxzoom="12" pathEffect="1_3"/>
 					<apply_if minzoom="13" maxzoom="13" pathEffect="1_5"/>
@@ -11912,7 +12335,7 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 				<apply_if minzoom="17" maxzoom="17" strokeWidth="6.5:6.5"/>
 				<apply_if minzoom="18" strokeWidth="7.5:7.5"/>
 			</switch>
-			<case tramTrainRoutes="true" tag="route_train" value="" color="$routeTrainColor" color_2="#ffffff">
+			<case showTrainRoutes="true" tag="route_train" value="" color="$routeTrainColor" color_2="#ffffff">
 				<case minzoom="11" maxzoom="12" strokeWidth="2.5:2.5" strokeWidth_2="1.5:1.5" pathEffect_2="10_10"/>
 				<case maxzoom="13" strokeWidth="3.2:3.2" strokeWidth_2="2.2:2.2" pathEffect_2="13_13"/>
 				<case maxzoom="14" strokeWidth="3.7:3.7" strokeWidth_2="3:3" pathEffect_2="17_17"/>
@@ -12195,6 +12618,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			<apply_if additional="area=false" color="$leisureTrackStrokeColor"/>
 		</case>
 
+		<case minzoom="16" tag="golf" value="hole" color="$golfHoleColor" strokeWidth="1"/>
+
 		<case minzoom="13" maxzoom="15" tag="leisure" value="marina" color="#0000ff" strokeWidth="0.6" pathEffect="6_2">
 			<apply_if minzoom="16" color="#0000ff" strokeWidth="1:1"/>
 		</case>
@@ -12420,7 +12845,8 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 						<case additional="route_hiking_#SEQ_osmc_waycolor=brown" color="$osmcBrownColor"/>
 						<case additional="route_hiking_#SEQ_osmc_waycolor=purple" color="$osmcPurpleColor"/>
 					</switch>
-				</apply_if>
+					<apply_if minzoom="13" cap="ROUND"/>
+					</apply_if>
 				<apply_if hikingRoutesOSMC="walkingRoutesOSMCNodes" minzoom="12">
 					<case additional="hiking_node_network=iwn" color="$iwnNodeNetworkColor"/>
 					<case additional="hiking_node_network=nwn" color="$nwnNodeNetworkColor"/>
@@ -12497,8 +12923,45 @@ https://wiki.openstreetmap.org/wiki/Key:surface
 			<apply_if minzoom="15" maxzoom="16" strokeWidth="3.5"/>
 			<apply_if minzoom="17" strokeWidth="5"/>
 		</switch>
+		<switch>
+			<case showFitnessTrails="true" tag="route_fitness_trail" value="" color="$fitnessTrailDefaultColor"/>
+			<apply cap="ROUND"/>
+			<apply_if maxzoom="13" strokeWidth="3" pathEffect="6_4"/>
+			<apply_if minzoom="14" maxzoom="14" strokeWidth="4" pathEffect="7_5"/>
+			<apply_if minzoom="15" maxzoom="16" strokeWidth="5" pathEffect="8_6"/>
+			<apply_if minzoom="17" strokeWidth="7" pathEffect="9_7"/>
+		</switch>
+		<switch showRunningRoutes="true">
+			<case minzoom="12" tag="route_running" value="" color="$runningRouteDefaultColor"/>
+			<apply>
+				<switch seq="1:10">
+					<case additional="route_running_#SEQ_osmc_waycolor=black" color="$osmcBlackColor"/>
+					<case additional="route_running_#SEQ_osmc_waycolor=blue" color="$osmcBlueColor"/>
+					<case additional="route_running_#SEQ_osmc_waycolor=green" color="$osmcGreenColor"/>
+					<case additional="route_running_#SEQ_osmc_waycolor=orange" color="$osmcOrangeColor"/>
+					<case additional="route_running_#SEQ_osmc_waycolor=red" color="$osmcRedColor"/>
+					<case additional="route_running_#SEQ_osmc_waycolor=yellow" color="$osmcYellowColor"/>
+					<case additional="route_running_#SEQ_osmc_waycolor=brown" color="$osmcBrownColor"/>
+					<case additional="route_running_#SEQ_osmc_waycolor=purple" color="$osmcPurpleColor"/>
+				</switch>
+			</apply>
+			<apply cap="ROUND"/>
+			<apply_if maxzoom="13" strokeWidth="3" pathEffect="2_6"/>
+			<apply_if minzoom="14" maxzoom="14" strokeWidth="4" pathEffect="3_7"/>
+			<apply_if minzoom="15" maxzoom="16" strokeWidth="5" pathEffect="3_8"/>
+			<apply_if minzoom="17" strokeWidth="7" pathEffect="4_9"/>
+		</switch>
 
-		<!--		<case tag="piste:type" value="" additional="route=piste" strokeWidth="3" color="#ae27b3"/>  This is not needed because we don't need to render piste routes in default style. But skimap.render.xml renders these routes. It allows to render osmc symbols. Only engine_v1 2017.05.30. -->
+		<switch horseScale="true" minzoom="12">
+			<case tag="horse_scale" value="common" pathEffect="2_38" color="$horseScaleColorLow"/>
+			<case tag="horse_scale" value="demanding" pathEffect="2_2_2_34" color="$horseScaleColorLow"/>
+			<case tag="horse_scale" value="difficult" pathEffect="2_2_2_2_2_30" color="$horseScaleColorMiddle"/>
+			<case tag="horse_scale" value="critical" pathEffect="2_2_2_2_2_2_2_26" color="$horseScaleColorMiddle"/>
+			<case tag="horse_scale" value="dangerous" pathEffect="2_2_2_2_2_2_2_2_2_22" color="$horseScaleColorMiddle"/>
+			<case tag="horse_scale" value="impossible" pathEffect="2_2_2_2_2_2_2_2_2_22" color="$horseScaleColorHigh"/>
+			<apply_if maxzoom="16" strokeWidth="2.5:2.5"/>
+			<apply_if minzoom="17" strokeWidth="4:4"/>
+		</switch>
 
 		<!-- <switch minzoom="16">
 			<case tag="hazard" value=""/>
