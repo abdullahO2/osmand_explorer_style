@@ -72,10 +72,16 @@
 
 ![image](https://github.com/abdullahO2/osmand_explorer_style/blob/main/2.gif)
 
+<h2 dir="rtl">الإصدار 2.5</h2>
+
+☑️ تمييز القرى والهجر بلون مختلف عن المدن وحل مشاكل في أولوية ظهور النص
+
+☑️ مواكبة جميع التحديثات الجديدة من المطور الأساسي
 
 
 
-<p dir="rtl"><a href="https://github.com/abdullahO2/osmand_explorer_style/releases/download/2.3/Explorer.2_3.render.xml/">للتحميل اضغط هنا</a> بعد التحميل قم بفتح الملف بواسطة أوسماند</p>
+
+<p dir="rtl"><a href="https://github.com/abdullahO2/osmand_explorer_style/releases/download/2.5/Explorer.2_5.render.xml/">للتحميل اضغط هنا</a> بعد التحميل قم بفتح الملف بواسطة أوسماند</p>
 
 
 <p dir="rtl">
