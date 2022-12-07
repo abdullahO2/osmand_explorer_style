@@ -72,22 +72,6 @@
 <p dir="rtl"><a href="https://github.com/abdullahO2/osmand_explorer_style/releases/download/2.5/Explorer.2_5.render.xml/">للتحميل اضغط هنا</a> بعد التحميل قم بفتح الملف بواسطة أوسماند</p>
 
 
-<p dir="rtl">
-وهذا النمط بالأصل هو النمط الافتراضي لأوسماند والموجود هنا:
-  
- 
-https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles
-
-</p>
-
-<p dir="rtl">
-وللمزيد عن كيفية صنع مثل هذا النمط:
-  
- 
-<p dir="rtl"><a href="https://arabmap.wordpress.com/2021/11/03/%d8%b7%d8%b1%d9%8a%d9%82%d8%a9-%d8%aa%d8%b9%d8%af%d9%8a%d9%84-%d8%a3%d9%86%d9%85%d8%a7%d8%b7-%d8%ab%d9%8a%d9%85%d8%a7%d8%aa-%d8%a3%d9%88%d8%b3%d9%85%d8%a7%d9%86%d8%af/">طريقة تعديل أنماط (ثيمات) أوسماند</a> </p>
-
-</p>
-
 <h2 dir="rtl">الإصدار الثالث (3)</h2>
 
 ☑️ إظهار خطوط القطارات بشكل افتراضي (بكل أنواعها الركاب و الشحن) بالإضافة إلى رفع مستوى ظهورها.  
@@ -114,3 +98,4 @@ https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles
 عند استخدام طبقة الأقمار الصناعية ( الستلايت )  
 يُفضَّل تعديل : نمط الطريق -  إلى (طرق بتباين عالي )  
 وذلك من القائمة – ضبط الخريطة – نمط الطريق : اختيار : طرق بتباين عالي  
+
