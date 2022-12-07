@@ -4,7 +4,9 @@
 
 ![image](https://user-images.githubusercontent.com/61907628/206233744-2e0c9695-76db-431d-84c0-ac6673a43faa.png)  
 
-![image](https://user-images.githubusercontent.com/61907628/206233990-6f2f1936-0539-48da-a0ce-6662baaca6ed.png)
+![image](https://user-images.githubusercontent.com/61907628/206233990-6f2f1936-0539-48da-a0ce-6662baaca6ed.png)  
+
+![image](https://user-images.githubusercontent.com/61907628/206234406-2ce00d51-bef0-4248-b964-d8438a2a5244.png)
 
 
 <h2 dir="rtl">الإصدار الأول</h2>
