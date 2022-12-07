@@ -99,8 +99,11 @@
 <p dir="rtl">وشكراً لكل من ساهم في هذا التحديث علماً بأن أكثر المساهمات والاقتراحات كانت من الأستاذ والاخ العزيز أبو صالح/401</p>
 
 <p dir="rtl"><a href="https://github.com/abdullahO2/osmand_explorer_style/releases/download/3.0/Explorer.3.render.xml">لتحميل ملف النمط اضغط هنا</a</p>
-
-
+  
+بعد التحميل:  
+للأندرويد: قم باستخدام برنامج <a href="https://play.google.com/store/apps/details?id=com.alphainventor.filemanager">File Manager</a> > ثم اذهب للتنزيلات > ثم اضغط على الملف ضغطة مطولة > ثم من القائمة الجانبية اضغط فتح باستخدام > ثم اختر أوسماند.
+  
+للآيفون: عندما تفتح الملف قم بمشاركته مع برنامج أوسماند.
 
 <p dir="rtl">
 وللمزيد عن كيفية صنع مثل هذا النمط شاهد  
