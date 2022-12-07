@@ -2,7 +2,9 @@
 
 <p dir="rtl">أهديكم هذا النمط المخصص لتطبيق أوسماند ليكون مناسباً لنا محلياً في دول الخليج والجزيرة العربية</p>
 
-![image](https://user-images.githubusercontent.com/61907628/206233744-2e0c9695-76db-431d-84c0-ac6673a43faa.png)
+![image](https://user-images.githubusercontent.com/61907628/206233744-2e0c9695-76db-431d-84c0-ac6673a43faa.png)  
+
+![image](https://user-images.githubusercontent.com/61907628/206233990-6f2f1936-0539-48da-a0ce-6662baaca6ed.png)
 
 
 <h2 dir="rtl">الإصدار الأول</h2>
