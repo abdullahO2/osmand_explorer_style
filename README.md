@@ -98,7 +98,7 @@
 
 <p dir="rtl">وشكراً لكل من ساهم في هذا التحديث علماً بأن أكثر المساهمات والاقتراحات كانت من الأستاذ والاخ العزيز أبو صالح/401</p>
 
-<p dir="rtl"><a href="https://github.com/abdullahO2/osmand_explorer_style/releases/download/3.0/Explorer.3.render.xml">للتحميل اضغط هنا</a</p>
+<p dir="rtl"><a href="https://github.com/abdullahO2/osmand_explorer_style/releases/download/3.0/Explorer.3.render.xml">لتحميل ملف النمط اضغط هنا</a</p>
 
 
 
